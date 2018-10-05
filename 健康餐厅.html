@@ -1,0 +1,826 @@
+<html>
+    <head>
+            <title>
+                    佑远餐饮
+            </title>
+        <style>
+            .bk3{
+                /* border: 1px red solid; */
+                width: 24.5%;
+            }
+            .bk7{
+/*                border: 1px black solid;*/
+                width: 75%;
+                padding-left: 10px;
+                background-color: white;
+            }
+            .wk{
+                /* border: 2px solid blue; */
+                display: flex;
+                flex-direction: row;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .gyt{
+                position: sticky;
+                top: 0px;
+                position: -webkit-sticky; /* ios兼容*/
+            }
+            .fengexian{
+			border-top: 1px solid rgba(223,223,223,1.00);
+			opacity: 1;
+			width: 96%;
+		}
+		.pinglei{
+			border-left:6px solid rgba(239,196,71,1);
+			padding:10px; 
+			text-align:center; 
+			background-color: rgba(204,204,204,1.00);
+		}
+		.pingleiwz{
+		 font-size: 12px;
+		 font-weight: bold;
+		 font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";	
+		}
+		.shipu{
+			font-size:13px; 
+			color:grey; 
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+			line-height: inherit;
+		}
+        .leimin{
+            text-align: center;
+            border-bottom: 1px solid rgb(202, 201, 201);
+            padding: 15px 5px;
+			font-weight: bold;
+			font-family: SimHei;
+        }
+        a{
+            text-decoration:none;
+            color: black;
+        }
+        </style>
+        <script>
+                function dis1(){
+                    document.getElementById("pijiu2").style.display="none";
+                    document.getElementById("pijiu3").style.display="none";
+                    document.getElementById("pijiu1").style.display="block";
+                    document.getElementById('pl1').style.backgroundColor='white'
+                    document.getElementById('pl1').style.borderLeft="6px solid rgba(239,196,71,1)"
+                    document.getElementById('pl2').style.borderLeft="0px solid rgba(239,196,71,1)"
+                    document.getElementById('pl3').style.borderLeft="0px solid rgba(239,196,71,1)"
+//                    document.getElementById('pl4').style.borderLeft="0px solid rgba(223,194,124,1)"
+                    document.getElementById('pl2').style.backgroundColor='rgba(204,204,204,0)'
+                    document.getElementById('pl3').style.backgroundColor='rgba(204,204,204,0)'
+//                    document.getElementById('pl4').style.backgroundColor='rgba(204,204,204,0)'
+                }
+                function dis2(){
+                    document.getElementById("pijiu1").style.display="none";
+                    document.getElementById("pijiu3").style.display="none";
+                    document.getElementById("pijiu2").style.display="block";
+                    document.getElementById('pl1').style.backgroundColor='rgba(204,204,204,0)'
+                    document.getElementById('pl2').style.backgroundColor='white'
+                    document.getElementById('pl2').style.borderLeft="6px solid rgba(239,196,71,1)"
+                    document.getElementById('pl1').style.borderLeft="0px solid rgba(239,196,71,1)"
+                    document.getElementById('pl3').style.borderLeft="0px solid rgba(239,196,71,1)"
+//                    document.getElementById('pl4').style.borderLeft="0px solid rgba(223,194,124,1)"
+                    document.getElementById('pl3').style.backgroundColor='rgba(204,204,204,0)'
+//                    document.getElementById('pl4').style.backgroundColor='rgba(204,204,204,0)'
+                }
+                function dis3(){
+                    document.getElementById("pijiu2").style.display="none";
+                    document.getElementById("pijiu1").style.display="none";
+                    document.getElementById("pijiu3").style.display="block";
+                    document.getElementById('pl1').style.backgroundColor='rgba(204,204,204,0)'
+                    document.getElementById('pl2').style.backgroundColor='rgba(204,204,204,0)'
+                    document.getElementById('pl3').style.backgroundColor='white'
+                    document.getElementById('pl3').style.borderLeft="6px solid rgba(239,196,71,1)"
+                    document.getElementById('pl2').style.borderLeft="0px solid rgba(239,196,71,1)"
+                    document.getElementById('pl1').style.borderLeft="0px solid rgba(239,196,71,1)"
+//                    document.getElementById('pl4').style.borderLeft="0px solid rgba(223,194,124,1)"
+//                    document.getElementById('pl4').style.backgroundColor='rgba(204,204,204,0)'
+                }
+        </script>
+    </head>
+<!--
+	自上而下
+	pijiu1代表“健康餐”
+	pijiu2代表“咖啡”
+	pijiu3代表“茶道”
+	pijiu4代表“烘培”
+	pijiu5代表“精酿”
+-->
+    <body>
+        <div class="wk">
+            <section class="bk3">
+                <section class="gyt">
+                    <section class="leimin" id="pl1" onclick="dis1()" style="background-color: white; border-left: 6px solid rgba(239,196,71,1)"><!-- 健康餐首选 -->
+                        健康餐-<br/>Healthy<br/>Meal
+                    </section>	
+                    <section class="leimin" id="pl2" onclick="dis2()" >
+                        咖啡-<br/>Coffee
+                    </section>
+                    <section class="leimin" id="pl3" onclick="dis3()" >
+                        茶道-Tea
+                    </section>
+                    <section class="leimin" id="pl4" onclick="dis4_()" style="color: rgba(196,196,196,1.00)"><!--锁住-->
+                        烘培-<br/>Baked(暂无)
+                    </section>
+                    <section class="leimin" id="pl5" onclick="dis5_()"  style="color: rgba(196,196,196,1.00)"><!--锁住-->
+                        精酿-<br/>Craft Beer<br/>(暂无)
+                    </section>
+                </section>
+            </section>
+            <section class="bk7">
+					<!-- display:block 健康餐首选显示 -->
+                    <div id="pijiu1" style="display:block;width:100%;border: 0px solid blue; background-color: white">
+                            <div id="pijiu1-1" style="padding-bottom:0px;border-bottom:0px solid red; margin-bottom:0px;padding-top: 10px">
+                                <!-- 商品链接 -->
+                                <!-- 塑身形体 -->
+                                <a href="http://yy.rxmmd.net/product_detail/130">  
+                                <div style="width:100%;">
+                              
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810050922514751340.jpg" width="80" align="left" hspace="5" vspace="5"/>
+										
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Body Shaping-塑身形体
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text class="shipu">
+											  Chinese Yam,Ipuranol,Chicken Breast,Egg,Cucumber,Carota
+											  <br/>
+                                              山药/紫薯（粒/片）·鸡胸肉（片）·鸡蛋·黄瓜（条）·胡萝卜（条）
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          45
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+                                  </a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+                            <div id="pijiu1-2" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+								<a href="http://yy.rxmmd.net/ProductDetails?productId=124">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041809451023970.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Balance Blood Pressure-平衡血压
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                             Potato,Broccoli,Black Fungus,Florence Oil,shrimp<br/>
+											 水蒸小土豆·黑木耳·西兰花·橄榄油·河虾
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          55
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+								</a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+                            <div id="pijiu1-3" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+								<a href="http://yy.rxmmd.net/ProductDetails?productId=132">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041813134719630.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Healthy Care-健康保养
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei;word-wrap:break-word">
+                                              Egg,Corm,Broccoli,Lily,Shrimp,Sweet-Potato,Grape-kernel Oil,Cucumber<br/>
+											  水蒸蛋·玉米（粒）·红薯·西兰花·百合·河虾·葡萄籽油炒牛柳·黄瓜（条）
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          58
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+								</a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+						    <div id="pijiu1-4" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+								<a href="http://yy.rxmmd.net/ProductDetails?productId=125">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041755257748880.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Weight Loss And Fat Loss-减肥减脂
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                              Chinese Yam，Poached Egg，Cucumber，Carota<br/>
+											  山药/紫薯·荷包蛋·黄瓜（条）·胡萝卜
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          45
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+								</a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+							<div id="pijiu1-5" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+								<a href="http://yy.rxmmd.net/ProductDetails?productId=122">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041752079821410.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Strong Muscle Building Package-强壮增肌套餐
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                              Rice，Cucumber，Little Tomato，Beef，Chicken Breast，Nut<br/>
+											  米饭·黄瓜（条）·小番茄·牛肉(片）·鸡胸肉（片）·坚果
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          62
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+								</a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+							<div id="pijiu1-6" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+								<a href="http://yy.rxmmd.net/ProductDetails?productId=123">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041801393643440.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Lower Blood Lipid Package-降低血脂套餐
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                              Corm,Chinese Yam,Baby Chinese Cabbage,Bean Sprout,Shrimp,Egg<br/>
+											  玉米·山药（片）·娃娃菜·豆芽·河虾·鸡蛋（片）
+                                          </text>
+                                      </div>
+                                  </div>
+                              <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          55
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+								</a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+                            <div id="pijiu1-7" style="padding-bottom:20px;border-bottom:0px solid red; margin-bottom:0px">
+								<a href="http://yy.rxmmd.net/ProductDetails?productId=131">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041807086029230.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Low Sugar Cycle Package-低糖循环套餐
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei"> 
+											  Chinese Yam,Taro,Broccoli,Black Fungus,Cucumber,Shrimp<br/>
+											  山药（片)·芋头·西兰花·黑木耳·黄瓜（条）·河虾
+										  </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          55
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/份
+                                      </text>
+                                  </div>
+								</a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian" style="display: none"></span>
+                                  </div>
+                              </div>
+                    </div>
+                    <div id="pijiu2" style="display:none;width:100%;border: 0px solid blue; background-color: white">
+                        <div id="pijiu2-1" style="padding-bottom:0px;border-bottom:0px solid red; margin-bottom:0px;padding-top: 10px">
+                            <!-- 商品链接 -->
+                            <!-- 瑰夏咖啡 -->
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=133">
+                            <div style="width:100%;">
+                          
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                    
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Rose Summer-瑰夏咖啡
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text class="shipu">
+                                          Floral, tropical fruit
+                                          <br/>
+                                          花香、热带水果香
+                                          <br/>
+                                          Type:虹吸壶、手冲
+                                      </text>
+                                  </div>
+                              </div>
+                              <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      268
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                              </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian"></span>
+                              </div>
+                          </div>
+                        <div id="pijiu2-2" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=134">
+                              <div style="width:100%;">
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298176.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Civet-麝香猫咖啡
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                        Fruity, Mellow, Sour
+                                         <br/>
+                                         果香，醇厚，酸味清淡
+                                         <br/>
+                                         Type:虹吸壶、手冲
+                                      </text>
+                                  </div>
+                              </div>
+                              <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      208
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                            </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian"></span>
+                              </div>
+                          </div>
+                        <div id="pijiu2-3" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=135">
+                              <div style="width:100%;">
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298171.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Blue Mountain-蓝山咖啡
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text style="font-size:12px; color:grey; font-family: microsoft-yahei;word-wrap:break-word">
+                                        Fruity, Sour and Mellow, Easy to enter<br/>
+                                        果香、果酸味醇厚，易入口 <br/>
+                                        Type:虹吸壶、手冲
+                                      </text>
+                                  </div>
+                              </div>
+                              <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      158
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                            </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian"></span>
+                              </div>
+                          </div>
+                        <div id="pijiu2-4" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=136">
+                              <div style="width:100%;">
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298172.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Yirgpainffe-耶加雪菲
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                        Sweet aroma of lemon, floral and honey, fruit and citrus<br/>
+                                        柠檬、花香和蜂蜜般的甜香气，果酸及柑橘味<br/>
+                                        Type:虹吸壶、手冲
+                                      </text>
+                                  </div>
+                              </div>
+                              <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      138
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                            </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian"></span>
+                              </div>
+                          </div>
+                        <div id="pijiu2-5" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=137">
+                              <div style="width:100%;">
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298173.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Gold Mandheling-黄金曼特咖啡
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                        Rich and mellow, bitter heavy, light Sour<br/>
+                                          浓郁醇厚，苦味重、香味重，酸味轻<br/>
+                                          Type:虹吸壶、手冲、比利时壶（两杯）
+                                      </text>
+                                  </div>
+                              </div>
+                              <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      98
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                            </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian"></span>
+                              </div>
+                          </div>
+                        <div id="pijiu2-6" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=138">
+                              <div style="width:100%;">
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298174.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Colombia-哥伦比亚咖啡
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+                                          Sour in the acid, Bitter taste in the flat, Soft and Smooth on the palate<br/>
+                                          酸中带甘，苦味中平，口感绵软，柔滑<br/>
+                                          Type:虹吸壶、手冲、比利时壶（两杯）
+                                      </text>
+                                  </div>
+                              </div>
+                          <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      68
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                            </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian"></span>
+                              </div>
+                          </div>
+                        <div id="pijiu2-7" style="padding-bottom:20px;border-bottom:0px solid red; margin-bottom:0px">
+                            <a href="http://yy.rxmmd.net/ProductDetails?productId=139">
+                              <div style="width:100%;">
+                                <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298170.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                  <div>
+                                      <text style="font-weight: bold; font-size: 16px">
+                                        Brazil-巴西咖啡
+                                      </text>
+                                  </div>
+                                  <div style="padding-top: 8px;">
+                                      <text style="font-size:12px; color:grey; font-family: microsoft-yahei"> 
+                                        Fruity and Sour, Rich in fat and Smooth in the mouth<br/>
+                                        果酸味浓郁、油脂丰厚、入口顺滑<br/>
+                                        Type:虹吸壶、手冲、比利时壶（两杯）
+                                      </text>
+                                  </div>
+                              </div>
+                              <div style="padding-left: 90px">
+                                  <text style="font-size: 12px">
+                                      ¥
+                                  </text>
+                                  <text style="font-size: 18px;color: orange; font-weight: bold">
+                                      68
+                                  </text>
+                                  <text style="font-size:12px;padding-left: 5px">
+                                      元/份
+                                  </text>
+                              </div>
+                            </a>
+                              <!-- a line -->
+                              <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                  <span class="fengexian" style="display: none"></span>
+                              </div>
+                          </div>
+                    </div>
+					<div id="pijiu3" style="display:none;width:100%;border: 0px solid blue; background-color: white">
+                            <div id="pijiu3-1" style="padding-bottom:0px;border-bottom:0px solid red; margin-bottom:0px;padding-top: 10px">
+                                <!-- 商品链接 -->
+                                <!-- 茶道 -->
+                                <a href="http://yy.rxmmd.net/product_detail/124">  
+                                <div style="width:100%;">
+                              
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041121091540343.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              White Tea-白茶
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text class="shipu">
+<!--
+											  Chinese Yam,Ipuranol,Chicken Breast,Egg,Cucumber,Carota
+											  <br/>
+-->
+                                              滋味醇和，陈香厚韵，有茶中仙子之美誉，具有三降、三抗等功效。
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          120
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/泡
+                                      </text>
+                                  </div>
+                                  </a>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+                            <div id="pijiu3-2" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041121091696344.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Black Tea-红茶
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+<!--                                             Potato,Broccoli,Black Fungus,Florence Oil,shrimp<br/>-->
+											 来自云南，采用优良的云南大叶种精制的红茶，<br/>
+											  成品茶外形条索紧结、肥硕，色泽乌润，汤色橙黄明亮，<br/>
+											  花蜜香鲜浓持久，滋味醇厚甘甜。
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          120
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/泡
+                                      </text>
+                                  </div>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+                            <div id="pijiu3-3" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041121091696345.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Green Tea-绿茶
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei;word-wrap:break-word">
+<!--                                              Egg,Corm,Broccoli,Lily,Shrimp,Sweet-Potato,Grape-kernel Oil,Cucumber<br/>-->
+											  清新鲜爽，提神醒脑，长期饮用还有抗辐射、美容养颜、抗疲劳
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          120
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/泡
+                                      </text>
+                                  </div>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+						    <div id="pijiu3-4" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041121091540342.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Pu'er Tea-普洱生茶
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+<!--                                              Chinese Yam，Poached Egg，Cucumber，Carota<br/>-->
+											  滑而不腻，清而不凉，满口生津，回甘持久
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          120
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/泡
+                                      </text>
+                                  </div>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+							<div id="pijiu3-5" style="padding-bottom:10px;border-bottom:0px solid red; margin-bottom:0px">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041121091540340.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Pu'er Cooked Tea-普洱熟茶
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei">
+<!--                                              Rice，Cucumber，Little Tomato，Beef，Chicken Breast，Nut<br/>-->
+											  茶汤质厚饱满，汤感细腻柔和，汤色琥珀生韵，入口醇和绵滑，醇香四溢。
+                                          </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          120
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/泡
+                                      </text>
+                                  </div>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian"></span>
+                                  </div>
+                              </div>
+                            <div id="pijiu3-6" style="padding-bottom:20px;border-bottom:0px solid red; margin-bottom:0px">
+                                  <div style="width:100%;">
+                                    <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810041121091540341.jpg" width="80" align="left" hspace="5" vspace="5"/>
+                                      <div>
+                                          <text style="font-weight: bold; font-size: 16px">
+                                              Oolong Tea-乌龙茶
+                                          </text>
+                                      </div>
+                                      <div style="padding-top: 8px;">
+                                          <text style="font-size:12px; color:grey; font-family: microsoft-yahei"> 
+<!--											  Chinese Yam,Taro,Broccoli,Black Fungus,Cucumber,Shrimp<br/>-->
+											  香气辛锐持久，香气久泡尤存，<br/>入口醇厚回甘，咽后齿颊留香,<br/>
+											  有防癌、防辐射、抗衰老、抗变异、提高免疫力的功效。
+										  </text>
+                                      </div>
+                                  </div>
+                                  <div style="padding-left: 90px">
+                                      <text style="font-size: 12px">
+                                          ¥
+                                      </text>
+                                      <text style="font-size: 18px;color: orange; font-weight: bold">
+                                          120
+                                      </text>
+                                      <text style="font-size:12px;padding-left: 5px">
+                                          元/泡
+                                      </text>
+                                  </div>
+                                  <!-- a line -->
+                                  <div style="width:100% ;border: 0px solid grey; display: flex; flex-direction: column; align-items: center; justify-cntent: center; padding:15px;">
+                                      <span class="fengexian" style="display: none"></span>
+                                  </div>
+                              </div>
+                    </div>
+            </section>
+        </div>
+    </body>
+</html>
