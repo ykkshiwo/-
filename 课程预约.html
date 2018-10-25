@@ -6,7 +6,7 @@
 			$(document).ready(function(){
   				$("#train_g").click(function(){
     				$("#train_").css("height", 'initial');
-//					$("#train_").css("content", 'initial');
+					$("#train_").addClass("new_train_introduce");
 					$("#train_g").hide();
   				});
 			});
@@ -79,6 +79,9 @@
     			padding:0 20px 1px 50px;
 /*    			background: url(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;*/
 				background: linear-gradient(to right, transparent, rgb(38,38,38) 55%);
+			}
+			.new_train_introduce:after{
+				content: '';
 			}
 			.img_train{
 				position: absolute;
@@ -170,7 +173,7 @@
 				<div style="border: 0px red solid;display: flex;">
 					<div class="shift_left_6px">FAQ</div>
 				</div>
-				Q:女性生理期能否练习?<pr/>
+				Q:女性生理期能否练习?<br/>
 				A:可以的。
 			</div>
 			<div class="content_kuai_2_title">健身步骤</div>
