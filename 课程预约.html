@@ -2,6 +2,15 @@
     <head>
         <title>课程预约</title>
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+  				$("#train_g").click(function(){
+    				$("#train_").css("height", 'initial');
+//					$("#train_").css("content", 'initial');
+					$("#train_g").hide();
+  				});
+			});
+		</script>
         <style>
 			body{
 				margin: 0;
@@ -60,14 +69,16 @@
 			    overflow:hidden;
 
 			}
-			.train_introduce::after{
+			.train_introduce:after{
+/*				border: 1px solid red;*/
 				content:"...";
     			font-weight:bold;
     			position:absolute;
     			bottom:0;
     			right:0;
-    			padding:0 20px 1px 45px;
-    			background: url(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;
+    			padding:0 20px 1px 50px;
+/*    			background: url(http://newimg88.b0.upaiyun.com/newimg88/2014/09/ellipsis_bg.png) repeat-y;*/
+				background: linear-gradient(to right, transparent, rgb(38,38,38) 55%);
 			}
 			.img_train{
 				position: absolute;
@@ -126,10 +137,11 @@
 		<div style="width: 100%; background-color: rgb(51,51,51);display: flex; flex-direction: column; align-items: center; padding-top: 0px; padding-bottom: 6px;">
 			<div class="content_kuai_1">
 				{{Name}}
-				<div class="train_introduce">
+				<div class="train_introduce" id="train_">
 					爱舞台,爱到飙汗不够，飙泪来凑，Darren嗨到爆、Jam能把自己跳哭的走心小哥哥。左手鸡血右手鸡汤，既激情又营养，喜欢在嘿到不能自己的课堂上大声歌唱。莱美BODYCOMBAT、BODYJAM认证教练。
-					
+		
 				</div>
+				<div style="border: 1px solid red; width: 75%" id="train_g"> hello </div>
 				<img class="img_train" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051719087266330.jpg"/>
 			</div>
 			<div class="content_kuai_1" style="padding-right: 6px;">
