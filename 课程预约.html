@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>课程预约</title>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
         <style>
 			body{
 				margin: 0;
@@ -50,6 +51,23 @@
 				color: rgba(152,152,152,1.00);
 				font-size: 10;
 				margin-top: 6px;
+				width: 75%; 
+				line-height: 20px;
+				position:relative;
+    			line-height:1.4em;
+    			/* 3 times the line-height to show 3 lines */
+    			height:4.2em;
+			    overflow:hidden;
+
+			}
+			.train_introduce::after{
+				content:"...";
+    			font-weight:bold;
+    			position:absolute;
+    			bottom:0;
+    			right:0;
+    			padding:0 20px 1px 45px;
+    			background:url(http://lidada.org/wp-content/uploads/2017/11/overflow_bg.png) repeat-y;
 			}
 			.img_train{
 				position: absolute;
@@ -104,12 +122,13 @@
         </style>
     </head>
     <body>
-        <img class="img_top" src="./xiaott.jpg"/>
+        <img class="img_top" src="http://yy.rxmmd.net/Storage/template/20180330/6365802486570209905275026.jpg"/>
 		<div style="width: 100%; background-color: rgb(51,51,51);display: flex; flex-direction: column; align-items: center; padding-top: 0px; padding-bottom: 6px;">
 			<div class="content_kuai_1">
 				{{Name}}
-				<div class="train_introduce" style="width: 75%; line-height: 20px;">
+				<div class="train_introduce">
 					爱舞台,爱到飙汗不够，飙泪来凑，Darren嗨到爆、Jam能把自己跳哭的走心小哥哥。左手鸡血右手鸡汤，既激情又营养，喜欢在嘿到不能自己的课堂上大声歌唱。莱美BODYCOMBAT、BODYJAM认证教练。
+					
 				</div>
 				<img class="img_train" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051719087266330.jpg"/>
 			</div>
@@ -136,6 +155,11 @@
 					<div class="shift_left_6px">适合人群</div>
 				</div>
 				老少咸宜，大家一起来锻炼。
+				<div style="border: 0px red solid;display: flex;">
+					<div class="shift_left_6px">FAQ</div>
+				</div>
+				Q:女性生理期能否练习?<pr/>
+				A:可以的。
 			</div>
 			<div class="content_kuai_2_title">健身步骤</div>
 			<div class="content_kuai_2_content" style="display:flex; flex-direction: column;align-items: center;">
