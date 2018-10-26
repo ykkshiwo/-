@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			alert("test")
+			$(".type_names").click(function(){
+				var attr_1 = $(this).attr('name')
+				var attr_1_id = "#" + attr_1
+				//找到右边内容大块，红框内的，包括左边的类名和各内容
+				var red = $(attr_1_id).position().top;
+				$("#zuobian").scrollTop(red)
+			});
+		});
+	</script>
+<title>无标题文档</title>
+	<style>
+		html,body{
+			height: 100%;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.type_names{
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 5px;
+			font-size: 10px;
+			border-bottom: 1px solid rgb(200,200,200);
+			font-family: SimHei;
+		}
+		.type_name_con{
+			border: 1px solid red;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+		.type_name{
+			border: 1px solid yellow;
+			padding: 3px;
+			margin-bottom: 6px;
+		}
+		.type_content{
+			border: 1px solid blue;
+			padding: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(200,200,200)">
+	<div style="border: 0px solid red; width: 26%; height: 100%;background-color: rgb(120,120,120)">
+		<div class="type_names" name="n1">佑远小吃<br/>Uyoung </div>
+		<div class="type_names" name="n2">能量碗<br/>SmooththieBowl</div>
+		<div class="type_names" name="n3">果昔<br/>Smoothie</div>
+		<div class="type_names" name="n4">慢磨果汁<br/>Slow Juice</div>
+		<div class="type_names" name="n5">咖啡-<br/>Coffee</div>
+		<div class="type_names" name="n6">茶水-<br/>Tea</div>
+		<div class="type_names" name="n7">小杯子<br/>Shots</div>
+	</div>
+	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll" id="zuobian">
+		<div class="type_name_con" id="n1">
+			<div class="type_name"> Name1 </div>
+			<div class="type_content"> content1-1 </div>
+			<div class="type_content"> content1-2 </div>
+			<div class="type_content"> content1-3 </div>
+			<div class="type_content"> content1-4 </div>
+		</div>
+		<div class="type_name_con" id="n2">
+			<div class="type_name"> Name2 </div>
+			<div class="type_content"> content2-1 </div>
+			<div class="type_content"> content2-2 </div>
+			<div class="type_content"> content2-3 </div>
+			<div class="type_content"> content2-4 </div>
+		</div>
+		<div class="type_name_con" id="n3">
+			<div class="type_name"> Name3 </div>
+			<div class="type_content"> content3-1 </div>
+			<div class="type_content"> content3-2 </div>
+			<div class="type_content"> content3-3 </div>
+			<div class="type_content"> content3-4 </div>
+		</div>
+		<div class="type_name_con" id="n4">
+			<div class="type_name"> Name4 </div>
+			<div class="type_content"> content4-1 </div>
+			<div class="type_content"> content4-2 </div>
+			<div class="type_content"> content4-3 </div>
+			<div class="type_content"> content4-4 </div>
+		</div>
+		<div class="type_name_con" id="n5">
+			<div class="type_name"> Name5 </div>
+			<div class="type_content"> content5-1 </div>
+			<div class="type_content"> content5-2 </div>
+			<div class="type_content"> content5-3 </div>
+			<div class="type_content"> content5-4 </div>
+		</div>
+		<div class="type_name_con" id="n6">
+			<div class="type_name"> Name6 </div>
+			<div class="type_content"> content6-1 </div>
+			<div class="type_content"> content6-2 </div>
+			<div class="type_content"> content6-3 </div>
+			<div class="type_content"> content6-4 </div>
+		</div>
+		<div class="type_name_con" id="n7">
+			<div class="type_name"> Name7 </div>
+			<div class="type_content"> content7-1 </div>
+			<div class="type_content"> content7-2 </div>
+			<div class="type_content"> content7-3 </div>
+			<div class="type_content"> content7-4 </div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

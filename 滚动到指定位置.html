@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>滚动到指定位置</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+var n;
+$(document).ready(function(){
+  $("button").click(function(){
+//	  n = $("#5").position().top
+//	  $("#i").scrollTop(n);
+	  console.log($("div[id^='_']"));
+  });
+});
+	
+</script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.kuai{
+			font-size: 70px;
+			border: 1px solid red;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="i" style="height: 200px; overflow:auto">
+		<div class="kuai" id='_1'>我是第1块</div>
+		<div class="kuai" id='_2'>我是第2块</div>
+		<div class="kuai" id='_3'>我是第3块</div>
+		<div class="kuai" id='4'>我是第4块</div>
+		<div class="kuai" id='5'>我是第5块</div>
+		<div class="kuai" id='6'>我是第6块</div>
+		<div class="kuai" id='7'>我是第7块</div>
+		<div class="kuai" id='8'>我是第8块</div>
+		<div class="kuai" id='9'>我是第9块</div>
+		<div class="kuai" id='10'>我是第10</div>
+		<div class="kuai" id='11'>我是第11</div>
+	</div>
+	
+<button>返回垂直滚动条的位置</button>
+
+</body>
+</html>
