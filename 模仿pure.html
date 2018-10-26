@@ -4,9 +4,27 @@
 <meta charset="utf-8">
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script>
+		
+		function sum(arr) { //数组相加
+			var s = 0;
+    		for (var i=arr.length-1; i>=0; i--) {
+        		s += arr[i];
+    		}
+    		return s;
+		}
+		
+		function sum_sum(arr){ //数组变为累加数组
+			var s = [];
+			for (var i=0; i<arr.length; i++){
+				s.push(sum(arr.slice(0,i+1)))
+			}
+			return s;
+		}
+		
 		$(document).ready(function(){
 //			alert("test")
-			var top_init = {};
+			var top_init = {}; //用来点击左边，定位右边的字典
+			var top_init_sum = [] //上面字典的累加数组，用来滑动定位右边的类名
 			var types = $(".type_name_con");
 			console.log("有几个种类 +1：",types.length);
 			var how_much_types = types.length;
@@ -16,6 +34,20 @@
 				top_init[types[j].id] = $('#n' + j).height()
 			}
 			console.log(top_init) //字典建立完毕
+			var top_init_nosum = [];
+			
+			for(k in top_init){
+				top_init_nosum.push(top_init[k])
+			}
+			
+			console.log(top_init_nosum) //将top_init字典装换成数组
+			top_init_sum = sum_sum(top_init_nosum) // top_init字典装换的数组，再装换为累加数组
+			console.log(top_init_sum)
+			
+			$('#zuobian').scroll(function(){
+				console.log(new Date())
+			});
+			
 			$(".type_names").click(function(){
 				var attr_name = $(this).attr('name');
 				console.log(attr_name);
@@ -87,6 +119,10 @@
 			<div class="type_content"> content2-1 </div>
 			<div class="type_content"> content2-2 </div>
 			<div class="type_content"> content2-3 </div>
+			<div class="type_content"> content2-4 </div>
+			<div class="type_content"> content2-4 </div>
+			<div class="type_content"> content2-4 </div>
+			<div class="type_content"> content2-4 </div>
 			<div class="type_content"> content2-4 </div>
 		</div>
 		<div class="type_name_con" id="n2">
