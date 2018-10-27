@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>带动感的三点</title>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var three_is = 0;
+			$("img").click(function(){
+				if (three_is){
+//					$("#img").animate( {width: "10%"}, 200, 'swing')
+					$(".four").css('position','absolute');
+				$("#homePage").animate({right:"2px", bottom: "2px"}, 200, 'swing');
+				$("#homePage").css("visibility","hidden")
+				$("#shopCar").animate({right:"2px", bottom: "2px"}, 200, 'swing')
+				$("#shopCar").css("visibility","hidden")
+				$("#classify").animate({right:"2px", bottom: "2px"}, 200, 'swing')
+				$("#classify").css("visibility","hidden")
+				$("#center").animate({right:"10px", bottom: "10px"}, 200, 'swing')
+				$("#center").css("visibility","visible")
+				three_is = 0;
+					}
+				else{
+				$("#homePage").animate({right:"20px", bottom: "80px"}, 200, 'swing');
+				$("#homePage").css("visibility","visible")
+				$("#shopCar").animate({right:"73px", top: "41px"}, 200, 'swing')
+				$("#shopCar").css("visibility","visible")
+				$("#classify").animate({right:"73px", bottom: "41px"}, 200, 'swing')
+				$("#classify").css("visibility","visible")
+				$("#center").animate({right:"20px", top: "80px"}, 200, 'swing')
+				$("#center").css("visibility","visible")
+				three_is = 1;
+				}
+//				$(this).animate({left:"100px", top: "100px"}, 200, 'swing')
+			});
+		});
+	</script>
+	<style>
+		.four{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			right: 2px;
+			bottom: 2px;
+			border: 1px solid red;
+			visibility: visible;
+		}
+	</style>	
+</head>
+
+<body>
+	<div style="position: fixed; right: 10px; bottom: 120px; border: 1px solid red; width: 36px; height: 36px;">
+		<img style="position: absolute;z-index: 9999" src="../from C 桌面/点击触发圆形-02.png" width="36px"/>
+		<div class="four" id="homePage"><img id="img" src="../from C 桌面/test-02.png" width="130%"/></div>
+		<div class="four" id="shopCar"><img id="img" src="../from C 桌面/test-02.png" width="130%"/></div>
+		<div class="four" id="classify"><img id="img" src="../from C 桌面/test-02.png" width="130%"/></div>
+		<div class="four" id="center"><img id="img" src="../from C 桌面/test-02.png" width="130%"/></div>
+	</div>
+</body>
+</html>
