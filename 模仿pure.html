@@ -55,8 +55,8 @@
 						console.log("现在是第 ",z+1," 类物品。")
 						console.log("动态定位左边id为： ", z)
 						console.log("动态定位右边id为： ", 'n'+z, 'm'+z)
-						$('.type_names').css('border-left', '0px');
-						$('#' + z).css('border-left', '5px solid rgb(240,194,61)');
+						$('.type_names').css({'border-left': '0px', 'background-color': ''});
+						$('#' + z).css({'border-left': '5px solid rgb(240,194,61)','background-color': 'rgb(220,220,220)'});
 						$('.type_name').css({'position':'relative',"left":'0px',"width":''});
 						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px',"width":'73%'});
 					    break;
@@ -96,8 +96,7 @@
 			font-family: SimHei;
 		}
 		.type_name_con{
-			border: 0px solid red;
-			padding-right: 6px;
+/*			border: 0px solid red;*/
 		}
 		.type_name{
 			border: 0px solid yellow;
@@ -105,7 +104,8 @@
 			margin-bottom: 6px;
 			width: 100%;
 			border-left: 5px solid rgb(240,194,61);
-			background-color: rgb(123,118,200)
+			background-color: rgb(200,200,200);
+			box-sizing: border-box;
 		}
 		.type_content{
 			border: 0px solid blue;
@@ -116,18 +116,19 @@
 
 <body>
 	<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(200,200,200)">
-	<div style="border: 0px solid red; width: 26%; height: 100%;background-color: rgb(120,120,120)">
-		<div class="type_names" id="0">佑远小吃<br/>Uyoung </div>
+	<div style="border: 0px solid red; width: 26%; height: 100%;background-color: rgb(200,200,200)">
+		<div class="type_names" id="0" style="border-left: 5px solid rgb(240,194,61);background-color: rgb(220,220,220)">佑远小吃<br/>Uyoung </div>
 		<div class="type_names" id="1">能量碗<br/>SmooththieBowl</div>
 		<div class="type_names" id="2">果昔<br/>Smoothie</div>
 		<div class="type_names" id="3">慢磨果汁<br/>Slow Juice</div>
 		<div class="type_names" id="4">咖啡-<br/>Coffee</div>
 		<div class="type_names" id="5">茶水-<br/>Tea</div>
 		<div class="type_names" id="6">小杯子<br/>Shots</div>
+		<div class="type_names" id="7">小杯子test<br/>Shots</div>
 	</div>
-	<div style="width: 1%;">
+	<div style="width: 1%; background-color: rgb(220,220,220)">
 	</div>
-	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; position: relative" id="zuobian">
+	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; position: relative; background-color: rgb(220,220,220)" id="zuobian">
 		<div class="type_name_con" id="n0">
 			<div class="type_name" id="m0"> Name1 </div>
 			<div class="type_content"> content1-1 </div>
@@ -193,6 +194,21 @@
 			<div class="type_content"> content7-2 </div>
 			<div class="type_content"> content7-3 </div>
 			<div class="type_content"> content7-4 </div>
+		</div>
+		<div class="type_name_con" id="n7">
+			<div class="type_name" id="m7"> Name7t </div>
+			<div class="type_content"> content7-1t </div>
+			<div class="type_content"> content7-2t </div>
+			<div class="type_content"> content7-3t </div>
+			<div class="type_content"> content7-4t </div>
+			<div class="type_content"> content7-1t </div>
+			<div class="type_content"> content7-2t </div>
+			<div class="type_content"> content7-3t </div>
+			<div class="type_content"> content7-4t </div>
+			<div class="type_content"> content7-1t </div>
+			<div class="type_content"> content7-2t </div>
+			<div class="type_content"> content7-3t </div>
+			<div class="type_content"> content7-4t </div>
 		</div>
 	</div>
 	</div>
