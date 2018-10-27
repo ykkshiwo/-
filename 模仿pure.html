@@ -44,12 +44,28 @@
 			top_init_sum = sum_sum(top_init_nosum) // top_init字典装换的数组，再装换为累加数组
 			console.log(top_init_sum)
 			
-			$('#zuobian').scroll(function(){
-				console.log(new Date())
+			$('#zuobian').scroll(function(){  //监听页面滚动，每次判断页面的scrollTop(),滑动后的高度
+				var l = $(this).scrollTop() //每次导出页面的滑动距离
+				console.log(l);
+				var t = 0; //判断当前显示的是哪一类物品
+				for (var z=0; z < top_init_sum.length; z++){
+					console.log(z, top_init_sum[z])
+					if(l < top_init_sum[z]){
+//						return z;
+						console.log("现在是第 ",z+1," 类物品。")
+						console.log("动态定位左边id为： ", z)
+						console.log("动态定位右边id为： ", 'n'+z, 'm'+z)
+						$('.type_names').css('border-left', '0px');
+						$('#' + z).css('border-left', '5px solid rgb(240,194,61)');
+						$('.type_name').css({'position':'relative',"left":'0px',"width":''});
+						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px',"width":'73%'});
+					    break;
+					}
+				}
 			});
 			
 			$(".type_names").click(function(){
-				var attr_name = $(this).attr('name');
+				var attr_name = $(this).attr('id');
 				console.log(attr_name);
 				var how_long_jump = 0;
 				for(i = 0; i < attr_name; i++){
@@ -60,6 +76,7 @@
 				$('#zuobian').scrollTop(how_long_jump);
 			});
 		});
+		
 	</script>
 <title>无标题文档</title>
 	<style>
@@ -80,13 +97,13 @@
 		}
 		.type_name_con{
 			border: 1px solid red;
-			padding-left: 6px;
 			padding-right: 6px;
 		}
 		.type_name{
 			border: 1px solid yellow;
 			padding: 3px;
 			margin-bottom: 6px;
+			width: 100%
 		}
 		.type_content{
 			border: 1px solid blue;
@@ -98,24 +115,26 @@
 <body>
 	<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(200,200,200)">
 	<div style="border: 0px solid red; width: 26%; height: 100%;background-color: rgb(120,120,120)">
-		<div class="type_names" name="0">佑远小吃<br/>Uyoung </div>
-		<div class="type_names" name="1">能量碗<br/>SmooththieBowl</div>
-		<div class="type_names" name="2">果昔<br/>Smoothie</div>
-		<div class="type_names" name="3">慢磨果汁<br/>Slow Juice</div>
-		<div class="type_names" name="4">咖啡-<br/>Coffee</div>
-		<div class="type_names" name="5">茶水-<br/>Tea</div>
-		<div class="type_names" name="6">小杯子<br/>Shots</div>
+		<div class="type_names" id="0">佑远小吃<br/>Uyoung </div>
+		<div class="type_names" id="1">能量碗<br/>SmooththieBowl</div>
+		<div class="type_names" id="2">果昔<br/>Smoothie</div>
+		<div class="type_names" id="3">慢磨果汁<br/>Slow Juice</div>
+		<div class="type_names" id="4">咖啡-<br/>Coffee</div>
+		<div class="type_names" id="5">茶水-<br/>Tea</div>
+		<div class="type_names" id="6">小杯子<br/>Shots</div>
 	</div>
-	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll" id="zuobian">
+	<div style="width: 1%;">
+	</div>
+	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; position: relative" id="zuobian">
 		<div class="type_name_con" id="n0">
-			<div class="type_name"> Name1 </div>
+			<div class="type_name" id="m0"> Name1 </div>
 			<div class="type_content"> content1-1 </div>
 			<div class="type_content"> content1-2 </div>
 			<div class="type_content"> content1-3 </div>
 			<div class="type_content"> content1-4 </div>
 		</div>
 		<div class="type_name_con" id="n1">
-			<div class="type_name"> Name2 </div>
+			<div class="type_name" id="m1"> Name2 </div>
 			<div class="type_content"> content2-1 </div>
 			<div class="type_content"> content2-2 </div>
 			<div class="type_content"> content2-3 </div>
@@ -126,28 +145,28 @@
 			<div class="type_content"> content2-4 </div>
 		</div>
 		<div class="type_name_con" id="n2">
-			<div class="type_name"> Name3 </div>
+			<div class="type_name" id="m2"> Name3 </div>
 			<div class="type_content"> content3-1 </div>
 			<div class="type_content"> content3-2 </div>
 			<div class="type_content"> content3-3 </div>
 			<div class="type_content"> content3-4 </div>
 		</div>
 		<div class="type_name_con" id="n3">
-			<div class="type_name"> Name4 </div>
+			<div class="type_name" id="m3"> Name4 </div>
 			<div class="type_content"> content4-1 </div>
 			<div class="type_content"> content4-2 </div>
 			<div class="type_content"> content4-3 </div>
 			<div class="type_content"> content4-4 </div>
 		</div>
 		<div class="type_name_con" id="n4">
-			<div class="type_name"> Name5 </div>
+			<div class="type_name" id="m4"> Name5 </div>
 			<div class="type_content"> content5-1 </div>
 			<div class="type_content"> content5-2 </div>
 			<div class="type_content"> content5-3 </div>
 			<div class="type_content"> content5-4 </div>
 		</div>
 		<div class="type_name_con" id="n5">
-			<div class="type_name"> Name6 </div>
+			<div class="type_name" id="m5"> Name6 </div>
 			<div class="type_content"> content6-1 </div>
 			<div class="type_content"> content6-2 </div>
 			<div class="type_content"> content6-3 </div>
@@ -159,7 +178,15 @@
 			<div class="type_content"> content6-9 </div>
 		</div>
 		<div class="type_name_con" id="n6">
-			<div class="type_name"> Name7 </div>
+			<div class="type_name" id="m6"> Name7 </div>
+			<div class="type_content"> content7-1 </div>
+			<div class="type_content"> content7-2 </div>
+			<div class="type_content"> content7-3 </div>
+			<div class="type_content"> content7-4 </div>
+			<div class="type_content"> content7-1 </div>
+			<div class="type_content"> content7-2 </div>
+			<div class="type_content"> content7-3 </div>
+			<div class="type_content"> content7-4 </div>
 			<div class="type_content"> content7-1 </div>
 			<div class="type_content"> content7-2 </div>
 			<div class="type_content"> content7-3 </div>
