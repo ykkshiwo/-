@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script src='fly-master/fly-master/dist/jquery.fly.min.js'></script>
@@ -58,9 +58,9 @@
 						console.log("动态定位左边id为： ", z)
 						console.log("动态定位右边id为： ", 'n'+z, 'm'+z)
 						$('.type_names').css({'border-left': '0px', 'background-color': ''});
-						$('#' + z).css({'border-left': '10px solid rgb(240,194,61)','background-color': 'rgb(250,250,250)'});
+						$('#' + z).css({'border-left': '5px solid rgb(240,194,61)','background-color': 'rgb(220,220,220)'});
 						$('.type_name').css({'position':'relative',"left":'0px',"width":''});
-						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px', "font-size": "42px"});
+						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px',"width":'73%'});
 					    break;
 					}
 				}
@@ -92,33 +92,17 @@
 				three_is = 0;
 					}
 				else{
-				$("#homePage").animate({right:"40px", bottom: "160px"}, 200, 'swing');
+				$("#homePage").animate({right:"20px", bottom: "80px"}, 200, 'swing');
 				$("#homePage").css("visibility","visible")
-				$("#shopCar").animate({right:"152px", top: "76px"}, 200, 'swing')
+				$("#shopCar").animate({right:"76px", top: "38px"}, 200, 'swing')
 				$("#shopCar").css("visibility","visible")
-				$("#classify").animate({right:"152px", bottom: "76px"}, 200, 'swing')
+				$("#classify").animate({right:"76px", bottom: "38px"}, 200, 'swing')
 				$("#classify").css("visibility","visible")
-				$("#center").animate({right:"40px", top: "160px"}, 200, 'swing')
+				$("#center").animate({right:"20px", top: "80px"}, 200, 'swing')
 				$("#center").css("visibility","visible")
 				three_is = 1;
 				}
 //				$(this).animate({left:"100px", top: "100px"}, 200, 'swing')
-				
-//				document.documentElement.addEventListener('touchstart', function (event) {
-//  if (event.touches.length > 1) {
-//    event.preventDefault();
-//  }
-//}, false);
-				
-				var lastTouchEnd = 0;
-document.documentElement.addEventListener('touchend', function (event) {
-  var now = Date.now();
-  if (now - lastTouchEnd <= 300) {
-    event.preventDefault();
-  }
-  lastTouchEnd = now;
-}, false);
-				
 			});
 			
 			//飞入购物车
@@ -126,22 +110,22 @@ document.documentElement.addEventListener('touchend', function (event) {
     $(".add").click(function(event){
         var addcar = $(this); 
 //        var img = addcar.parent().find('img').attr('src');
-        var flyer = $('	<div style="border-radius: 50%; width: 50px; height: 50px; background-color: #4F4C4C; z-index: 8000"></div>');
+        var flyer = $('	<div style="border-radius: 50%; width: 16px; height: 16px; background-color: #4F4C4C"></div>');
         flyer.fly({
             start: {
                 left: event.pageX, //开始位置（必填）#fly元素会被设置成position: fixed 
                 top: event.pageY //开始位置（必填） 
             }, 
             end: { 
-                left: offset.left, //结束位置（必填)
-                top: offset.top, //结束位置（必填） 
+                left: offset.left+20, //结束位置（必填)
+                top: offset.top+20, //结束位置（必填） 
                 width: 0, //结束时宽度 
                 height: 0 //结束时高度 
             }, 
             onEnd: function(){ //结束回调
 //                $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); 
 //                addcar.css("cursor","default").removeClass('orange');
-                  this.destory(); //移除dom
+//                this.destory(); //移除dom
             } 
         });
     });
@@ -165,11 +149,11 @@ document.documentElement.addEventListener('touchend', function (event) {
 			padding: 0;
 		}
 		.type_names{
-			padding-top: 36px;
-			padding-bottom: 36px;
-			padding-left: 10px;
-			font-size: 36px;
-			border-bottom: 5px solid rgb(255,255,255);
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 5px;
+			font-size: 10px;
+			border-bottom: 1px solid rgb(200,200,200);
 			font-family: SimHei;
 		}
 		.type_name_con{
@@ -177,22 +161,18 @@ document.documentElement.addEventListener('touchend', function (event) {
 		}
 		.type_name{
 			border: 0px solid yellow;
-			padding: 10px;
+			padding: 3px;
 			margin-bottom: 6px;
 			width: 100%;
-			border-left: 10px solid rgb(240,194,61);
+			border-left: 5px solid rgb(240,194,61);
 			background-color: rgb(200,200,200);
 			box-sizing: border-box;
-			font-size: 26px;
-			z-index: 2000;
+			font-size: 12px;
 		}
 		.type_content{
 			border: 0px solid blue;
-			border-bottom: 1px solid rgba(99,99,99,1.00);
-			padding: 60px;
-			padding-top: 120px;
+			padding: 30px;
 			position: relative;
-			
 		}
 		.four{
 			position: absolute;
@@ -206,50 +186,49 @@ document.documentElement.addEventListener('touchend', function (event) {
 			position: fixed;
 			left: 2px;
 			bottom: 2px;
-			width: 200px;
-			height: 200px;
-			z-index: 9000;
+			width: 60px;
+			height: 60px;
+			z-index: 8000;
 		}
 		.car_num{
-			border: 0px solid blue;
+			border: px solid blue;
 			position: absolute;
-			top: -10px;
-			right: -10px;
-			border-radius: 60px;
+			top: -5px;
+			right: -5px;
+			border-radius: 20px;
 			background-color: red;
-			line-height: 60px;
+			line-height: 20px;
 			color: white;
 			font-weight: bold;
-			padding: 0px 25px;
-			font-size: 40px;
+			padding: 0px 4px;
 		}
 		.add{
 			position: absolute;
 			border: 0px red solid;
-			width: 60px;
-			right: 30px;
+			width: 18px;
+			right: 22px;
 			bottom: 8px;
 		}
 	</style>
 </head>
 
 <body>
-	<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(240,240,240)">
+	<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(200,200,200)">
 	<div style="border: 0px solid red; width: 26%; height: 100%;background-color: rgb(200,200,200)">
-		<div class="type_names" id="0" style="border-left: 10px solid rgb(240,194,61);background-color: rgb(250,250,250)">佑远小吃<br/>Uyoung </div>
-		<div class="type_names" id="1">能量碗<br/>Smooththie<br/>Bowl</div>
+		<div class="type_names" id="0" style="border-left: 5px solid rgb(240,194,61);background-color: rgb(220,220,220)">佑远小吃<br/>Uyoung </div>
+		<div class="type_names" id="1">能量碗<br/>SmooththieBowl</div>
 		<div class="type_names" id="2">果昔<br/>Smoothie</div>
 		<div class="type_names" id="3">慢磨果汁<br/>Slow Juice</div>
 		<div class="type_names" id="4">咖啡-<br/>Coffee</div>
 		<div class="type_names" id="5">茶水-<br/>Tea</div>
 		<div class="type_names" id="6">小杯子<br/>Shots</div>
-<!--		<div class="type_names" id="7">小杯子test<br/>Shots</div>-->
+		<div class="type_names" id="7">小杯子test<br/>Shots</div>
 	</div>
-	<div style="width: 1%; background-color: rgb(250,250,250)">
+	<div style="width: 1%; background-color: rgb(220,220,220)">
 	</div>
-	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; -webkit-overflow-scrolling: touch;position: relative; background-color: rgb(250,250,250)" id="zuobian">
+	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; -webkit-overflow-scrolling: touch;position: relative; background-color: rgb(220,220,220)" id="zuobian">
 		<div class="type_name_con" id="n0">
-			<div class="type_name" id="m0"> 佑远小吃 </div>
+			<div class="type_name" id="m0"> Name1 </div>
 			<div class="type_content"> content1-1 
 				<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/>
 			</div>
@@ -258,7 +237,7 @@ document.documentElement.addEventListener('touchend', function (event) {
 			<div class="type_content"> content1-4 </div>
 		</div>
 		<div class="type_name_con" id="n1">
-			<div class="type_name" id="m1"> 能量碗 </div>
+			<div class="type_name" id="m1"> Name2 </div>
 			<div class="type_content"> content2-1 
 				<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/>
 			</div>
@@ -271,28 +250,28 @@ document.documentElement.addEventListener('touchend', function (event) {
 			<div class="type_content"> content2-4 </div>
 		</div>
 		<div class="type_name_con" id="n2">
-			<div class="type_name" id="m2"> 果昔 </div>
+			<div class="type_name" id="m2"> Name3 </div>
 			<div class="type_content"> content3-1 </div>
 			<div class="type_content"> content3-2 </div>
 			<div class="type_content"> content3-3 </div>
 			<div class="type_content"> content3-4 </div>
 		</div>
 		<div class="type_name_con" id="n3">
-			<div class="type_name" id="m3"> 慢摇果汁 </div>
+			<div class="type_name" id="m3"> Name4 </div>
 			<div class="type_content"> content4-1 </div>
 			<div class="type_content"> content4-2 </div>
 			<div class="type_content"> content4-3 </div>
 			<div class="type_content"> content4-4 </div>
 		</div>
 		<div class="type_name_con" id="n4">
-			<div class="type_name" id="m4"> 咖啡 </div>
+			<div class="type_name" id="m4"> Name5 </div>
 			<div class="type_content"> content5-1 </div>
 			<div class="type_content"> content5-2 </div>
 			<div class="type_content"> content5-3 </div>
 			<div class="type_content"> content5-4 </div>
 		</div>
 		<div class="type_name_con" id="n5">
-			<div class="type_name" id="m5"> 茶水 </div>
+			<div class="type_name" id="m5"> Name6 </div>
 			<div class="type_content"> content6-1 </div>
 			<div class="type_content"> content6-2 </div>
 			<div class="type_content"> content6-3 </div>
@@ -304,7 +283,7 @@ document.documentElement.addEventListener('touchend', function (event) {
 			<div class="type_content"> content6-9 </div>
 		</div>
 		<div class="type_name_con" id="n6">
-			<div class="type_name" id="m6"> 小杯子 </div>
+			<div class="type_name" id="m6"> Name7 </div>
 			<div class="type_content"> content7-1 </div>
 			<div class="type_content"> content7-2 </div>
 			<div class="type_content"> content7-3 </div>
@@ -318,7 +297,6 @@ document.documentElement.addEventListener('touchend', function (event) {
 			<div class="type_content"> content7-3 </div>
 			<div class="type_content"> content7-4 </div>
 		</div>
-<!--
 		<div class="type_name_con" id="n7">
 			<div class="type_name" id="m7"> Name7t </div>
 			<div class="type_content"> content7-1t </div>
@@ -334,18 +312,17 @@ document.documentElement.addEventListener('touchend', function (event) {
 			<div class="type_content"> content7-3t </div>
 			<div class="type_content"> content7-4t </div>
 		</div>
--->
 	</div>
 	</div>
-	<div style="position: fixed; right: 10px; bottom: 320px; border: 0px solid red; width: 120px; height: 120px;z-index: 9000">
-		<img id="touch" style="position: absolute;z-index: 9999" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581060.png" width="120px">
-		<a href="https://www.baidu.com"><img class="four" id="homePage" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581064.png" width="120%"></a>
-		<img class="four" id="shopCar" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="120%">
-		<img class="four" id="classify" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581063.png" width="120%">
-		<img class="four" id="center" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="120%">
+	<div style="position: fixed; right: 10px; bottom: 160px; border: 0px solid red; width: 36px; height: 36px">
+		<img id="touch" style="position: absolute;z-index: 9999" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581060.png" width="39px">
+		<a href="https://www.baidu.com"><img class="four" id="homePage" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png' width="56px"></a>
+		<img class="four" id="shopCar" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png' width="56px">
+		<img class="four" id="classify" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png' width="56px">
+		<img class="four" id="center" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png' width="56px">
 	</div>
 	<div class="car">
-		<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291721097074560.png" width="100%"/>
+		<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291721097074560.png" width="60px"/>
 		<div class="car_num"><p id="carNum">0</p></div>
 	</div>
 </body>
