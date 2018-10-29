@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script src='fly-master/fly-master/dist/jquery.fly.min.js'></script>
 	<script>
 		
 		function sum(arr) { //数组相加
@@ -75,6 +76,59 @@
 				console.log(how_long_jump)
 				$('#zuobian').scrollTop(how_long_jump);
 			});
+			
+			var three_is = 0;
+			$("#touch").click(function(){
+				if (three_is){
+				$("#homePage").animate({right:"2px", bottom: "2px"}, 200, 'swing');
+				$("#homePage").css("visibility","hidden")
+				$("#shopCar").animate({right:"2px", bottom: "2px", top: ""}, 200, 'swing')
+				$("#shopCar").css("visibility","hidden")
+				$("#classify").animate({right:"2px", bottom: "2px"}, 200, 'swing')
+				$("#classify").css("visibility","hidden")
+				$("#center").animate({right:"2px", bottom: "2px", top: ""}, 200, 'swing')
+				$("#center").css("visibility","hidden")
+				three_is = 0;
+					}
+				else{
+				$("#homePage").animate({right:"20px", bottom: "80px"}, 200, 'swing');
+				$("#homePage").css("visibility","visible")
+				$("#shopCar").animate({right:"76px", top: "38px"}, 200, 'swing')
+				$("#shopCar").css("visibility","visible")
+				$("#classify").animate({right:"76px", bottom: "38px"}, 200, 'swing')
+				$("#classify").css("visibility","visible")
+				$("#center").animate({right:"20px", top: "80px"}, 200, 'swing')
+				$("#center").css("visibility","visible")
+				three_is = 1;
+				}
+//				$(this).animate({left:"100px", top: "100px"}, 200, 'swing')
+			});
+			
+			//飞入购物车
+	var offset = $(".car").offset(); //购物车的位置
+    $(".add").click(function(event){
+        var addcar = $(this); 
+//        var img = addcar.parent().find('img').attr('src');
+        var flyer = $('	<div style="border-radius: 50%; width: 16px; height: 16px; background-color: #4F4C4C"></div>');
+        flyer.fly({
+            start: {
+                left: event.pageX, //开始位置（必填）#fly元素会被设置成position: fixed 
+                top: event.pageY //开始位置（必填） 
+            }, 
+            end: { 
+                left: offset.left+20, //结束位置（必填） 
+                top: offset.top+20, //结束位置（必填） 
+                width: 0, //结束时宽度 
+                height: 0 //结束时高度 
+            }, 
+            onEnd: function(){ //结束回调
+//                $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); 
+//                addcar.css("cursor","default").removeClass('orange');
+                this.destory(); //移除dom
+            } 
+        });
+    });
+			
 		});
 		
 	</script>
@@ -110,6 +164,30 @@
 		.type_content{
 			border: 0px solid blue;
 			padding: 30px;
+			position: relative;
+		}
+		.four{
+			position: absolute;
+			right: 2px;
+			bottom: 2px;
+			border: 0px solid red;
+			visibility: hidden;
+		}
+		.car{
+			border:0px red solid;
+			position: fixed;
+			left: 2px;
+			bottom: 2px;
+			width: 60px;
+			height: 60px;
+			z-index: 8000;
+		}
+		.add{
+			position: absolute;
+			border: 0px red solid;
+			width: 18px;
+			right: 22px;
+			bottom: 8px;
 		}
 	</style>
 </head>
@@ -131,14 +209,18 @@
 	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; position: relative; background-color: rgb(220,220,220)" id="zuobian">
 		<div class="type_name_con" id="n0">
 			<div class="type_name" id="m0"> Name1 </div>
-			<div class="type_content"> content1-1 </div>
+			<div class="type_content"> content1-1 
+				<img src="点击触发圆形-07.png" class="add"/>
+			</div>
 			<div class="type_content"> content1-2 </div>
 			<div class="type_content"> content1-3 </div>
 			<div class="type_content"> content1-4 </div>
 		</div>
 		<div class="type_name_con" id="n1">
 			<div class="type_name" id="m1"> Name2 </div>
-			<div class="type_content"> content2-1 </div>
+			<div class="type_content"> content2-1 
+				<img src="点击触发圆形-07.png" class="add"/>
+			</div>
 			<div class="type_content"> content2-2 </div>
 			<div class="type_content"> content2-3 </div>
 			<div class="type_content"> content2-4 </div>
@@ -212,5 +294,14 @@
 		</div>
 	</div>
 	</div>
+	<div style="position: fixed; right: 10px; bottom: 160px; border: 0px solid red; width: 36px; height: 36px">
+		<img id="touch" style="position: absolute;z-index: 9999" src="点击触发圆形-02.png" width="39px">
+		<a href="https://www.baidu.com"><img class="four" id="homePage" src='点击触发圆形-06.png' width="56px"></a>
+		<img class="four" id="shopCar" src='点击触发圆形-购物车-04.png'点击触发圆形-03.png'' width="56px">
+		<img class="four" id="classify" src='点击触发圆形-05.png' width="56px">
+		<img class="four" id="center" src='点击触发圆形-03.png' width="56px">
+	</div>
+	
+	<img class="car" src="点击触发圆形-下面的购物车-09.png"/>
 </body>
 </html>
