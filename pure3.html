@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
-	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-	<script src='fly-master/fly-master/dist/jquery.fly.min.js'></script>
-	<script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src='fly-master/fly-master/dist/jquery.fly.min.js'></script>
+<script>
 		
 		function sum(arr) { //数组相加
 			var s = 0;
@@ -52,18 +52,23 @@
 				var t = 0; //判断当前显示的是哪一类物品
 				for (var z=0; z < top_init_sum.length; z++){
 					console.log(z, top_init_sum[z])
-					if(l < top_init_sum[z]){
+					if(l < top_init_sum[z] - 40 ){
 //						return z;
 						console.log("现在是第 ",z+1," 类物品。")
 						console.log("动态定位左边id为： ", z)
 						console.log("动态定位右边id为： ", 'n'+z, 'm'+z)
 						$('.type_names').css({'border-left': '0px', 'background-color': ''});
-						$('#' + z).css({'border-left': '5px solid rgb(240,194,61)','background-color': 'rgb(220,220,220)'});
+						$('#' + z).css({'border-left': '5px solid rgb(240,194,61)','background-color': 'rgb(255,255,255)'});
 						$('.type_name').css({'position':'relative',"left":'0px',"width":''});
+//						$('.type_name_con').css({"padding-top":"0px"})
 						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px',"width":'73%'});
+//						$('#m'+z).parent().css({"padding-top":"40px"});
 					    break;
 					}
 				}
+										if(z==0){
+			$('#m'+z).css({'position':'relative',"left":'0px',"width":''});
+						};//第一类的商品比较特殊
 			});
 			
 			$(".type_names").click(function(){
@@ -75,7 +80,7 @@
 					how_long_jump += top_init['n' + i]
 				};
 				console.log(how_long_jump)
-				$('#zuobian').scrollTop(how_long_jump);
+				$('#zuobian').scrollTop(how_long_jump-40);
 			});
 			
 			var three_is = 0;
@@ -140,98 +145,147 @@
 		
 	</script>
 <title>点菜</title>
-	<style>
-		html,body{
-			height: 100%;
-		}
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		.type_names{
-			padding-top: 15px;
-			padding-bottom: 15px;
-			padding-left: 5px;
-			font-size: 14px;
-			border-bottom: 1px solid rgb(200,200,200);
-			font-family: SimHei;
-		}
-		.type_name_con{
-			border: 0px solid red;
-		}
-		.type_name{
-			border: 0px solid yellow;
-			padding: 8px;
-			margin-bottom: 6px;
-			width: 100%;
-			border-left: 5px solid rgb(240,194,61);
-			background-color: rgb(200,200,200);
-			box-sizing: border-box;
-			font-size: 12px;
-			position: relative;
-			z-index: 200;
-		}
-		.type_content{
-			border: 0px solid blue;
-			padding: 30px;
-			position: relative;
-		}
-		.four{
-			position: absolute;
-			right: 2px;
-			bottom: 2px;
-			border: 0px solid red;
-			visibility: hidden;
-		}
-		.car{
-			border:0px red solid;
-			position: fixed;
-			left: 2px;
-			bottom: 2px;
-			width: 60px;
-			height: 60px;
-			z-index: 8000;
-		}
-		.car_num{
-			border: px solid blue;
-			position: absolute;
-			top: -5px;
-			right: -5px;
-			border-radius: 20px;
-			background-color: red;
-			line-height: 20px;
-			color: white;
-			font-weight: bold;
-			padding: 0px 4px;
-		}
-		.add{
-			position: absolute;
-			border: 0px red solid;
-			width: 18px;
-			right: 22px;
-			bottom: 8px;
-		}
-	</style>
+<style>
+html, body {
+	height: 100%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.type_names {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 5px;
+	font-size: 14px;
+	border-bottom: 1px solid rgb(200,200,200);
+	font-family: SimHei;
+}
+.type_name_con {
+	border: 0px solid red;
+	padding-top: 0px;
+}
+.type_name {
+	border: 0px solid yellow;
+	padding: 8px;
+	margin-bottom: 6px;
+	width: 100%;
+	border-left: 5px solid rgb(240,194,61);
+	background-color: rgb(200,200,200);
+	box-sizing: border-box;
+	font-size: 12px;
+	position: relative;
+	z-index: 200;
+}
+.type_content {
+	border: 0px solid blue;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	padding-top: 2px;
+	padding-right: 8px;
+	position: relative;
+	border-bottom: 0px solid red;
+}
+.type_content_in_1 {
+	border: 0px solid red;
+	position: relative;
+	font-size: 14px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid rgb(200,200,200);
+}
+.produce_name {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 6px;
+	font-family: SimHei;
+}
+.produce_indu {
+	font-size: 12px;
+}
+.product_picture {
+	float: left;
+	width: 60px;
+	margin-top: 3px;
+	margin-right: 3px;
+}
+.four {
+	position: absolute;
+	right: 2px;
+	bottom: 2px;
+	border: 0px solid red;
+	visibility: hidden;
+}
+.car {
+	border: 0px red solid;
+	position: fixed;
+	left: 2px;
+	bottom: 2px;
+	width: 60px;
+	height: 60px;
+	z-index: 8000;
+}
+.car_num {
+	border: 0px solid blue;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	border-radius: 20px;
+	background-color: red;
+	line-height: 20px;
+	color: white;
+	font-weight: bold;
+	padding: 0px 4px;
+}
+.price_add {
+	clear: both;
+	position: relative;
+	border: 0px solid blue;
+	margin-top: 20px;
+}
+.add {
+	position: absolute;
+	border: 0px red solid;
+	width: 18px;
+	right: 0px;
+	bottom: 0px;
+}
+.money {
+	color: rgb(239,195,62);
+	font-size: 12px;
+/*	font-weight: bold;*/
+}
+</style>
 </head>
 
 <body>
-	<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(200,200,200)">
+<div style="height: 100%; display: flex;justify-content: space-between;background-color: rgb(200,200,200)">
 	<div style="border: 0px solid red; width: 26%; height: 100%;background-color: rgb(200,200,200)">
-		<div class="type_names" id="0" style="border-left: 5px solid rgb(240,194,61);background-color: rgb(220,220,220)">佑远小吃<br/>Uyoung </div>
-		<div class="type_names" id="1">能量碗<br/>Smooththie<br/>Bowl</div>
-		<div class="type_names" id="2">果昔<br/>Smoothie</div>
-		<div class="type_names" id="3">慢磨果汁<br/>Slow Juice</div>
-		<div class="type_names" id="4">咖啡-<br/>Coffee</div>
-		<div class="type_names" id="5">茶水-<br/>Tea</div>
-		<div class="type_names" id="6">小杯子<br/>Shots</div>
+		<div class="type_names" id="0" style="border-left: 5px solid rgb(240,194,61);background-color: rgb(255,255,255)">佑远小吃<br/>
+			Uyoung </div>
+		<div class="type_names" id="1">能量碗<br/>
+			Smooththie<br/>
+			Bowl</div>
+		<div class="type_names" id="2">果昔<br/>
+			Smoothie</div>
+		<div class="type_names" id="3">慢磨果汁<br/>
+			Slow Juice</div>
+		<div class="type_names" id="4">咖啡-<br/>
+			Coffee</div>
+		<div class="type_names" id="5">茶水-<br/>
+			Tea</div>
+		<div class="type_names" id="6">小杯子<br/>
+			Shots</div>
 	</div>
-	<div style="width: 1%; background-color: rgb(220,220,220)">
-	</div>
-	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; -webkit-overflow-scrolling: touch;position: relative; background-color: rgb(220,220,220)" id="zuobian">
+	<div style="width: 1%; background-color: rgb(255,255,255)"> </div>
+	<div style="border: 0px solid blue; width: 73%; background-color: rgb(120,120,120); overflow-y: scroll; -webkit-overflow-scrolling: touch;position: relative; background-color: rgb(255,255,255)" id="zuobian">
 		<div class="type_name_con" id="n0">
 			<div class="type_name" id="m0"> Name1 </div>
-			<div class="type_content"> content1-1 
-				<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/>
+			<div class="type_content">
+				<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
 			</div>
 			<div class="type_content"> content1-2 </div>
 			<div class="type_content"> content1-3 </div>
@@ -239,12 +293,22 @@
 		</div>
 		<div class="type_name_con" id="n1">
 			<div class="type_name" id="m1"> Name2 </div>
-			<div class="type_content"> content2-1 
-				<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/>
+			<div class="type_content">
+								<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
 			</div>
 			<div class="type_content"> content2-2 </div>
 			<div class="type_content"> content2-3 </div>
-			<div class="type_content"> content2-4 </div>
+			<div class="type_content">
+				<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
+			</div>
 			<div class="type_content"> content2-4 </div>
 			<div class="type_content"> content2-4 </div>
 			<div class="type_content"> content2-4 </div>
@@ -252,7 +316,13 @@
 		</div>
 		<div class="type_name_con" id="n2">
 			<div class="type_name" id="m2"> Name3 </div>
-			<div class="type_content"> content3-1 </div>
+			<div class="type_content">
+								<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
+			</div>
 			<div class="type_content"> content3-2 </div>
 			<div class="type_content"> content3-3 </div>
 			<div class="type_content"> content3-4 </div>
@@ -273,7 +343,13 @@
 		</div>
 		<div class="type_name_con" id="n5">
 			<div class="type_name" id="m5"> Name6 </div>
-			<div class="type_content"> content6-1 </div>
+			<div class="type_content">
+								<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
+			</div>
 			<div class="type_content"> content6-2 </div>
 			<div class="type_content"> content6-3 </div>
 			<div class="type_content"> content6-4 </div>
@@ -285,7 +361,13 @@
 		</div>
 		<div class="type_name_con" id="n6">
 			<div class="type_name" id="m6"> Name7 </div>
-			<div class="type_content"> content7-1 </div>
+			<div class="type_content">
+								<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
+			</div>
 			<div class="type_content"> content7-2 </div>
 			<div class="type_content"> content7-3 </div>
 			<div class="type_content"> content7-4 </div>
@@ -295,21 +377,22 @@
 			<div class="type_content"> content7-4 </div>
 			<div class="type_content"> content7-1 </div>
 			<div class="type_content"> content7-2 </div>
-			<div class="type_content"> content7-3 </div>
+			<div class="type_content">
+				<div class="type_content_in_1"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051106072298175.jpg" class="product_picture"/>
+					<p class="produce_name"> {{椰加雪菲}}</p>
+					<p class="produce_indu"> {{这是斯大林同志最爱喝的咖啡之一，在苏联大清洗时期，斯大林喝着咖啡唱着歌。}}</p>
+					<div class="price_add"> <a class="money">￥</a><a class="money" style="font-size: 18px;">{{120}}</a><a style="color: #515151">/份</a> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581065.png" class="add"/> </div>
+				</div>
+			</div>
 			<div class="type_content"> content7-4 </div>
 		</div>
 	</div>
+</div>
+<div style="position: fixed; right: 10px; bottom: 160px; border: 0px solid red; width: 36px; height: 36px; z-index: 9999"> <img id="touch" style="position: absolute; z-index: 999" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581060.png" width="42px"> <a href="https://www.baidu.com"><img class="four" id="homePage" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="56px"></a> <img class="four" id="shopCar" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="56px"> <img class="four" id="classify" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="56px"> <img class="four" id="center" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="56px"> </div>
+<div class="car"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291721097074560.png" width="60px"/>
+	<div class="car_num">
+		<p id="carNum">0</p>
 	</div>
-	<div style="position: fixed; right: 10px; bottom: 160px; border: 0px solid red; width: 36px; height: 36px; z-index: 9999">
-		<img id="touch" style="position: absolute; z-index: 999" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581060.png" width="42px">
-		<a href="https://www.baidu.com"><img class="four" id="homePage" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="56px"></a>
-		<img class="four" id="shopCar" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="56px">
-		<img class="four" id="classify" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="56px">
-		<img class="four" id="center" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="56px">
-	</div>
-	<div class="car">
-		<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291721097074560.png" width="60px"/>
-		<div class="car_num"><p id="carNum">0</p></div>
-	</div>
+</div>
 </body>
 </html>
