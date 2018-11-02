@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8">
+<title>块与内联</title>
+	
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+
+<body>
+	<span style="border: 1px solid #FF0000">hello</span>
+	<div style="border: 1px solid #FF0000; width: 50%">hello</div>
+	<div style="border: 1px solid #FF0000; width: 50%">hello</div>
+	<div style="border: 1px solid #FF0000; padding: 20px">hello</div>
+<body ng-app="">
+
+<p>点击按钮:</p>
+
+<button ng-click="count = count + 1" ng-init="count=0">OK</button>
+<button ng-click="count1 = count1 + 1" ng-init="count=0">OK</button>
+<button ng-click="count2 = count2 + 1" ng-init="count=0">OK</button>
+
+<p>按钮1被点击了 {{count}} 次。</p>
+<p>按钮2被点击了 {{count1}} 次。</p>
+<p>按钮3被点击了 {{count2}} 次。</p>
+<p>按钮被点击了 {{count1 + count}} 次。</p>
+<p>按钮被点击了 {{count1 + count + count2}} 次。</p>
+
+<p>实例中，按钮每被点击一次变量 "count" 会自动加 1。</p>
+
+</body>
+</body>
+</html>
