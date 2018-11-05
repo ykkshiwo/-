@@ -2,6 +2,36 @@
 <html>
 <head>
 <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		function getMD(i){
+			var d = new Date();
+			d.setDate(d.getDate() + parseInt(i) )
+			var mon = d.getMonth() + 1;
+			var day = d.getDate();
+			return [mon, day]
+		}
+		
+		$(document).ready(function(){
+			var weeks = ["周一", "周二","周三","周四","周五","周六","周天"]
+			var mdw = getMD("0")
+			$("#0").css({"border-radius": "50%","opacity": "1"});
+			$("#0").html("<a>" + mdw[0] + "." + mdw[1] + "</a></br>" + weeks[parseInt("0")])
+			
+			$(".dater").click(function(){
+				console.log("click");
+				var thisDay = $(".dater");
+				var thisid = $(this).attr("id");
+				console.log(thisid);
+				var md = getMD(thisid)
+				console.log("今天是： "+ md[0] +"月" + md[1] + "号")
+				thisDay.css({"border-radius": "0px","opacity": "0"});
+				$(this).css({"border-radius": "50%","opacity": "1"});
+				$(this).html("<a>" + md[0] + "." + md[1] + "</a></br>" + weeks[parseInt(thisid)])
+			});
+		});
+	</script>
 <title>课程预约</title>
 	<style>
 			body{
@@ -17,50 +47,240 @@
 		.text_1{
 			color: white;
 			text-align: center;
-			border: 1px solid green;
+			border: 0px solid green;
 			font-family: SimHei;
 			font-size: 12px;
+			padding: 3px;
 		}
 		.cut_off{
-			border-left: 2px solid rgb(100,100,100);
+			border-left: 1px solid rgb(100,100,100);
 			height: 15px;;
 			width: 2px;
 		}
 		.date{
-			border:1px blue solid;
-			height: 15px;
-			width: 15px;
+			border:px blue solid;
+/*			height: 15px;*/
+/*			width: 28px;*/
 			text-align: center;
+			font-size: 12px;
 /*			border-radius: 15px;*/
+		}
+		.dater{
+			border: 2px rgb(239,195,62)solid;
+			height: 34px;
+			width: 34px;
+			text-align: center;
+			background-color: rgb(100,100,100);
+			opacity: 0;
+			font-size: 10px;
+			padding-top: 3px;
+			box-sizing: content-boxcont;
+/*			visibility: hidden;*/
+		}
+		.train_big{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			height: 90px;
+			border-bottom: 1px solid rgb(100,100,100);
+		}
+		.train_pic{
+			border-radius: 50%;
+			height: 60px;
+			width: 60px;
+			border: 0px solid red;
+		}
+		.detail{
+			border: 0px solid #823D3E;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			width: 55%;
+		}
+		.order{
+			color: rgb(239,195,62);
+			border: 1px solid rgb(239,195,62);
+		}
+		.course_name{
+			color: white;
+			font-family: SimHei;
+			margin-bottom: 8px;
+			font-size: 14px;
+		}
+		.label{
+			color: rgb(100,100,100);
+			font-family: SimHei;
+			font-size: 12px;
+			margin-bottom: 6px;
+		}
+		.time_price{
+			color: white;
+			font-size: 12px;
+			
+		}
+		.time{
+			color:rgb(239,195,62);
+		}
+		.order{
+			padding: 3px 6px;
+			border-radius: 3px;
+			font-size: 12px;
 		}
 	</style>
 </head>
 
 <body>
-	<div style="background-color: rgb(38,38,38);display: flex;flex-direction: column;	width: 100%;box-sizing: content-box">
+	<div style="background-color: rgb(38,38,38);display: flex;flex-direction: column;	width: 100%;box-sizing: content-box; overflow-y: visible">
 		<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810261116226623260.jpg" class="img_top"/>
-		<div style="border: 1px solid red; margin-top: 6px; width: 100%;display: flex; flex-direction: row; align-items: center;justify-content: space-around; box-sizing: border-box">
+	<div style="border: 0px solid green; position: sticky; top:0;position: -webkit-sticky;background-color: rgb(30,30,30)"> <!-- 粘性定位 -->
+		<div style="border: 0px solid red; margin-top: 3px; width: 100%;display: flex; flex-direction: row; align-items: center;justify-content: space-around; box-sizing: border-box">
 			<div class="text_1">义乌市全城</div>
 			<div class="cut_off"></div>
 			<div class="text_1">全部课程</div>
 			<div class="cut_off"></div>
 			<div class="text_1">全部时段</div>
 		</div>
-		<div style="display: flex; flex-direction: row; justify-content: space-between">
-			<div style="border: 1px solid red; margin-top: 6px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; width: 65%;">
-				<div class="date">1</div>
-				<div class="date">2</div>
-				<div class="date">3</div>
-				<div class="date">4</div>
-				<div class="date">5</div>
-				<div class="date">6</div>
-				<div class="date">7</div>
+		<div style="border-bottom: 1px solid rgb(100,100,100); margin-top: 3px;"></div>
+		<div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 3px; color: rgb(180,180,180); font-size: 10px; height: 20px;">
+			<div style="border: 0px solid red; display: flex; flex-direction: row; justify-content: space-around; align-items: center; width: 73%;position: relative;">
+				<div class="date">一</div>
+				<div class="date">二</div>
+				<div class="date">三</div>
+				<div class="date">四</div>
+				<div class="date">五</div>
+				<div class="date">六</div>
+				<div class="date">日</div>
+<!--				隐藏起来的具体月份和日期，只有在点击的时候出现-->
+				<div style="width: 100%; height: 30px; border: 0px solid #7F7575; position: absolute; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+					<div class="dater" id=0>a</div>
+					<div class="dater" id=1>b</div>
+					<div class="dater" id=2>c</div>
+					<div class="dater" id=3>d</div>
+					<div class="dater" id=4>e</div>
+					<div class="dater" id=5>f</div>
+					<div class="dater" id=6>g</div>
+				</div>
 			</div>
-			<div style="width: 35%; border: 1px yellow solid; display: flex; flex-direction: row; justify-content: space-around; align-items: center">
-				<div></div>
+			<div class="cut_off"></div>
+			<div style="width: 27%; border: 0px yellow solid; display: flex; flex-direction: row; justify-content: space-around; align-items: center; text-align: center">
+				<div class="date">团操</div>
+				<div class="date">私教</div>
 			</div>
 		</div>
-		
+	</div>
+		<div style="background-color: rgb(20,20,20); width:100%;display: flex;flex-direction: row; justify-content: space-between;color:white;font-size: 1px;font-size: 12px;">
+			<div style="padding: 5px;">文创园店</div>
+			<div style="padding: 5px">查看地图</div>
+		</div>
+		<div class="train_big">
+			<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811051656455936190.jpg" class="train_pic">
+			<div class="detail">
+				<div class="course_name">BODYSTEP燃脂踏板</div>
+				<div class="label">{{运动·燃脂·塑形}}</div>
+				<div class="time_price">
+					<a class="time">{{10.10-11.10}}</a>
+					<a class="price">￥{{120}}}</a></div>
+			</div>
+			<a href="http://225w5187b5.iask.in:37748/course_detail.html">
+			<div class="order">
+				预约
+			</div>
+			</a>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
+		<div class="train_big">
+			<div class="train_pic">
+				
+			</div>
+			<div class="detail">
+				<div>kkk</div>
+				<div>zzzddddddd</div>
+				<div>hhhh</div>
+			</div>
+			<div class="order">
+				预约
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,197 @@
+<!-- 首先感谢九0软件公司对我们提供的帮助 -->
+<html>
+    <head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<meta charset="
+					   utf-8">
+        <title>课程预约</title>
+		
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+  				$("#train_g").click(function(){
+    				$("#train_").css("height", 'initial');
+					$("#train_").addClass("new_train_introduce");
+					$("#train_g").hide();
+  				});
+			});
+		</script>
+        <style>
+			body{
+				margin: 0;
+				padding: 0;
+			}
+            .img_top{
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 150px;
+            }
+			.content_kuai_1{
+				width: 98%;
+				background-color: rgb(38,38,38); 
+				border-radius: 4px;
+				padding-bottom: 12px;
+				padding-top: 12px;
+				padding-left: 6px;
+				box-sizing: border-box;
+				color: white;
+				margin-top: 6px;
+				position: relative;
+			}
+			.content_kuai_2_title{
+				margin-top: 6px;
+				width: 98%;
+				background-color: rgb(28,28,28);
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+				color: white;
+				padding-left: 6px;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				box-sizing: border-box;
+				font-size: 13;
+				font-weight: bold;
+			}
+			.content_kuai_2_content{
+				background-color: rgb(38,38,38);
+				width: 98%;
+				padding: 6px;
+				box-sizing: border-box;
+				color: rgba(152,152,152,1.00);
+				font-size: 12;
+			}
+			.train_introduce{
+				color: rgba(152,152,152,1.00);
+				font-size: 10;
+				margin-top: 6px;
+				width: 75%; 
+/*				line-height: 20px;*/
+				position:relative;
+    			line-height:1.4em;
+    			/* 2 times the line-height to show 3 lines */
+    			height:2.8em;
+			    overflow:hidden;
+
+			}
+			.train_introduce:after{
+/*				border: 1px solid red;*/
+				content:"...";
+    			font-weight:bold;
+    			position:absolute;
+    			bottom:0;
+    			right:0;
+    			padding:0 20px 1px 50px;
+				background: linear-gradient(to right, transparent, rgb(38,38,38) 55%);
+			}
+			.new_train_introduce:after{
+				content: '';
+			}
+			.img_train{
+				position: absolute;
+				top:10px; 
+				right: 10px; 
+				width: 60px; 
+				height: 60px; 
+				border: 0px red solid;
+				border-radius: 50px;
+			}
+			.time_add_pri{
+				font-size:6;
+				padding-bottom: 8px; 
+				padding-top: 0px;
+				border-bottom: 2px solid rgb(51,51,51)
+			}
+			.property{
+				border-radius: 12px;
+				background-color: rgb(59,59,59);
+				padding: 6px;
+				font-size：8;
+				margin: 6px;
+				margin-left: 0px;
+			}
+			.shift_left_6px{
+				color: rgb(240,194,61);
+				background-color: rgb(28,28,28);
+				padding: 6px;
+				position: relative;
+				right: 6px;
+				margin-top: 6px;
+				margin-bottom: 6px;
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+			}
+			.step{
+				width: 80%;
+				background-color: grey;
+				text-align: center;
+				padding: 6px;
+				color: white;
+				font-size: 14;
+				margin: 6px;
+				border-radius: 4px;
+			}
+			.step_step{
+				color: rgb(240,194,61); 
+				font-size:16;
+				font-weight:bold;
+				font-family: SimHei；
+			}
+        </style>
+    </head>
+    <body>
+        <img class="img_top" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810261116226623260.jpg"/> <!-- 搞3张轮播图,谢谢 -->
+		<div style="width: 100%; background-color: rgb(51,51,51);display: flex; flex-direction: column; align-items: center; padding-top: 0px; padding-bottom: 6px;">
+			<div class="content_kuai_1">
+				{{Name}}
+				<div class="train_introduce" id="train_">
+					{{爱舞台,爱到飙汗不够，飙泪来凑，Darren嗨到爆、Jam能把自己跳哭的走心小哥哥。左手鸡血右手鸡汤，既激情又营养，喜欢在嘿到不能自己的课堂上大声歌唱。莱美BODYCOMBAT、BODYJAM认证教练。}}
+				</div>
+				<div style="border: 0px solid red; width: 75%; text-align: center" id="train_g"> <img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810260933257338660.png" width="20px"/> </div>
+<!--				教练头像-->
+				<img class="img_train" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810051719087266330.jpg"/>
+			</div>
+			<div class="content_kuai_1" style="padding-right: 6px;">
+				<div class="time_add_pri">时间：{{ }}</div>
+				<div class="time_add_pri" style="padding-top: 8px;">地址：{{ }}</div>
+				<div class="time_add_pri" style="border-bottom: 0;padding-top: 8px; padding-bottom: 0px">价格：{{ }}</div>
+			</div>
+			<div class="content_kuai_2_title">
+				课程简介
+			</div>
+			<div class="content_kuai_2_content">
+				{{hello content 燃脂搏击是一门由我们自助研发的一套健身系统。}}
+				<div style="display:flex; flex-direction: row;">
+					<div class="property">{{塑形}}</div>
+					<div class="property">{{燃脂}}</div>
+					<div class="property">{{体态纠正}}</div>
+				</div>
+				<div style="border: 0px red solid;display: flex;">
+					<div class="shift_left_6px">训练效果</div>
+				</div>
+				{{非常棒，是一套十分优秀的健身联系系统。}}
+				<div style="border: 0px red solid;display: flex;">
+					<div class="shift_left_6px">适合人群</div>
+				</div>
+				{{老少咸宜，大家一起来锻炼。}}
+				<div style="border: 0px red solid;display: flex;">
+					<div class="shift_left_6px">FAQ</div>
+				</div>
+				<strong>Q:我没有基础能否练习？</strong><br/>
+				A:可以的，我们有专业的指导教练团队，可以为您提供最权威的服务。
+			</div>
+			<div class="content_kuai_2_title">
+				注意事项
+			</div>
+			<div class="content_kuai_2_content" style="font-size: 10; line-height: 16px">
+				{{1、运动装备：相比其他力量和体能训练课程，BODYJAM更加适合宽松、舒适的衣服，从而自如地舞蹈}}
+			</div>
+			<div class="content_kuai_2_title">健身步骤</div>
+			<div class="content_kuai_2_content" style="display:flex; flex-direction: column;align-items: center;">
+				<div class="step"><text class="step_step">STEP 1 </text>预约付费成功</div>
+				<div class="step"><text class="step_step">STEP 2 </text>获得入场牌</div>
+				<div class="step"><text class="step_step">STEP 3 </text>验证成功入场上课</div>
+			</div>
+		</div>
+    </body>
+</html>
