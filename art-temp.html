@@ -32,7 +32,7 @@
 	<div id="{{ 'n' + $index}}">
     <h1 id="{{ 'm' + $index}}" class="test">{{$index}} : {{$value["fenlei"]}}, </h1>
 	{{each $value["target"]}}
-		<h2>{{$index}} ,{{$value["target"]["name"]}}: {{$value["price"]}}</h2>
+		<h2>{{$index}} ,{{$value["name"]}}: {{$value["price"]}}</h2>
 	{{/each}}
 	</div>
 {{/each}}

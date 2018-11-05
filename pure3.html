@@ -59,9 +59,9 @@
 						console.log("动态定位右边id为： ", 'n'+z, 'm'+z)
 						$('.type_names').css({'border-left': '0px', 'background-color': ''});
 						$('#' + z).css({'border-left': '5px solid rgb(240,194,61)','background-color': 'rgb(255,255,255)'});
-//						$('.type_name').css({'position':'relative',"left":'0px',"width":''});
+						$('.type_name').css({'position':'relative',"left":'0px',"width":''});
 //						$('.type_name_con').css({"padding-top":"0px"})
-//						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px',"width":'73%'});
+						$('#m'+z).css({'position':'fixed',"left":"27%",'top':'0px',"width":'73%'});
 //						$('#m'+z).parent().css({"padding-top":"40px"});
 					    break;
 					}
@@ -169,8 +169,7 @@ html, body {
 	background-color: rgb(200,200,200);
 	box-sizing: border-box;
 	font-size: 12px;
-	position: sticky;
-	top: 0;
+	position: relative;
 	z-index: 200;
 }
 .type_content {
