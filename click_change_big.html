@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<title>无标题文档</title>
+	<style>
+		.date{
+			border:1px blue solid;
+			height: 15px;
+			width: 15px;
+			text-align: center;
+/*			border-radius: 15px;*/
+		}
+		.date1{
+			border:1px #FF9E00 solid;
+			height: 40px;
+			width: 40px;
+			text-align: center;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".date1").click(function(){
+				$(this).css({"border-radius":"20px"});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div style="border: red 1px solid;height: 30px;display: flex; width: 70%;position: relative; justify-content:space-around; align-items: center">
+		<div class="date">1</div>
+		<div class="date">2</div>
+		<div class="date">3</div>
+		<div class="date">4</div>
+		<div class="date">5</div>
+		<div class="date">6</div>
+		<div class="date">7</div>
+		<div style="border: 2px yellow solid; height:150%;width:100%; position: absolute; display: flex; flex-direction: row;justify-content: space-around;align-items: center">
+			<div class="date1">a</div>
+			<div class="date1">b</div>
+			<div class="date1">c</div>
+			<div class="date1">d</div>
+			<div class="date1">e</div>
+			<div class="date1">f</div>
+			<div class="date1">g</div>
+		</div>
+	</div>
+</body>
+</html>

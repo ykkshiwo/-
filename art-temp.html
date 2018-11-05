@@ -11,7 +11,7 @@
 
 <!-- 模板 -->
 <!-- 引入模板引擎js -->
-<script src='./art-template-master/lib/template-web.js'></script>
+<script src="art-template-master/template-web.js"></script>
 
 <!-- 制作模板 -->
 <script type="text/html" id="template">
@@ -22,6 +22,12 @@
     </ul>
 </script>
 
+<script type="text/html" id="template1">
+{{each target}}
+    {{$index}} {{$value}}
+{{/each}}
+</script>
+
 <script>
     // 获取数据
     var data = {
@@ -29,12 +35,15 @@
         age:"18",
         phone:"18233989613"
     };
+	
+	var data1 = {target:[1,2,5,7]}
 
     // 将数据放入模板中
     var res = template("template", data);
-    console.log(res);
+	var res1 = template("template1", data1)
+//    console.log(res);
 
     // 将模板放入页面中
-    document.body.innerHTML = res;
+    document.body.innerHTML = res1;
 
 </script>
