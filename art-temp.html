@@ -2,7 +2,20 @@
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 <title>Title</title>
+	<style>
+		.test{
+			color: red;
+		}
+	</style>
+<!--
+		<script>
+		$(document).ready(function(){
+			alert($("#n2").html())
+		});
+	</script>
+-->
 </head>
 <body>
     <h3>模板引擎的使用</h3>
@@ -14,32 +27,23 @@
 <script src="art-template-master/template-web.js"></script>
 
 <!-- 制作模板 -->
-<script type="text/html" id="template">
-    <ul>
-        <li>姓名{{name}}</li>
-        <li>年龄{{age}}</li>
-        <li>电话{{phone}}</li>
-    </ul>
-</script>
-
 <script type="text/html" id="template1">
-{{each target}}
-    {{$index}} {{$value}}
+{{each data}}
+	<div id="{{ 'n' + $index}}">
+    <h1 id="{{ 'm' + $index}}" class="test">{{$index}} : {{$value["fenlei"]}}, </h1>
+	{{each $value["target"]}}
+		<h2>{{$index}} ,{{$value["target"]["name"]}}: {{$value["price"]}}</h2>
+	{{/each}}
+	</div>
 {{/each}}
 </script>
 
 <script>
     // 获取数据
-    var data = {
-        name:"Ray",
-        age:"18",
-        phone:"18233989613"
-    };
-	
-	var data1 = {target:[1,2,5,7]}
+	var data1 = {data:[{target:[{name: "咖啡1-1", price: 125},{name: "咖啡1-2", price: 125},{name: "咖啡1-3", price: 125},{name: "咖啡1-4", price: 1225}], "fenlei": 666},
+				{target:[{name: "咖啡2-1", price: 195},{name: "咖啡2-2", price: 125},{name: "咖啡2-3", price: 125},{name: "咖啡2-4", price: 125}], "fenlei": 777}]}
 
     // 将数据放入模板中
-    var res = template("template", data);
 	var res1 = template("template1", data1)
 //    console.log(res);
 
