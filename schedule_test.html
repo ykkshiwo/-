@@ -54,6 +54,9 @@
 		span[id^="d"]{
 			color: rgb(150,150,150);
 		}
+		tr td:nth-child(1){
+			background-color: rgb(100,100,100);
+		}
 	</style>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script>
@@ -122,8 +125,8 @@
 		var jquery_find_now_course = "tr:eq(" + now_course + ")"
 		console.log(jquery_find_now_course)
 		
-		var xt = "<div style='display: flex;flex-direction: row; justify-content:space-around; align-items: center'><div style='width: 60px; height: 36px; border: 1px red solid'></div><div style='width: 60px; height: 36px; border: 1px red solid'></div></div>"
-		var xtt = "<div style='width: 60px; height: 90px; border: 1px red solid'></div>"
+//		var xt = "<div style='display: flex;flex-direction: row; justify-content:space-around; align-items: center'><div style='width: 60px; height: 36px; border: 1px red solid'></div><div style='width: 60px; height: 36px; border: 1px red solid'></div></div>"
+//		var xtt = "<div style='width: 60px; height: 90px; border: 1px red solid'></div>"
 		
 //		此为每一堂课的插入html，可以改变课程名称，教练名称和时间段，
 		var one_course = 
@@ -159,7 +162,8 @@
 //			$('table td').append(xtt); 
 //			$('table tr:eq(5) td').eq(5).html(xt);
 			//console.log(r)
-			$('tr td:nth-child(1)').css("background-color", "rgb(100,100,100)")// 所有tr元素的td元素中的第2个
+//			$('tr td:nth-child(1)').css("background-color", "rgb(100,100,100)")// 所有tr元素的td元素中的第2个
+			
 		});
 	</script>
 </head>
