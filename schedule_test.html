@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>schedule</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		html body{
+			height: 100%;
+			margin: 0;
+		}
+		table{table-layout:fixed;}
+		td{
+/*			width:12%;*/
+		}
+		th{
+/*			height: 20px;*/
+		}
+		tr{
+			height: 80px;
+			
+		}
+		.if_much_cousers{
+			display: flex;
+			flex-direction: row; 
+			justify-content:space-around; 
+			align-items: center;
+		}
+		.one_couser{
+			height: 90px; 
+			border: 1px red solid; 
+			display: flex; 
+			flex-direction: column; 
+			justify-content: center;
+			align-items: flex-start
+		}
+		.course_train_time{
+			display: flex; 
+			flex-direction: row; 
+			justify-content: center; 
+			align-items: center; 
+			margin-top: 6px;
+		}
+		.tag{
+			margin-right: 2px;
+			width: 16px;
+		}
+/*		选择所有id属性以d打头的span元素*/
+		span[id^="d"]{
+			color: rgb(150,150,150);
+		}
+	</style>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		var xt = "<div style='display: flex;flex-direction: row; justify-content:space-around; align-items: center'><div style='width: 60px; height: 36px; border: 1px red solid'></div><div style='width: 60px; height: 36px; border: 1px red solid'></div></div>"
+		var xtt = "<div style='width: 60px; height: 90px; border: 1px red solid'></div>"
+		
+//		此为每一堂课的插入html，可以改变课程名称，教练名称和时间段，
+		var one_course = 
+					"<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span>" + "CourseName1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + "TrainNmae1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + "time1" + "</span></div></div>"
+		
+		var weekz = ["星期天", "星期一","星期二", "星期三","星期四","星期五","星期六"]
+//		此函数用来计算几天后的月日和星期，输入参数为几天，如今天为0，明天为1 ···
+		function getDay_Date(i){
+			var d = new Date();
+			d.setDate(d.getDate()+i)
+			var week = d.getDay();
+			var mon = d.getMonth();
+			var day = d.getDate();
+			return mon + 1 + "月" + day + "日 " + weekz[week]
+		}
+		
+		$(document).ready(function(){
+			$("#d1").text(getDay_Date(0))
+			$("#d2").text(getDay_Date(1))
+			$("#d3").text(getDay_Date(2))
+			$("#d4").text(getDay_Date(3))
+			$("#d5").text(getDay_Date(4))
+			$("#d6").text(getDay_Date(5))
+			$("#d7").text(getDay_Date(6))
+			
+//			$('table tr:eq(1) td:eq(1)').children("div").append(xtt); //在单元格元素里面插入一堂课，如此时插入一堂课到第一行，第一列。
+			
+			$('table tr:eq(3) td:eq(3)').children("div").append(one_course);//又插入一堂课
+//			$('table td').append(xtt); 
+//			$('table tr:eq(5) td').eq(5).html(xt);
+			//console.log(r)
+			$('tr td:nth-child(1)').css("background-color", "yellow")// 所有tr元素的td元素中的第2个
+		});
+	</script>
+</head>
+
+<body>
+	<table border="1" width="100%" height="80%" style="table-layout: fixed">
+		<tr style="height: 50px;border-bottom: 2px red solid">
+			<th style="width: 100px;">时间</th>
+			<th>今天 <span id="d1"></span></th>
+			<th>明天<span id="d2"></span></th>
+			<th>后天<span id="d3"></span></th>
+			<th>第四天<span id="d4"></span></th>
+			<th>第五天<span id="d5"></span></th>
+			<th>第六天<span id="d6"></span></th>
+			<th>第七天<span id="d7"></span></th>
+		</tr>
+		
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+<!--
+					<div class="one_couser">
+						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg" class="tag"><span>CourseName</span></div>
+						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png" class="tag"><span>TrainNmae</span></div>
+						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png" class="tag"><span>time</span></div>
+					</div>
+-->
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				time1
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
