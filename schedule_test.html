@@ -2,14 +2,17 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="refresh" content="300000">
 <title>schedule</title>
+<!--
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->
 	<style>
 		html body{
-			height: 100%;
-			margin: 0;
+/*			height: 100%;*/
+			margin: 6px;
 		}
 		table{table-layout:fixed;}
 		td{
@@ -20,21 +23,21 @@
 		}
 		tr{
 			height: 80px;
-			
 		}
 		.if_much_cousers{
 			display: flex;
 			flex-direction: row; 
-			justify-content:space-around; 
+			justify-content:flex-start;
 			align-items: center;
 		}
 		.one_couser{
 			height: 90px; 
-			border: 1px red solid; 
+			border: 1px red solid;
 			display: flex; 
 			flex-direction: column; 
 			justify-content: center;
-			align-items: flex-start
+			align-items: flex-start;
+			font-size: 12px;
 		}
 		.course_train_time{
 			display: flex; 
@@ -45,7 +48,7 @@
 		}
 		.tag{
 			margin-right: 2px;
-			width: 16px;
+			width: 12px;
 		}
 /*		选择所有id属性以d打头的span元素*/
 		span[id^="d"]{
@@ -54,6 +57,71 @@
 	</style>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script>
+		
+//		function myrefresh(){ 
+//			window.location.reload();
+//  		}
+//		setTimeout('myrefresh()', 2000);
+		
+//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
+		var course_interval = [540,600,720,840,960,1110,1170,1230,1290] 
+		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
+		function whereCourse(){
+			var d = new Date();
+			var the_time_of_min = d.getHours() * 60 + d.getMinutes();
+			for (var i = 0; i < course_interval.length; i++){
+				if(the_time_of_min < course_interval[i]){
+					return i;
+					break;
+				}
+			}
+		}
+		
+//		此函数输入一堂课的日期，输出这堂课在第几行。
+		function whereIsCourse(t){
+			for (var i = 0; i < course_interval.length; i++){
+				if(course_interval[i] == t){
+				    return i;
+					break;
+				}
+			}
+		}
+		
+		//测试数据集。
+		var fjl = [
+	[{'cousrName':'拉伸1', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //今天的课程s 
+	[{'cousrName':'拉伸2', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //明天的课程s
+	[{'cousrName':'拉伸3', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'}],
+	[{'cousrName':'拉伸4', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'}],
+	[{'cousrName':'拉伸5', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
+	[{'cousrName':'拉伸6', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'}],
+	[{'cousrName':'拉伸7', 'TrainName':'Darren', 'Time':'1290' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
+]
+//		此函数是将所有的课程添加到表的内容中。
+		function addCourses(fjl){
+//			循环第一层数据（7天的所有课程），每一个是其中一天的所有课程。
+			for(var i=0; i<fjl.length;i++){
+////				循环第二层数据（其中一天的所有课程），每一次循环得到的是其中的一节课。
+				for(var j=0; j<fjl[i].length; j++){
+					var this_course = fjl[i][j] //这堂课的所有数据
+					var this_course_time = this_course['Time'] //这堂课的时间
+					var where_time_course = whereIsCourse(this_course_time)
+					console.log("这是 " + i + " 天" + " ，第" + j + "堂课" + where_time_course) //课程在第j+1行，第i+1列。
+					var jq_append_one_course = 'table tr:eq(' + parseInt(where_time_course+1) + ') td:eq(' + parseInt(i+1)+ ')'
+					console.log(jq_append_one_course)
+					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + this_course_time + "</span></div></div>"
+					$(jq_append_one_course).children("div").append(one_course)
+				}
+			}
+		}
+		
+//		addCourses(fjl)
+
+		
+		var now_course = whereCourse();
+		var jquery_find_now_course = "tr:eq(" + now_course + ")"
+		console.log(jquery_find_now_course)
+		
 		var xt = "<div style='display: flex;flex-direction: row; justify-content:space-around; align-items: center'><div style='width: 60px; height: 36px; border: 1px red solid'></div><div style='width: 60px; height: 36px; border: 1px red solid'></div></div>"
 		var xtt = "<div style='width: 60px; height: 90px; border: 1px red solid'></div>"
 		
@@ -80,22 +148,26 @@
 			$("#d5").text(getDay_Date(4))
 			$("#d6").text(getDay_Date(5))
 			$("#d7").text(getDay_Date(6))
+			// 此为将目前在进行的课程下面标红
+			$(jquery_find_now_course).css({"border-bottom":"2px solid red"});
+			addCourses(fjl)
 			
 //			$('table tr:eq(1) td:eq(1)').children("div").append(xtt); //在单元格元素里面插入一堂课，如此时插入一堂课到第一行，第一列。
 			
-			$('table tr:eq(3) td:eq(3)').children("div").append(one_course);//又插入一堂课
+			//$('table tr:eq(3) td:eq(3)').children("div").append(one_course);//又插入一堂
+			//$('table tr:eq(3) td:eq(3)').children("div").append(one_course);
 //			$('table td').append(xtt); 
 //			$('table tr:eq(5) td').eq(5).html(xt);
 			//console.log(r)
-			$('tr td:nth-child(1)').css("background-color", "yellow")// 所有tr元素的td元素中的第2个
+			$('tr td:nth-child(1)').css("background-color", "rgb(100,100,100)")// 所有tr元素的td元素中的第2个
 		});
 	</script>
 </head>
 
 <body>
-	<table border="1" width="100%" height="80%" style="table-layout: fixed">
+	<table border="1" width="100%" height="80%" style="table-layout: fixed;">
 		<tr style="height: 50px;border-bottom: 2px red solid">
-			<th style="width: 100px;">时间</th>
+			<th style="width: 5%;background-color: aqua">时间</th>
 			<th>今天 <span id="d1"></span></th>
 			<th>明天<span id="d2"></span></th>
 			<th>后天<span id="d3"></span></th>
@@ -104,10 +176,9 @@
 			<th>第六天<span id="d6"></span></th>
 			<th>第七天<span id="d7"></span></th>
 		</tr>
-		
 		<tr>
 			<td>
-				time1
+				09:00
 			</td>
 			<td>
 				<div class="if_much_cousers">
@@ -147,7 +218,47 @@
 		</tr>
 		<tr>
 			<td>
-				time1
+				10:00
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+<!--
+					<div class="one_couser">
+						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg" class="tag"><span>CourseName</span></div>
+						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png" class="tag"><span>TrainNmae</span></div>
+						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png" class="tag"><span>time</span></div>
+					</div>
+-->
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				12:00
 			</td>
 			<td>
 				<div class="if_much_cousers">
@@ -180,7 +291,7 @@
 		</tr>
 		<tr>
 			<td>
-				time1
+				14:00
 			</td>
 			<td>
 				<div class="if_much_cousers">
@@ -213,7 +324,7 @@
 		</tr>
 		<tr>
 			<td>
-				time1
+				16:00
 			</td>
 			<td>
 				<div class="if_much_cousers">
@@ -246,7 +357,7 @@
 		</tr>
 		<tr>
 			<td>
-				time1
+				18:30
 			</td>
 			<td>
 				<div class="if_much_cousers">
@@ -279,7 +390,7 @@
 		</tr>
 		<tr>
 			<td>
-				time1
+				19:30
 			</td>
 			<td>
 				<div class="if_much_cousers">
@@ -312,7 +423,40 @@
 		</tr>
 		<tr>
 			<td>
-				time1
+				20:30
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+			<td>
+				<div class="if_much_cousers">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				21:30
 			</td>
 			<td>
 				<div class="if_much_cousers">
