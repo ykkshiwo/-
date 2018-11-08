@@ -38,6 +38,8 @@
 			justify-content: center;
 			align-items: flex-start;
 			font-size: 12px;
+			width: 45%;
+			margin-left: 5px;
 		}
 		.course_train_time{
 			display: flex; 
@@ -92,7 +94,7 @@
 		
 		//测试数据集。
 		var fjl = [
-	[{'cousrName':'拉伸1', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //今天的课程s 
+	[{'cousrName':'拉伸1this is a lasheng', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //今天的课程s 
 	[{'cousrName':'拉伸2', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //明天的课程s
 	[{'cousrName':'拉伸3', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'}],
 	[{'cousrName':'拉伸4', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'}],
@@ -112,7 +114,7 @@
 					console.log("这是 " + i + " 天" + " ，第" + j + "堂课" + where_time_course) //课程在第j+1行，第i+1列。
 					var jq_append_one_course = 'table tr:eq(' + parseInt(where_time_course+1) + ') td:eq(' + parseInt(i+1)+ ')'
 					console.log(jq_append_one_course)
-					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + this_course_time + "</span></div></div>"
+					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span style='width:100%'>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + this_course_time + "</span></div></div>"
 					$(jq_append_one_course).children("div").append(one_course)
 				}
 			}
