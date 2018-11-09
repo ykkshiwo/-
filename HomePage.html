@@ -1,0 +1,135 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>佑远</title>
+<link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">
+<style>
+.section {
+	text-align: center; 
+	font: 50px "Microsoft Yahei"; 
+	color: #fff; 
+	width:100%;       
+	height: 100%;
+	border: 1px solid red;
+	position: relative;
+	}
+.section2 p { 
+	position: relative; 
+	left: -120%;
+	}
+.section3 p { 
+	position: relative; 
+	bottom: -120%;
+	}
+.section4 p { 
+	display: none;
+	}
+.sl_down{-webkit-animation: sl_down .8s infinite linear;}
+@-webkit-keyframes sl_down{
+	0% {
+	    transform: translateY(0px);
+	    opacity: 1;
+	}
+
+	100% {
+	    transform: translateY(20px);
+	    opacity: 0;
+	}
+}
+</style>
+	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.easings.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
+	
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+		afterLoad: function(anchorLink, index){
+//			if(index == 0){
+//				break;
+//			}
+			if(index == 1){
+				$('.section1').find('div').delay(500).fadeIn(2000);
+			}
+			if(index == 2){
+				$('.section2').find('p').delay(500).animate({
+					left: '0'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 3){
+				$('.section3').find('p').delay(500).animate({
+					bottom: '0'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 4){
+				$('.section4').find('p').fadeIn(2000);
+			}
+		},
+		onLeave: function(index, direction){
+//			if(index == 0){
+//				break;
+//			}
+			if(index == 1){
+				$('.section1').find('di').delay(500).animate({
+					left: '-120%'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 2){
+				$('.section2').find('p').delay(500).animate({
+					left: '-120%'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 3){
+				$('.section3').find('p').delay(500).animate({
+					bottom: '-120%'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 4){
+				$('.section4').find('p').fadeOut(2000);
+			}
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div id="dowebok" style="width: 100%; height: 100%">
+	<div class="section section1">
+		<div style="position: absolute; height: 36px; width: 36px; top: 20px; right: 20px;background-color: rgba(20,20,20,0.2); font-size: 20px; display: flex;flex-direction: row;justify-content: center;align-items: center; border: 2px solid rgba(37,36,36,0.6)">
+			EN
+		</div>
+		<img src="http://yy.rxmmd.net/Storage/template/20180330/6365802824305227243805366.jpg" width="100%" height="100%">
+		<div style="position: absolute;border: 1px solid red;width:100%; top: 30%;">
+			<div style="color: rgba(50,49,49,1.00);font-size: 24px">有样 有世界</div>
+			<div style="color: rgba(50,49,49,1.00); font-size: 42px">欢迎您</div>
+			<div style="color: rgba(50,49,49,1.00); font-size: 36px;">来到佑远</div>
+		</div>
+		<div style="position: absolute; top:60% ;border: 1px solid red; width: 100%;">
+			<img class="sl_down" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811091630386777890.png" width="60px">
+		</div>
+	</div>
+	<div class="section section2">
+		<div style="position: absolute; top: 20px; right: 20px;color: black; font-size: 36px;font-family: SimHei;font-weight: bold; display: flex; flex-direction: column; justify-content: center; align-items: flex-end">
+			
+		</div>
+	</div>
+	<div class="section section3">
+		<div style="position: absolute;top: 30%; width: 100%; border: 1px solid red;display: flex; flex-direction: row; justify-content: center;">
+			<div style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(211,157,21,0.5);text-align: justify; text-align-last: left;padding: 6px;">
+				佑远，内设茶道、咖啡厅、健身、Pilates、运动康复、慢性疼痛物理治疗、TRX、游泳、美容SPA、美甲美睫、美发SALON、静吧、儿童DIY等高端优雅项目，集休闲、舒压、康复、聚会、健体、商务洽谈于一身。
+			</div>
+		</div>
+	</div>
+	<div class="section section4">
+		<h3>第四屏</h3>
+		<p>滚动到第四屏后的回调函数执行的效果</p>
+	</div>
+</div>
+</body>
+</html>
