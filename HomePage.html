@@ -12,6 +12,8 @@
 	<script  src="./fullpagesforhomepage/jquery.easings.min.js"></script>
 	<link rel="stylesheet" href="./fullpagesforhomepage/jquery.fullPage.css">
 	<script src="./fullpagesforhomepage/jquery.fullPage.js"></script>
+	<link href="fullpagesforhomepage/swiper.min.css">
+	<script src="fullpagesforhomepage/swiper.min.js"></script>
 <style>
 	
 .section {
@@ -67,7 +69,7 @@ $(function(){
 			if(index == 3){
 				$('#introduce').fadeIn(1000);
 			}
-			if(index == 4){
+			if(index == 5){
 				$('#register').delay(500).animate({
 					top: '70%'
 				}, 1500, 'easeOutExpo');
@@ -88,12 +90,10 @@ $(function(){
 			if(index == 3){
 				$('#introduce').fadeOut(1000);
 			}
-			if(index == 4){
-				if(index == 4){
+			if(index == 5){
 				$('#register').delay(500).animate({
 					top: '120%'
 				}, 1500, 'easeOutExpo');
-			}
 			}
 		}
 	});
@@ -114,6 +114,12 @@ $(function(){
 		}
 	});
 	});
+	
+	var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
 </script>
 </head>
 
@@ -149,7 +155,10 @@ $(function(){
 			</div>
 		</div>
 	</div>
-	<div class="section section4">
+	<div class="sectio section4">
+		
+	</div>
+	<div class="section section5">
 		<img style="position: absolute; top: 2%; right: 5%; font-size: 26px;color: black" width="30%" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100931577545930.png" />
 		<div style="position: absolute; top: 15%; width: 100%; text-align: center">
 			<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100920379736880.jpg" width="100%"/>
