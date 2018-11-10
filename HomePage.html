@@ -3,11 +3,13 @@
 <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <title>佑远</title>
-<link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">
+<!--<link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.easings.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
+<!--	<script src="fullPage.js-master/dist/fullpage.js"></script>-->
+<!--	<link src="fullPage.js-master/dist/fullpage.css">-->
 <style>
 .section {
 	text-align: center; 
@@ -49,7 +51,10 @@ $(function(){
 		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'white'],
 		afterLoad: function(anchorLink, index){
 			if(index == 1){
-				$('.section1').find('div').delay(500).fadeIn(2000);
+				$('#world').delay(200).fadeIn(2000);
+				$('#welcome').delay(400).fadeIn(2000);
+				$('#uyoung').delay(600).fadeIn(2000);
+				$(".sl_down").delay(600).fadeIn(3000);
 			}
 			if(index == 2){
 				$('.section2').find('p').delay(500).animate({
@@ -57,19 +62,20 @@ $(function(){
 				}, 1500, 'easeOutExpo');
 			}
 			if(index == 3){
-				$('.section3').find('p').delay(500).animate({
-					bottom: '0'
-				}, 1500, 'easeOutExpo');
+				$('#introduce').fadeIn(1000);
 			}
 			if(index == 4){
-				$('.section4').find('p').fadeIn(2000);
+				$('#register').delay(500).animate({
+					top: '70%'
+				}, 1500, 'easeOutExpo');
 			}
 		},
 		onLeave: function(index, direction){
 			if(index == 1){
-				$('.section1').find('di').delay(500).animate({
-					left: '-120%'
-				}, 1500, 'easeOutExpo');
+				$('#world').delay(200).fadeOut(1000);
+				$('#welcome').delay(400).fadeOut(1000);
+				$('#uyoung').delay(600).fadeOut(1000);
+				$(".sl_down").delay(600).fadeOut(1000);
 			}
 			if(index == 2){
 				$('.section2').find('p').delay(500).animate({
@@ -77,16 +83,34 @@ $(function(){
 				}, 1500, 'easeOutExpo');
 			}
 			if(index == 3){
-				$('.section3').find('p').delay(500).animate({
-					bottom: '-120%'
-				}, 1500, 'easeOutExpo');
+				$('#introduce').fadeOut(1000);
 			}
 			if(index == 4){
-				$('.section4').find('p').fadeOut(2000);
+				if(index == 4){
+				$('#register').delay(500).animate({
+					top: '120%'
+				}, 1500, 'easeOutExpo');
+			}
 			}
 		}
 	});
 });
+	$(document).ready(function(){
+	  $("#language").click(function(){
+		if($(this).text() == "EN"){
+			$(this).text("中文");
+			$("#world").text("UYOUNG  HAVE WORLD");
+			$("#welcome").text("WELCOME");
+			$("#uyoung").text("TO UYOUNG");
+		}
+		else{
+			$(this).text("EN");
+			$("#world").text("有样 有世界");
+			$("#welcome").text("欢迎您");
+			$("#uyoung").text("来到佑远");
+		}
+	});
+	});
 </script>
 </head>
 
@@ -94,21 +118,21 @@ $(function(){
 
 <div id="dowebok" style="width: 100%; height: 100%">
 	<div class="section section1">
-		<div style="position: absolute; height: 36px; width: 36px; top: 20px; right: 20px;background-color: rgba(100,100,100,0.2); font-size: 16px; display: flex;flex-direction: row;justify-content: center;align-items: center; border: 2px solid rgba(37,36,36,0.6)">
+		<div id="language" style="position: absolute; height: 36px; width: 36px; top: 20px; right: 20px;background-color: rgba(100,100,100,0.2); font-size: 16px; display: flex;flex-direction: row;justify-content: center;align-items: center; border: 2px solid rgba(37,36,36,0.6)">
 			EN
 		</div>
 		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101034584994570.jpg" width="100%" height="100%">
 		<div style="position: absolute;border: 0px solid red;width:100%; top: 30%;">
-			<div style="color: rgba(220,220,220,1.00);font-size: 24px;text-shadow:5px 2px 6px #000; letter-spacing: 8px">有样 有世界</div>
-			<div style="color: rgba(220,220,220,1.00); font-size: 42px;text-shadow:5px 2px 6px #000;letter-spacing: 8px">欢迎您</div>
-			<div style="color: rgba(220,220,220,1.00); font-size: 36px;letter-spacing: 8px;text-shadow:5px 2px 6px #000;">来到佑远</div>
+			<div id="world" style="color: rgba(220,220,220,1.00);font-size: 24px;text-shadow:5px 2px 6px #000; letter-spacing: 8px; display: none">有样 有世界</div>
+			<div id="welcome" style="color: rgba(220,220,220,1.00); font-size: 42px;text-shadow:5px 2px 6px #000;letter-spacing: 8px;display: none">欢迎您</div>
+			<div id="uyoung" style="color: rgba(220,220,220,1.00); font-size: 36px;letter-spacing: 8px;text-shadow:5px 2px 6px #000;display: none">来到佑远</div>
 		</div>
 		<div style="position: absolute; top:60% ;border: 0px solid red; width: 100%;">
-			<img class="sl_down" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811091630386777890.png" width="60px">
+			<img class="sl_down" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811091630386777890.png" width="60px" style="display: none">
 		</div>
 	</div>
 	<div class="section section2">
-		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101058370526470.jpg" width="100%" height="100%">
+		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101339293842330.jpg" width="100%" height="100%">
 <!--
 		<div style="position: absolute; top: 20px; right: 20px;color: black; font-size: 36px;font-family: SimHei;font-weight: bold; display: flex; flex-direction: column; justify-content: center; align-items: flex-end">
 		</div>
@@ -117,7 +141,7 @@ $(function(){
 	<div class="section section3">
 		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101120018042220.jpg" width="100%" height="100%">
 		<div style="position: absolute;top: 30%; width: 100%; border: 0px solid red;display: flex; flex-direction: row; justify-content: center;">
-			<div style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(239,195,62,0.6);text-align: justify; text-align-last: left;padding: 6px 12px; color: black; font-family: SimHei">
+			<div id="introduce" style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(239,195,62,0.6);text-align: justify; text-align-last: left;padding: 6px 12px; color: black; font-family: SimHei;display: none">
 				佑远，内设茶道、咖啡厅、健身、Pilates、运动康复、慢性疼痛物理治疗、TRX、游泳、美容SPA、美甲美睫、美发SALON、静吧、儿童DIY等高端优雅项目，集休闲、舒压、康复、聚会、健体、商务洽谈于一身。
 			</div>
 		</div>
@@ -128,6 +152,7 @@ $(function(){
 			<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100920379736880.jpg" width="100%"/>
 		</div>
 		<img style="position: absolute; left:5%; top: 66%;" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100942371490850.jpg" width="60%">
+		<div id="register" style="position: absolute; width: 100px; height: 30px; border: 1px solid black;top: 120%; right: 6%; font-size: 14px; color: black;display: flex; justify-content: center;align-items: center"> 立即注册 </div>
 	</div>
 </div>
 </body>
