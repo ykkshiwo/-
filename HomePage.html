@@ -4,6 +4,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <title>佑远</title>
 <link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.easings.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
 <style>
 .section {
 	text-align: center; 
@@ -11,7 +15,7 @@
 	color: #fff; 
 	width:100%;       
 	height: 100%;
-	border: 1px solid red;
+	border: 0px solid red;
 	position: relative;
 	}
 .section2 p { 
@@ -39,19 +43,11 @@
 }
 </style>
 	
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.easings.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>
-	
 <script>
 $(function(){
 	$('#dowebok').fullpage({
-		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'white'],
 		afterLoad: function(anchorLink, index){
-//			if(index == 0){
-//				break;
-//			}
 			if(index == 1){
 				$('.section1').find('div').delay(500).fadeIn(2000);
 			}
@@ -70,9 +66,6 @@ $(function(){
 			}
 		},
 		onLeave: function(index, direction){
-//			if(index == 0){
-//				break;
-//			}
 			if(index == 1){
 				$('.section1').find('di').delay(500).animate({
 					left: '-120%'
@@ -101,34 +94,40 @@ $(function(){
 
 <div id="dowebok" style="width: 100%; height: 100%">
 	<div class="section section1">
-		<div style="position: absolute; height: 36px; width: 36px; top: 20px; right: 20px;background-color: rgba(20,20,20,0.2); font-size: 20px; display: flex;flex-direction: row;justify-content: center;align-items: center; border: 2px solid rgba(37,36,36,0.6)">
+		<div style="position: absolute; height: 36px; width: 36px; top: 20px; right: 20px;background-color: rgba(100,100,100,0.2); font-size: 16px; display: flex;flex-direction: row;justify-content: center;align-items: center; border: 2px solid rgba(37,36,36,0.6)">
 			EN
 		</div>
-		<img src="http://yy.rxmmd.net/Storage/template/20180330/6365802824305227243805366.jpg" width="100%" height="100%">
-		<div style="position: absolute;border: 1px solid red;width:100%; top: 30%;">
-			<div style="color: rgba(50,49,49,1.00);font-size: 24px">有样 有世界</div>
-			<div style="color: rgba(50,49,49,1.00); font-size: 42px">欢迎您</div>
-			<div style="color: rgba(50,49,49,1.00); font-size: 36px;">来到佑远</div>
+		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101034584994570.jpg" width="100%" height="100%">
+		<div style="position: absolute;border: 0px solid red;width:100%; top: 30%;">
+			<div style="color: rgba(220,220,220,1.00);font-size: 24px;text-shadow:5px 2px 6px #000; letter-spacing: 8px">有样 有世界</div>
+			<div style="color: rgba(220,220,220,1.00); font-size: 42px;text-shadow:5px 2px 6px #000;letter-spacing: 8px">欢迎您</div>
+			<div style="color: rgba(220,220,220,1.00); font-size: 36px;letter-spacing: 8px;text-shadow:5px 2px 6px #000;">来到佑远</div>
 		</div>
-		<div style="position: absolute; top:60% ;border: 1px solid red; width: 100%;">
+		<div style="position: absolute; top:60% ;border: 0px solid red; width: 100%;">
 			<img class="sl_down" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811091630386777890.png" width="60px">
 		</div>
 	</div>
 	<div class="section section2">
+		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101058370526470.jpg" width="100%" height="100%">
+<!--
 		<div style="position: absolute; top: 20px; right: 20px;color: black; font-size: 36px;font-family: SimHei;font-weight: bold; display: flex; flex-direction: column; justify-content: center; align-items: flex-end">
-			
 		</div>
+-->
 	</div>
 	<div class="section section3">
-		<div style="position: absolute;top: 30%; width: 100%; border: 1px solid red;display: flex; flex-direction: row; justify-content: center;">
-			<div style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(211,157,21,0.5);text-align: justify; text-align-last: left;padding: 6px;">
+		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101120018042220.jpg" width="100%" height="100%">
+		<div style="position: absolute;top: 30%; width: 100%; border: 0px solid red;display: flex; flex-direction: row; justify-content: center;">
+			<div style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(239,195,62,0.6);text-align: justify; text-align-last: left;padding: 6px 12px; color: black; font-family: SimHei">
 				佑远，内设茶道、咖啡厅、健身、Pilates、运动康复、慢性疼痛物理治疗、TRX、游泳、美容SPA、美甲美睫、美发SALON、静吧、儿童DIY等高端优雅项目，集休闲、舒压、康复、聚会、健体、商务洽谈于一身。
 			</div>
 		</div>
 	</div>
 	<div class="section section4">
-		<h3>第四屏</h3>
-		<p>滚动到第四屏后的回调函数执行的效果</p>
+		<img style="position: absolute; top: 2%; right: 5%; font-size: 26px;color: black" width="30%" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100931577545930.png" />
+		<div style="position: absolute; top: 15%; width: 100%; text-align: center">
+			<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100920379736880.jpg" width="100%"/>
+		</div>
+		<img style="position: absolute; left:5%; top: 66%;" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100942371490850.jpg" width="60%">
 	</div>
 </div>
 </body>
