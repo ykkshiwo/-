@@ -12,8 +12,8 @@
 	<script  src="./fullpagesforhomepage/jquery.easings.min.js"></script>
 	<link rel="stylesheet" href="./fullpagesforhomepage/jquery.fullPage.css">
 	<script src="./fullpagesforhomepage/jquery.fullPage.js"></script>
-	<link href="fullpagesforhomepage/swiper.min.css">
-	<script src="fullpagesforhomepage/swiper.min.js"></script>
+<!--	<link href="./dist/css/swiper.min.css">-->
+<!--	<script src="dist/js/swiper.min.js"></script>-->
 <style>
 	
 .section {
@@ -26,7 +26,7 @@
 	position: relative;
 	}
 .section2 p { 
-	position: relative; 
+	position: relative;
 	left: -120%;
 	}
 .section3 p { 
@@ -48,12 +48,16 @@
 	    opacity: 0;
 	}
 }
+	h3{
+		color: black;
+	}
 </style>
 	
 <script>
 $(function(){
 	$('#dowebok').fullpage({
-		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'white'],
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'white', 'white'],
+		slidesNavigation: true,
 		afterLoad: function(anchorLink, index){
 			if(index == 1){
 				$('#world').delay(200).fadeIn(2000);
@@ -68,6 +72,9 @@ $(function(){
 			}
 			if(index == 3){
 				$('#introduce').fadeIn(1000);
+			}
+			if(index == 4){
+				console.log("hello uyoung")
 			}
 			if(index == 5){
 				$('#register').delay(500).animate({
@@ -89,6 +96,9 @@ $(function(){
 			}
 			if(index == 3){
 				$('#introduce').fadeOut(1000);
+			}
+			if(index == 4){
+				console.log("bye uyoung")
 			}
 			if(index == 5){
 				$('#register').delay(500).animate({
@@ -155,8 +165,10 @@ $(function(){
 			</div>
 		</div>
 	</div>
-	<div class="sectio section4">
-		
+	<div class="section section4">
+		<div class="slide"><h3>第一屏</h3></div>
+		<div class="slide"><h3>第二屏</h3></div>
+		<div class="slide"><h3>第三屏</h3></div>
 	</div>
 	<div class="section section5">
 		<img style="position: absolute; top: 2%; right: 5%; font-size: 26px;color: black" width="30%" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100931577545930.png" />
