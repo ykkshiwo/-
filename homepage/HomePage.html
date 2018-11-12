@@ -8,10 +8,10 @@
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/vendors/jquery.easings.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.7/jquery.fullPage.js"></script>-->
-	<script src="./fullpagesforhomepage/jquery.js"></script>
-	<script  src="./fullpagesforhomepage/jquery.easings.min.js"></script>
-	<link rel="stylesheet" href="./fullpagesforhomepage/jquery.fullPage.css">
-	<script src="./fullpagesforhomepage/jquery.fullPage.js"></script>
+	<script src="./jquery.js"></script>
+	<script  src="./jquery.easings.min.js"></script>
+	<link rel="stylesheet" href="./jquery.fullPage.css">
+	<script src="./jquery.fullPage.js"></script>
 <!--	<link href="./dist/css/swiper.min.css">-->
 <!--	<script src="dist/js/swiper.min.js"></script>-->
 <style>
@@ -29,7 +29,7 @@
 	position: relative;
 	left: -120%;
 	}
-.section3 p { 
+.section3 p {
 	position: relative; 
 	bottom: -120%;
 	}
@@ -50,6 +50,9 @@
 }
 	h3{
 		color: black;
+	}
+	a{
+		text-decoration: none;
 	}
 </style>
 	
@@ -74,7 +77,12 @@ $(function(){
 				$('#introduce').fadeIn(1000);
 			}
 			if(index == 4){
-				console.log("hello uyoung")
+				$("#wenzi").fadeIn(1000);
+				$("#coffee").delay(500).fadeIn(1000);
+				$("#yezi").delay(1000).fadeIn(1000);
+				$("#point").delay(1200).animate({
+					bottom: '20%'
+				}, 1500, 'easeOutExpo');
 			}
 			if(index == 5){
 				$('#register').delay(500).animate({
@@ -98,7 +106,12 @@ $(function(){
 				$('#introduce').fadeOut(1000);
 			}
 			if(index == 4){
-				console.log("bye uyoung")
+				$("#wenzi").fadeOut(1000);
+				$("#coffee").fadeOut(1000);
+				$("#yezi").fadeOut(1000);
+				$("#point").delay(1200).animate({
+					bottom: '-200%'
+				}, 1500, 'easeOutExpo');
 			}
 			if(index == 5){
 				$('#register').delay(500).animate({
@@ -160,15 +173,21 @@ $(function(){
 	<div class="section section3">
 		<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811101120018042220.jpg" width="100%" height="100%">
 		<div style="position: absolute;top: 30%; width: 100%; border: 0px solid red;display: flex; flex-direction: row; justify-content: center;">
-			<div id="introduce" style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(239,195,62,0.6);text-align: justify; text-align-last: left;padding: 6px 12px; color: black; font-family: SimHei;display: none">
+			<div id="introduce" style="width: 40%; height: 40%;font-size: 14px;background-color: rgba(239,195,62,0.6);text-align: justify; text-align-last: left;padding: 6px 12px; color: black; font-family: SimHei;display: none; color: white">
 				佑远，内设茶道、咖啡厅、健身、Pilates、运动康复、慢性疼痛物理治疗、TRX、游泳、美容SPA、美甲美睫、美发SALON、静吧、儿童DIY等高端优雅项目，集休闲、舒压、康复、聚会、健体、商务洽谈于一身。
 			</div>
 		</div>
 	</div>
 	<div class="section">
-		<div class="slide"><h3>第一屏</h3></div>
-		<div class="slide"><h3>第二屏</h3></div>
-		<div class="slide"><h3>第三屏</h3></div>
+		<img id="bg" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811121628043519780.jpg" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px"/>
+		<img id="wenzi" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811121628235462290.png" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px;display: none"/>
+		<img id="yezi" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811121628468922110.png" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; display: none"/>
+		<img id="coffee" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811121628349536230.png" style="width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; display: none"/>
+		<div id="point" style="border: 0px solid red; width: 100%; text-align: center; z-index: 9999; position: absolute; bottom: -200%;display: flex; justify-content: center;align-items: center">
+			<a href="http://yy.rxmmd.net/Vshop/productsearch">
+				<div style="border: 1px solid black; color: black; width: 100px; height: 30px;font-size: 14px;display: flex; justify-content: center;align-items: center"> 立刻点单 </div>
+				</a>
+		</div>
 	</div>
 	<div class="section section5">
 		<img style="position: absolute; top: 2%; right: 5%; font-size: 26px;color: black" width="30%" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100931577545930.png" />
@@ -176,7 +195,10 @@ $(function(){
 			<img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100920379736880.jpg" width="100%"/>
 		</div>
 		<img style="position: absolute; left:5%; top: 66%;" src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811100942371490850.jpg" width="60%">
-		<div id="register" style="position: absolute; width: 100px; height: 30px; border: 1px solid black;top: 120%; right: 6%; font-size: 14px; color: black;display: flex; justify-content: center;align-items: center"> 立即注册 </div>
+		<a href="http://yy.rxmmd.net//wapshop/MemberCenter.aspx">
+		<div id="register" style="position: absolute; width: 100px; height: 30px; border: 1px solid black;top: 120%; right: 6%; font-size: 14px; color: black;display: flex; justify-content: center;align-items: center"> 立即注册 
+			</div>
+			</a>
 	</div>
 </div>
 </body>
