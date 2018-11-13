@@ -2,65 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="300000">
-<title>schedule</title>
-<!--
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
--->
-	<style>
-		html body{
-/*			height: 100%;*/
-			margin: 6px;
-		}
-		table{table-layout:fixed;}
-		td{
-/*			width:12%;*/
-		}
-		th{
-/*			height: 20px;*/
-		}
-		tr{
-			height: 80px;
-		}
-		.if_much_cousers{
-			display: flex;
-			flex-direction: row; 
-			justify-content:flex-start;
-			align-items: center;
-		}
-		.one_couser{
-			height: 90px; 
-			border: 1px red solid;
-			display: flex; 
-			flex-direction: column; 
-			justify-content: center;
-			align-items: flex-start;
-			font-size: 12px;
-			width: 45%;
-			margin-left: 5px;
-		}
-		.course_train_time{
-			display: flex; 
-			flex-direction: row; 
-			justify-content: center; 
-			align-items: center; 
-			margin-top: 6px;
-		}
-		.tag{
-			margin-right: 2px;
-			width: 12px;
-		}
-/*		选择所有id属性以d打头的span元素*/
-		span[id^="d"]{
-			color: rgb(150,150,150);
-		}
-		tr td:nth-child(1){
-			background-color: rgb(100,100,100);
-		}
-		table{border-collapse:collapse;}
-	</style>
+<title>操房外显示屏界面</title>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 		
@@ -160,6 +102,13 @@
 		
 		$(document).ready(function(){
 			
+			var key = "d5688c33007b420ba76343a93d03b42a";
+			var location = "义乌";
+			$.get('https://free-api.heweather.com/s6/weather/forecast?key=' + key + 		'&location='+location,function(data,status){
+				console.log(data);
+				console.log(data["HeWeather6"][1]['daily_forecast']);
+			});
+			
 			//首先需要知道今天是星期几，也就是whatday。
 			var whatday = getDayNormal();
 //			在知道今天是星期几后，计算出这一周每一天的具体日期。例如，今天是周五，那么这一周的周一就是4天前，可以使用getDay_Date(1-5)函数来计算那一天的具体日期，以次类推，可以得到这一周每天的具体日期，而且因为星期几在表格上的位置是固定的，都是从周一到周天。
@@ -192,10 +141,69 @@
 			
 		});
 	</script>
+	<style>
+		html,body{
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+		td{
+/*			width:12%;*/
+		}
+		th{
+/*			height: 20px;*/
+		}
+		tr{
+/*			height: 8px;*/
+		}
+		.if_much_cousers{
+			display: flex;
+			flex-direction: row; 
+			justify-content:flex-start;
+			align-items: center;
+		}
+		.one_couser{
+			height: 90px; 
+			border: 1px red solid;
+			display: flex; 
+			flex-direction: column; 
+			justify-content: center;
+			align-items: flex-start;
+			font-size: 12px;
+			width: 45%;
+			margin-left: 5px;
+		}
+		.course_train_time{
+			display: flex; 
+			flex-direction: row; 
+			justify-content: center; 
+			align-items: center; 
+			margin-top: 6px;
+		}
+		.tag{
+			margin-right: 2px;
+			width: 12px;
+		}
+/*		选择所有id属性以d打头的span元素*/
+		span[id^="d"]{
+			color: rgb(150,150,150);
+		}
+		tr td:nth-child(1){
+			background-color: rgb(100,100,100);
+		}
+		table{border-collapse:collapse;}
+	</style>
 </head>
 
 <body>
-	<table border="1" width="100%" height="80%" style="table-layout: fixed;">
+	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box;">
+		<div style="width: 40%; height: 20%; border: 1px solid black;">
+			weather
+		</div>
+		
+<!--		将表格限定在此div中-->
+		<div style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box">
+		<table border="1" width="100%" height="100%" style="table-layout: fixed;display: ">
 		<tr style="height: 50px;border-bottom: 2px red solid">
 			<th style="width: 5%;background-color: aqua">时间</th>
 			<th><span id="1"></span></th>
@@ -387,6 +395,7 @@
 		</tr>
 		<tr>
 			<td>
+
 				18:30
 			</td>
 			<td>
@@ -518,5 +527,10 @@
 			</td>
 		</tr>
 	</table>
+		</div>
+		<div style="width: 60%; height: 10%; border: 1px solid #28DD0C">
+			按钮选择
+		</div>
+	</div>
 </body>
 </html>
