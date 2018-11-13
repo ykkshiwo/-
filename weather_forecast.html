@@ -22,11 +22,85 @@
 			});
 		});
 	});
+		document.getElementById('color').onchange = function(){
+            var c = this.value;
+            document.getElementById('icon').style.webkitFilter = 'drop-shadow('+c+' 20px 0)';
+        }
 	</script>
+	<style>
+		div.icon{
+			height:20px;
+			width:20px;
+			overflow: hidden;
+		}
+            .icon .icon{
+				width: 20px;
+				height: 20px;
+				display:block;
+				position: relative;
+				left: -20px;
+				border-right: 20px solid transparent;
+                background: url("https://cdn.heweather.com/cond_icon/101.png") no-repeat;
+				-webkit-filter: drop-shadow(#000 20px 0);
+				filter: drop-shadow(#000 20px 0);   
+            }
+		img {
+    -webkit-filter: drop-shadow(8px 8px 10px red); /* Chrome, Safari, Opera */
+    filter: drop-shadow(0px 0px 0px red);
+}
+		
+		
+		.logo{
+   			 height: 58px; 
+			width: 58px;
+    		position: absolute;
+   			 top: 15px;
+/*			超出的部分都隐藏*/
+    		overflow: hidden;
+/*			border: 1px solid red;*/
+}
+.logo-for-kmbbs{
+	border: 1px solid blue;
+    height: 58px; 
+	width: 58px;
+    background: url('https://cdn.heweather.com/cond_icon/101.png') no-repeat 0 0;
+    background-size: 58px 58px;
+    position: relative;
+/*	将原来的图像向左推到58个像素之外*/
+    left: -58px;
+    border-right: 18px solid transparent;
+    -webkit-filter: drop-shadow(58px 0px red);
+/*	在y轴方向58个像素的位置投影*/
+    filter: drop-shadow(58px 0px red); 
+}
+/*
+		.pic {
+    width: 200px;
+    height: 200px;
+    background-image: url('./duoyun.jpg');
+    background-size: cover;
+}
+ 
+.pic1 {
+    background-image: url('./duoyun.jpg'), linear-gradient(#f00, #f00);
+    background-blend-mode: lighten;
+    background-size: cover;
+}
+*/
+	</style>
 </head>
 
 <body>
 	<button>点击</button>
 	<p id="weather1"></p>
+	<div class="img"></div>
+
+	<div class="logo">
+    	<div class="logo-for-kmbbs"></div>
+	</div>
+<!--
+	<div class="pic"></div>
+	<div class="pic1"></div>
+-->
 </body>
 </html>
