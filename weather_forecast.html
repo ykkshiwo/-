@@ -51,27 +51,28 @@
 		
 		
 		.logo{
-   			 height: 58px; 
-			width: 58px;
+   			 height: 100px; 
+			width: 100px;
     		position: absolute;
    			 top: 15px;
+			left: 100px;
 /*			超出的部分都隐藏*/
     		overflow: hidden;
 /*			border: 1px solid red;*/
 }
 .logo-for-kmbbs{
 	border: 1px solid blue;
-    height: 58px; 
-	width: 58px;
+    height: 100px; 
+	width: 100px;
     background: url('https://cdn.heweather.com/cond_icon/101.png') no-repeat 0 0;
-    background-size: 58px 58px;
+    background-size: 100px 100px;
     position: relative;
 /*	将原来的图像向左推到58个像素之外*/
-    left: -58px;
+    left: -80px;
     border-right: 18px solid transparent;
-    -webkit-filter: drop-shadow(58px 0px red);
+    -webkit-filter: drop-shadow(100px 0px red);
 /*	在y轴方向58个像素的位置投影*/
-    filter: drop-shadow(58px 0px red); 
+    filter: drop-shadow(200px 0px red); 
 }
 /*
 		.pic {
@@ -96,11 +97,15 @@
 	<div class="img"></div>
 
 	<div class="logo">
-    	<div class="logo-for-kmbbs"></div>
+    	<img class="logo-for-kmbbs"></div>
 	</div>
 <!--
 	<div class="pic"></div>
 	<div class="pic1"></div>
 -->
+	<div>
+		<img src="https://cdn.heweather.com/cond_icon/101.png" class
+			 ="logo-for-kmbbs"/>
+	</div>
 </body>
 </html>

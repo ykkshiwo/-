@@ -6,13 +6,8 @@
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 		
-//		function myrefresh(){ 
-//			window.location.reload();
-//  		}
-//		setTimeout('myrefresh()', 2000);
-		
 //		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
-		var course_interval = [540,600,720,840,960,1110,1170,1230,1290] 
+		var course_interval = [540,600,720,840,960,1110,1170,1230,1290]
 		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
 		function whereCourse(){
 			var d = new Date();
@@ -35,16 +30,17 @@
 			}
 		}
 		
-		//测试数据集。
+		//测试数据集，实际需要服务器支持。
 		var fjl = [
-	[{'cousrName':'拉伸1this is a lasheng', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //今天的课程s 
-	[{'cousrName':'拉伸2', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //明天的课程s
-	[{'cousrName':'拉伸3', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'}],
-	[{'cousrName':'拉伸4', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'}],
-	[{'cousrName':'拉伸5', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
-	[{'cousrName':'拉伸6', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'}],
-	[{'cousrName':'拉伸7', 'TrainName':'Darren', 'Time':'1290' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
-]
+			[{'cousrName':'拉伸1this is a lasheng', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //今天的课程s 
+			[{'cousrName':'拉伸2', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //明天的课程s
+			[{'cousrName':'拉伸3', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'}],
+			[{'cousrName':'拉伸4', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'}],
+			[{'cousrName':'拉伸5', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
+			[{'cousrName':'拉伸6', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'}],
+			[{'cousrName':'拉伸7', 'TrainName':'Darren', 'Time':'1290' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
+		]
+		
 //		此函数是将所有的课程添加到表的内容中。
 		function addCourses(fjl){
 //			循环第一层数据（7天的所有课程），每一个是其中一天的所有课程。
@@ -57,7 +53,7 @@
 					console.log("这是 " + i + " 天" + " ，第" + j + "堂课" + where_time_course) //课程在第j+1行，第i+1列。
 					var jq_append_one_course = 'table tr:eq(' + parseInt(where_time_course+1) + ') td:eq(' + parseInt(i+1)+ ')'
 					console.log(jq_append_one_course)
-					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span style='width:100%'>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + this_course_time + "</span></div></div>"
+					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458465939380.png' class='tag'><span style='width:100%'>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458540320170.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458340257340.png' class='tag'><span>" + this_course_time + "</span></div></div>"
 					$(jq_append_one_course).children("div").append(one_course)
 				}
 			}
@@ -74,10 +70,12 @@
 //		var xtt = "<div style='width: 60px; height: 90px; border: 1px red solid'></div>"
 		
 //		此为每一堂课的插入html，可以改变课程名称，教练名称和时间段，
-		var one_course = 
-					"<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span>" + "CourseName1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + "TrainNmae1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + "time1" + "</span></div></div>"
+//		var one_course = 
+//					"<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span>" + "CourseName1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + "TrainNmae1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + "time1" + "</span></div></div>"
 		
-		var weekz = ["星期天", "星期一","星期二", "星期三","星期四","星期五","星期六"]
+		var weekz = ["星期天", "星期一","星期二", "星期三","星期四","星期五","星期六"];
+		var weekz_en= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var month_en = ["January","February","March","April","May","June","July ","August","Septemper","October","November","December"];
 //		此函数用来计算从就今天计算n天后的具体月日和星期，输入参数为几天，如今天为0，明天为1 ···
 		function getDay_Date(i){
 			var d = new Date();
@@ -100,15 +98,78 @@
 			}
 		}
 		
+		
+		//显示右上角时钟的函数
+		function showTime(){
+					var date = new Date();
+					var timeStr;
+					var hour = date.getHours();
+//			在出现个位数时，要添加0，例如，09点，而不是9点。
+					timeStr = hour <10 ? '0':'';
+					timeStr += hour + ':';
+					var minute = date.getMinutes();
+					timeStr +=minute < 10 ? '0':'';
+					timeStr +=minute + ':'
+					var second = date.getSeconds();
+					timeStr += second < 10 ? '0': '';
+					timeStr += second ;
+					return timeStr;
+				}
+		
+/*************************************以下为jQuery************************************/
+		
 		$(document).ready(function(){
+			
+
+/***********************************以下天气预报****************************************/
 			
 			var key = "d5688c33007b420ba76343a93d03b42a";
 			var location = "义乌";
+			var many_of_the_weather;
+			var icon_head = "https://cdn.heweather.com/cond_icon/"
+			var d = new Date();
 			$.get('https://free-api.heweather.com/s6/weather/forecast?key=' + key + 		'&location='+location,function(data,status){
 				console.log(data);
-				console.log(data["HeWeather6"][1]['daily_forecast']);
+				var many_of_the_weather = data["HeWeather6"][0]['daily_forecast'];
+				var today = many_of_the_weather[0];
+				console.log(many_of_the_weather.length);
+				for(var i=0; i < many_of_the_weather.length; i++){
+					var this_day_information = many_of_the_weather[i];
+					console.log(this_day_information);
+					var this_day_date = this_day_information["date"];
+					var date_print_array =  this_day_date.split("-");
+					console.log(date_print_array);
+					var date_print = date_print_array[1] + "/" +date_print_array[2];
+					var icon_imgurl = icon_head + this_day_information["cond_code_d"] + ".png"
+					console.log("icon_imgurl: "+icon_imgurl)
+					$("#day" + i + " img").attr("src",icon_imgurl);
+					$("#day" + i + " text").text(date_print);
+				}
+				
+				console.log(today["tmp_max"]);
+				$("#tmp_today").text(today["tmp_min"] + "/" + today["tmp_max"]);
 			});
 			
+//			将具体日期写在温度上面
+			var date_on_temp = weekz_en[d.getDay()] + "," + d.getDate() +"<sup>th</sup>" + " of " + month_en[d.getMonth()] + " " + d.getFullYear()
+			console.log(date_on_temp)
+			$("#specific_date").html(date_on_temp);
+			
+/***********************************以上天气预报****************************************/
+			
+
+			/**************************以下timer*****************************/
+			
+			function shownowtime(){
+				$("#timer").text(showTime());
+			}
+			
+			window.setInterval(shownowtime,200);
+			
+			/**************************以上timer*****************************/
+			
+			
+
 			//首先需要知道今天是星期几，也就是whatday。
 			var whatday = getDayNormal();
 //			在知道今天是星期几后，计算出这一周每一天的具体日期。例如，今天是周五，那么这一周的周一就是4天前，可以使用getDay_Date(1-5)函数来计算那一天的具体日期，以次类推，可以得到这一周每天的具体日期，而且因为星期几在表格上的位置是固定的，都是从周一到周天。
@@ -140,6 +201,9 @@
 //			$('tr td:nth-child(1)').css("background-color", "rgb(100,100,100)")// 所有tr元素的td元素中的第2个
 			
 		});
+		
+/*************************************以上为jQuery************************************/
+		
 	</script>
 	<style>
 		html,body{
@@ -190,19 +254,70 @@
 		}
 		tr td:nth-child(1){
 			background-color: rgb(100,100,100);
+			color: white;
+			font-weight: bold;
+			font-size: 40px;
 		}
 		table{border-collapse:collapse;}
+		.weather_day{
+			width:18%;
+			border:1px solid green;
+			text-align: center;
+		}
+		p{
+			border:1px red solid;
+		}
 	</style>
 </head>
 
 <body>
-	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box;">
-		<div style="width: 40%; height: 20%; border: 1px solid black;">
-			weather
+	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(./beijing.jpg); background-repeat: no-repeat; background-size:cover">
+		
+<!--		显示天气预报-->
+		<div style="width: 40%; height: 20%; border: 1px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
+			<div id="specific_date" style="border: 1px red solid">
+				
+			</div>
+			<div style="border: 1px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
+				<div id="tmp_today" style="font-size: 65px; font-family: SimHei; border: 1px solid red; height: 60px;">0/0</div>
+				<div style="font-weight: bold; padding: 0; border: 1px solid blue">o</div>
+				<div style="align-self: flex-end; border: 1px solid green;">c</div>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 1px red solid; width: 100%;"> 
+				<div id="day0" class="weather_day">
+					<div style="width: 100%; position: relative;overflow: hidden">
+						<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid yellow; filter: drop-shadow(100px 0px white);position: relative; left:-100px;"/>
+					</div>
+					<text style="color: white; font-size: 26px">11/11</text>
+				</div>
+				<div id="day1" class="weather_day">
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 1px solid yellow;"/></div>
+					<text style="color: white; font-size: 26px">11/11</text>
+				</div>
+				<div id="day2" class="weather_day">
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100%; border: 1px solid yellow;"/></div>
+					<text style="color: white; font-size: 26px">11/11</text>
+				</div>
+<!--免费开发者只能调用和风天气的3天的数据-->
+<!--
+				<div id="day3" class="weather_day">
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 1px solid yellow;"/></div>
+					<text>11/11</text>
+				</div>
+				<div id="day4" class="weather_day">
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 1px solid yellow;"/></div>
+					<text>11/11</text>
+				</div>
+-->
+			</div>
 		</div>
 		
+<!--		时钟显示， 绝对定位在右上角-->
+		
+		<div id="timer" style="position: absolute; top: 20px; right: 20px; font-size: 60px;color: white"> 12:12 </div>
+		
 <!--		将表格限定在此div中-->
-		<div style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box">
+		<div style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color: white;">
 		<table border="1" width="100%" height="100%" style="table-layout: fixed;display: ">
 		<tr style="height: 50px;border-bottom: 2px red solid">
 			<th style="width: 5%;background-color: aqua">时间</th>
@@ -528,8 +643,10 @@
 		</tr>
 	</table>
 		</div>
-		<div style="width: 60%; height: 10%; border: 1px solid #28DD0C">
-			按钮选择
+		<div style="width: 60%; height: 10%; border: 1px solid #28DD0C; font-family: SimHei; color:white;">
+			<div style="width: 42%; border: 1px solid red; text-align: center; letter-spacing: 30px; font-size: 28px; padding: 10px; border-radius:50px;margin: 10px; background-color: darkgoldenrod">课程表</div>
+			<div style="float: left; width:60px; border: 1px red solid;text-align: center; padding: 10px; width: 30%; font-size: 28px;margin: 10px; border-radius: 50px;background-color: darkgoldenrod">团操课教练</div>
+			<div style="float: left; width: 25%; border: 1px solid red; padding: 10px;text-align: center; font-size: 28px;margin: 10px; border-radius: 50px;background-color: darkgoldenrod"> 私教课教练</div>
 		</div>
 	</div>
 </body>
