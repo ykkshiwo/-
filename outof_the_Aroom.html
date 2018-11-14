@@ -123,8 +123,8 @@
 
 /***********************************以下天气预报****************************************/
 			
-			var key = "d5688c33007b420ba76343a93d03b42a";
-			var location = "义乌";
+			var key = "d5688c33007b420ba76343a93d03b42a"; //我的key
+			var location = "义乌"; // 查询义乌
 			var many_of_the_weather;
 			var icon_head = "https://cdn.heweather.com/cond_icon/"
 			var d = new Date();
@@ -260,7 +260,7 @@
 		}
 		table{border-collapse:collapse;}
 		.weather_day{
-			width:18%;
+			width:100px;
 			border:1px solid green;
 			text-align: center;
 		}
@@ -285,7 +285,7 @@
 			</div>
 			<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 1px red solid; width: 100%;"> 
 				<div id="day0" class="weather_day">
-					<div style="width: 100%; position: relative;overflow: hidden">
+					<div style="width: 100px; position: relative;overflow: hidden">
 						<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid yellow; filter: drop-shadow(100px 0px white);position: relative; left:-100px;"/>
 					</div>
 					<text style="color: white; font-size: 26px">11/11</text>
@@ -318,7 +318,7 @@
 		
 <!--		将表格限定在此div中-->
 		<div style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color: white;">
-		<table border="1" width="100%" height="100%" style="table-layout: fixed;display: ">
+		<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
 		<tr style="height: 50px;border-bottom: 2px red solid">
 			<th style="width: 5%;background-color: aqua">时间</th>
 			<th><span id="1"></span></th>
