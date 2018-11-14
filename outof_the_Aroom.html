@@ -147,7 +147,7 @@
 				}
 				
 				console.log(today["tmp_max"]);
-				$("#tmp_today").text(today["tmp_min"] + "/" + today["tmp_max"]);
+				$("#tmp_today").html(today["tmp_min"] + "<sub>~</sub>" + today["tmp_max"]);
 			});
 			
 //			将具体日期写在温度上面
@@ -279,7 +279,7 @@
 				
 			</div>
 			<div style="border: 1px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
-				<div id="tmp_today" style="font-size: 65px; font-family: SimHei; border: 1px solid red; height: 60px;">0/0</div>
+				<div id="tmp_today" style="font-size: 65px; font-family: SimHei; border: 1px solid red; height: 60px;">12/18</div>
 				<div style="font-weight: bold; padding: 0; border: 1px solid blue">o</div>
 				<div style="align-self: flex-end; border: 1px solid green;">c</div>
 			</div>
