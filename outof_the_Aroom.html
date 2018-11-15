@@ -294,6 +294,49 @@
 		p{
 			border:0px red solid;
 		}
+		#choose_course{
+			width: 42%; 
+			border: 1px solid red; 
+			text-align: center; 
+			letter-spacing: 30px; 
+			font-size: 28px; 
+			padding: 10px; 
+			border-radius:50px;
+			margin: 10px; 
+			background-color: darkgoldenrod;
+		}
+		#choose_course:active{
+			transform: translateY(4px 4px);
+		}
+		#choose_group_trains{
+			float: left; 
+			width:60px; 
+			border: 1px red solid;
+			text-align: center; 
+			padding: 10px; 
+			width: 30%; 
+			font-size: 28px;
+			margin: 10px; 
+			border-radius: 50px;
+			background-color: darkgoldenrod;
+		}
+		#choose_group_trains:active{
+			box-shadow:5px 5px 5px rgb(200,200,200) inset;
+		}
+		#choose_personal_trains{
+			float: left; 
+			width: 25%; 
+			border: 1px solid red; 
+			padding: 10px;
+			text-align: center; 
+			font-size: 28px;
+			margin: 10px; 
+			border-radius: 50px;
+			background-color: darkgoldenrod;
+		}
+		#choose_personal_trains:active{
+			box-shadow:5px 5px 5px rgb(200,200,200) inset;
+		}
 	</style>
 </head>
 
@@ -1388,9 +1431,9 @@
 	</div>
 		
 		<div style="width: 60%; height: 10%; border: 1px solid #28DD0C; font-family: SimHei; color:white;">
-			<div id="choose_course" style="width: 42%; border: 1px solid red; text-align: center; letter-spacing: 30px; font-size: 28px; padding: 10px; border-radius:50px;margin: 10px; background-color: darkgoldenrod">课程表</div>
-			<div id="choose_group_trains" style="float: left; width:60px; border: 1px red solid;text-align: center; padding: 10px; width: 30%; font-size: 28px;margin: 10px; border-radius: 50px;background-color: darkgoldenrod">团操课教练</div>
-			<div id="choose_personal_trains" style="float: left; width: 25%; border: 1px solid red; padding: 10px;text-align: center; font-size: 28px;margin: 10px; border-radius: 50px;background-color: darkgoldenrod"> 私教课教练</div>
+			<div id="choose_course">课程表</div>
+			<div id="choose_group_trains">团操课教练</div>
+			<div id="choose_personal_trains"> 私教课教练</div>
 		</div>
 	</div>
 </body>
