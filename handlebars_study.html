@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>handlebars_study</title>
+	<link rel="stylesheet" type="text/css" href="./introduceOfTrains.css" />
+	<script src="./handlebars-v4.0.12.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="group_trains" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background-color: aqua">
+<!--
+		<div class="train_pic_text">
+			<div class="train_pic_text_left">
+				<img src="./zz.jpg">
+				<p>Darren团操教练0</p>
+			</div>
+			<div class="train_pic_text_right">
+				<div class="train_name_position">
+					曾钟钟<a>佑远团超教练</a>
+				</div>
+				<div class="certificates">
+					<u>所获认证</u>
+					<ul>
+						<li>2012年获得RYS200ttc证书</li>
+						<li>2013年获得RYS50小时流瑜伽证书</li>
+						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
+						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
+					</ul>
+				</div>
+				<div class="teach_class">所教授项目：</div>
+				<div class="teach_class_concrete">
+					<div class="hook_classname">
+						√ 尊巴
+					</div>
+					<div class="hook_classname">
+						√ 有氧
+					</div>
+					<div class="hook_classname">
+						√ 搏击
+					</div>
+					<div class="hook_classname">
+						√ 单车
+					</div>
+					<div class="hook_classname">
+						√ 功能杠铃
+					</div>
+				</div>
+			</div>
+		</div>
+-->
+	</div>
+</body>
+	<script type="text/template" id="Train_moudel">
+		{{#each trains_info}}
+			<div class="train_pic_text">
+			<div class="train_pic_text_left">
+				<img src="./zz.jpg">
+				<p>{{en_name}}</p>
+			</div>
+			<div class="train_pic_text_right">
+				<div class="train_name_position">
+					{{cn_name}}<a>佑远团超教练</a>
+				</div>
+				<div class="certificates">
+					<u>所获认证</u>
+					<ul>
+						{{#each certificates}}
+						<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="teach_class">所教授项目：</div>
+				<div class="teach_class_concrete">
+					{{#each projects}}
+					<div class="hook_classname">
+						√ {{this}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<script>
+		var data_group_trains=
+			{trains_info: [
+			{
+				en_name: "Darren",
+				cn_name: "曾钟钟1",
+				certificates: [
+					"2012年获得RYS200ttc证书",
+					"2013年获得RYS50小时流瑜伽证书",
+					"2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书",
+					"2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书",
+				],
+				projects: ["尊巴","有氧","杠铃","单车","搏击"]
+			},
+			{
+				en_name: "Darren",
+				cn_name: "曾钟钟2",
+				certificates: [
+					"2012年获得RYS200ttc证书",
+					"2013年获得RYS50小时流瑜伽证书",
+					"2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书",
+					"2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书",
+				],
+				projects: ["尊巴","有氧","杠铃","单车","搏击"]
+			}
+		]};
+		
+//		function fillTemplate(templateObj,contentObj,fillData){
+//     		var templateHtml = templateObj.html();
+//     		var template = Handlebars.compile(templateHtml);
+//     		contentObj.html(template(fillData));
+// 		};
+
+			var tpl = $("#Train_moudel").html();
+			var template = Handlebars.compile(tpl);
+			var html = template(data_group_trains);
+			$('#group_trains').html(html);
+		
+	</script>
+</html>
