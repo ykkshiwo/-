@@ -31,15 +31,36 @@
 			}
 		}
 		
-		//测试数据集，实际需要服务器支持。
+		//测试数据集，课程固定，静态，不需要服务器支持。Time是将时间转为分钟，比如10小时变为600分钟。
 		var fjl = [
-			[{'cousrName':'拉伸1this is a lasheng', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //今天的课程s 
-			[{'cousrName':'拉伸2', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1110' ,'Fee':'120'}], //明天的课程s
-			[{'cousrName':'拉伸3', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'}],
-			[{'cousrName':'拉伸4', 'TrainName':'Darren', 'Time':'840' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'}],
-			[{'cousrName':'拉伸5', 'TrainName':'Darren', 'Time':'600' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
-			[{'cousrName':'拉伸6', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1170' ,'Fee':'120'}],
-			[{'cousrName':'拉伸7', 'TrainName':'Darren', 'Time':'1290' ,'Fee':'120'},{'cousrName':'拉伸', 'TrainName':'Darren', 'Time':'1230' ,'Fee':'120'}],
+			[{'cousrName':'尊巴Zumba', 'TrainName':'Darren', 'Time':'600' ,'duration':'50'},
+			 {'cousrName':'Aerobic Exercise综合有氧', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
+			 {'cousrName':'Yin yoga阴瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
+			 {'cousrName':'Ready to go 新手入门', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
+			
+			[{'cousrName':'Yoga physical 理疗瑜伽', 'TrainName':'Yiyi', 'Time':'840' ,'duration':'50'},
+			 {'cousrName':'Flow 流瑜伽', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
+			
+			[{'cousrName':'Flow yoga 流瑜伽', 'TrainName':'Yiyi', 'Time':'600' ,'duration':'50'},
+			 {'cousrName':'Fight FX 能量搏击', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
+			 {'cousrName':'Yin yoga阴瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
+			 {'cousrName':'Training Day 训练日', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
+			
+			[{'cousrName':'Hatha Yogaha哈他瑜伽', 'TrainName':'Yiyi', 'Time':'600' ,'duration':'50'},
+			 {'cousrName':'Zumba 尊巴', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
+			 {'cousrName':'Hatha yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
+			 {'cousrName':'Ready to go 新手入门', 'TrainName':'Rambo', 'Time':'1170' ,'duration':'50'}],
+			
+			[{'cousrName':'Hatha Yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'840' ,'duration':'50'},
+			 {'cousrName':'Aerobic Exercise综合有氧', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
+			 {'cousrName':'Flow yoga 流瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
+			 {'cousrName':'Schwinn', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
+			
+			[{'cousrName':'Pump FX 功能杠铃', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
+			 {'cousrName':'Hatha Yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
+			 {'cousrName':'Ready to do 新手入门', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
+			
+			[{'cousrName':'Fight FX 能量搏击', 'TrainName':'Darren', 'Time':'1110', 'duration':'50'}],
 		]
 		
 //		此函数是将所有的课程添加到表的内容中。
@@ -49,18 +70,16 @@
 ////				循环第二层数据（其中一天的所有课程），每一次循环得到的是其中的一节课。
 				for(var j=0; j<fjl[i].length; j++){
 					var this_course = fjl[i][j] //这堂课的所有数据
-					var this_course_time = this_course['Time'] //这堂课的时间
+					var this_course_time = this_course['Time'] //这堂课的时长
 					var where_time_course = whereIsCourse(this_course_time)
 					console.log("这是 " + i + " 天" + " ，第" + j + "堂课" + where_time_course) //课程在第j+1行，第i+1列。
 					var jq_append_one_course = 'table tr:eq(' + parseInt(where_time_course+1) + ') td:eq(' + parseInt(i+1)+ ')'
 					console.log(jq_append_one_course)
-					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458465939380.png' class='tag'><span style='width:100%'>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458540320170.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458340257340.png' class='tag'><span>" + this_course_time + "</span></div></div>"
+					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458465939380.png' class='tag'><span style='width:100%'>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458540320170.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458340257340.png' class='tag'><span>" + this_course['duration'] + "</span></div></div>"
 					$(jq_append_one_course).children("div").append(one_course)
 				}
 			}
 		}
-		
-//		addCourses(fjl)
 
 		
 		var now_course = whereCourse();
@@ -136,15 +155,15 @@
 				console.log(many_of_the_weather.length);
 				for(var i=0; i < many_of_the_weather.length; i++){
 					var this_day_information = many_of_the_weather[i];
-					console.log(this_day_information);
+					console.log("this_day_information: ", this_day_information);
 					var this_day_date = this_day_information["date"];
 					var date_print_array =  this_day_date.split("-");
 					console.log(date_print_array);
-					var date_print = date_print_array[1] + "/" +date_print_array[2];
+					var date_print = date_print_array[1] + "/" +date_print_array[2] + "<div>" + this_day_information["cond_txt_d"] + "</div>";
 					var icon_imgurl = icon_head + this_day_information["cond_code_d"] + ".png"
 					console.log("icon_imgurl: "+icon_imgurl)
 					$("#day" + i + " img").attr("src",icon_imgurl);
-					$("#day" + i + " text").text(date_print);
+					$("#day" + i + " text").html(date_print);
 				}
 				
 				console.log(today["tmp_max"]);
@@ -184,12 +203,14 @@
 			
 //			将今天和明天的标记为中文“今天”和“明天”
 			$("#"+ whatday).text("今天");
-			$("#"+ whatday).parent().css({"background-color": "red"});
+			$("#"+ whatday).parent().css({"background-color": "rgb(239,195,62)"});
 			$("#"+ parseInt(whatday+1)).text("明天");
-			$("#"+ parseInt(whatday+1)).parent().css({"background-color": "red"});
+			$("#"+ parseInt(whatday+1)).parent().css({"background-color": "rgb(239,205,101)"});
 			
 			// 此为将目前在进行的课程下边框变成3px的红线。
-			$(jquery_find_now_course).css({"border-bottom":"3px solid red"});
+			window.setInterval($(jquery_find_now_course).css({"border-bottom":"3px solid red"}), 1000*60*5);
+		
+			//将所有课程插入到表格中。
 			addCourses(fjl)
 			
 //			$('table tr:eq(1) td:eq(1)').children("div").append(xtt); //在单元格元素里面插入一堂课，如此时插入一堂课到第一行，第一列。
