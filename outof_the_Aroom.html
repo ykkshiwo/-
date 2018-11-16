@@ -7,6 +7,7 @@
 <title>操房外显示屏界面</title>
 	<link rel="stylesheet" type="text/css" href="./introduceOfTrains.css" />
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script src="./handlebars-v4.0.12.js"></script>
 	<script>
 		
 //		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
@@ -417,7 +418,7 @@
 		
 <!--		将课程表格限定在此div中，默认课程显示-->
 		<div id="courses" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color: white;">
-		<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
+			<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
 		<tr style="height: 50px;border-bottom: 2px red solid">
 			<th style="width: 5%;background-color: aqua">时间</th>
 			<th><span id="1"></span></th>
@@ -744,454 +745,12 @@
 		</div>
 		
 <!--		将私教介绍限定在此div中，默认课程不显示-->
-		<div id="personal_trains" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">
-		<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-					<div class="hook_classname">
-						√ 体操
-					</div>
-					<div class="hook_classname">
-						√ 水中单车
-					</div>
-					<div class="hook_classname">
-						√ 自由运动
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
+		<div id="personal_trains" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">	
 		</div>
-				<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-				<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-				<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟z<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-			<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟z<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 		
 <!--		将团操限定在此div中，默认课程不显示-->
 		<div id="group_trains" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">
-		<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren团操教练</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-					<div class="hook_classname">
-						√ 体操
-					</div>
-					<div class="hook_classname">
-						√ 水中单车
-					</div>
-					<div class="hook_classname">
-						√ 自由运动
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
 		</div>
-		<div class="train_pic_text">
-			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>Darren团操教练</p>
-			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					曾钟钟<a>佑远团超教练</a>
-				</div>
-				<div class="certificates">
-					<u>所获认证</u>
-					<ul>
-						<li>2012年获得RYS200ttc证书</li>
-						<li>2013年获得RYS50小时流瑜伽证书</li>
-						<li>2016获得Yoga Beyond 学院飞行瑜伽100小时Level 1证书</li>
-						<li>2017获得Yoga Beyond 学院飞行瑜伽100小时Level 2证书</li>
-					</ul>
-				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
-					<div class="hook_classname">
-						√ 尊巴
-					</div>
-					<div class="hook_classname">
-						√ 有氧
-					</div>
-					<div class="hook_classname">
-						√ 搏击
-					</div>
-					<div class="hook_classname">
-						√ 单车
-					</div>
-					<div class="hook_classname">
-						√ 功能杠铃
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 		
 		<div style="width: 60%; height: 10%; border: 1px solid #28DD0C; font-family: SimHei; color:white;">
 			<div id="choose_course">课程表</div>
@@ -1200,4 +759,47 @@
 		</div>
 	</div>
 </body>
+	<script type="text/template" id="Train_moudel">
+		{{#each trains_info}}
+			<div class="train_pic_text">
+			<div class="train_pic_text_left">
+				<img src="./zz.jpg">
+				<p>{{en_name}}</p>
+			</div>
+			<div class="train_pic_text_right">
+				<div class="train_name_position">
+					{{cn_name}}<a>{{position}}</a>
+				</div>
+				<div class="certificates">
+					<u>所获认证</u>
+					<ul>
+						{{#each certificates}}
+						<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="teach_class">所教授项目：</div>
+				<div class="teach_class_concrete">
+					{{#each projects}}
+					<div class="hook_classname">
+						√ {{this}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<script src="./trains_info.js"></script>
+	<script>
+		var tpl = $("#Train_moudel").html();
+		var template = Handlebars.compile(tpl);
+		var html = template(data_group_trains);
+		$('#group_trains').html(html);
+		
+		var tpl = $("#Train_moudel").html();
+		var template = Handlebars.compile(tpl);
+		var html = template(data_person_trains);
+		$('#personal_trains').html(html);
+	</script>
 </html>

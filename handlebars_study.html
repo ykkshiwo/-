@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>handlebars_study</title>
+	<meta charset="utf-8">
+	<title>handlebars_study</title>
 	<link rel="stylesheet" type="text/css" href="./introduceOfTrains.css" />
 	<script src="./handlebars-v4.0.12.js"></script>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
@@ -45,17 +45,9 @@
 	</script>
 	<script src="./trains_info.js"></script>
 	<script>
-		
-//		function fillTemplate(templateObj,contentObj,fillData){
-//     		var templateHtml = templateObj.html();
-//     		var template = Handlebars.compile(templateHtml);
-//     		contentObj.html(template(fillData));
-// 		};
-
-			var tpl = $("#Train_moudel").html();
-			var template = Handlebars.compile(tpl);
-			var html = template(data_group_trains);
-			$('#group_trains').html(html);
-		
+		var tpl = $("#Train_moudel").html();
+		var template = Handlebars.compile(tpl);
+		var html = template(data_group_trains);
+		$('#group_trains').html(html);
 	</script>
 </html>
