@@ -3,9 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Bootstrap 实例 - 滚动监听（Scrollspy）插件事件</title>
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <link href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <style>
         .section{
             border: 1px solid red;
@@ -20,7 +22,7 @@
 </head>
 <body>
 
-<nav id="myScrollspy" class="navbar navbar-default navbar-static" role="navigation">
+<nav id="myScrollspy" class="navbar navbar-default navbar-static" role="navigation" style="background-color: plum;">
 	<div class="container-fluid"> 
 		<div class="navbar-header">
 			<button class="navbar-toggle" type="button" data-toggle="collapse" 
@@ -53,8 +55,9 @@
 		</div>
 	</div>
 </nav>
+
 <div data-spy="scroll" data-target="#myScrollspy" data-offset="0" 
-	 style="height:600px;overflow:auto; position: relative;">
+	 style="height:600px;overflow:auto; position: relative; background-color: pink;">
 	<div class="section">
 		<h4 id="ios" style="position: sticky; top: 0px;">iOS<small><a href="#" onclick="removeSection(this);">
 			&times; 删除该部分</a></small>
@@ -73,14 +76,14 @@
                                                     TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
 	</div>
 	<div class="section">
-		<h4 id="svn" style="position: sticky; top: 0px;">SVN<small></small></h4>
+		<h4 id="svn" style="position: sticky; top: 10px;">SVN<small></small></h4>
         <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
         <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
         <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
         <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
 	</div>
 	<div class="section">
-		<h4 id="jmeter" style="">jMeter<small><a href="#" onclick="removeSection(this);">
+		<h4 id="jmeter" style="position: sticky; top: 10px;">jMeter<small><a href="#" onclick="removeSection(this);">
 			&times; 删除该部分</a></small>
 		</h4>
         <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
