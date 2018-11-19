@@ -5,7 +5,12 @@
 	<title>Bootstrap 实例 - 基本的按钮下拉菜单</title>
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .col-lg-3{
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
 
@@ -89,7 +94,7 @@
                     </li>
                 </ul>
             </div>
-            
+
             <div class="btn-group dropup">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">原始
                     <span class="caret"></span>
@@ -111,6 +116,73 @@
                 </ul>
             </div>
         </div>
+
+            <div style="padding: 100px 100px 10px;">
+                <form class="bs-example bs-example-form" role="form">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input type="text" class="form-control" placeholder="twitterhandle">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">.00</span>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">.00</span>
+                    </div>
+                </form>
+            </div>
+
+            <div style="padding: 100px 100px 10px;" class="contain">
+                    <form class="bs-example bs-example-form" role="form">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            Go!
+                                        </button>
+                                    </span>
+                                    <input type="text" class="form-control">
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            Go!
+                                        </button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">
+                                                Go!
+                                            </button>
+                                        </span>
+                                    </div><!-- /input-group -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">
+                                                    Go!
+                                                </button>
+                                            </span>
+                                        </div><!-- /input-group -->
+                                    </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </form>
+                </div>
 
 </body>
 </html>
