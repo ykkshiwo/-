@@ -7,7 +7,10 @@
 <title>操房外显示屏界面</title>
 	<link rel="stylesheet" type="text/css" href="./introduceOfTrains.css" />
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<!--	handlebars模板语言-->
 	<script src="./handlebars-v4.0.12.js"></script>
+<!--	课程信息js文件导入-->
+	<script src="./courses_info.js"></script>
 	<script>
 		
 //		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
@@ -33,38 +36,6 @@
 				}
 			}
 		}
-		
-		//测试数据集，课程固定，静态，不需要服务器支持。Time是将时间转为分钟，比如10小时变为600分钟。
-		var fjl = [
-			[{'cousrName':'尊巴Zumba', 'TrainName':'Darren', 'Time':'600' ,'duration':'50'},
-			 {'cousrName':'Aerobic Exercise综合有氧', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
-			 {'cousrName':'Yin yoga阴瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
-			 {'cousrName':'Ready to go 新手入门', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
-			
-			[{'cousrName':'Yoga physical 理疗瑜伽', 'TrainName':'Yiyi', 'Time':'840' ,'duration':'50'},
-			 {'cousrName':'Flow 流瑜伽', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
-			
-			[{'cousrName':'Flow yoga 流瑜伽', 'TrainName':'Yiyi', 'Time':'600' ,'duration':'50'},
-			 {'cousrName':'Fight FX 能量搏击', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
-			 {'cousrName':'Yin yoga阴瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
-			 {'cousrName':'Training Day 训练日', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
-			
-			[{'cousrName':'Hatha Yogaha哈他瑜伽', 'TrainName':'Yiyi', 'Time':'600' ,'duration':'50'},
-			 {'cousrName':'Zumba 尊巴', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
-			 {'cousrName':'Hatha yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
-			 {'cousrName':'Ready to go 新手入门', 'TrainName':'Rambo', 'Time':'1170' ,'duration':'50'}],
-			
-			[{'cousrName':'Hatha Yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'840' ,'duration':'50'},
-			 {'cousrName':'Aerobic Exercise综合有氧', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
-			 {'cousrName':'Flow yoga 流瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
-			 {'cousrName':'Schwinn', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
-			
-			[{'cousrName':'Pump FX 功能杠铃', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
-			 {'cousrName':'Hatha Yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'1170' ,'duration':'50'},
-			 {'cousrName':'Ready to do 新手入门', 'TrainName':'Darren', 'Time':'1170' ,'duration':'50'}],
-			
-			[{'cousrName':'Fight FX 能量搏击', 'TrainName':'Darren', 'Time':'1110', 'duration':'50'}],
-		]
 		
 //		此函数是将所有的课程添加到表的内容中。
 		function addCourses(fjl){
@@ -262,15 +233,6 @@
 			height: 100%;
 			width: 100%;
 		}
-		td{
-/*			width:12%;*/
-		}
-		th{
-/*			height: 20px;*/
-		}
-		tr{
-/*			height: 8px;*/
-		}
 		.if_much_cousers{
 			display: flex;
 			flex-direction: row; 
@@ -419,329 +381,316 @@
 <!--		将课程表格限定在此div中，默认课程显示-->
 		<div id="courses" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color: white;">
 			<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
-		<tr style="height: 50px;border-bottom: 2px red solid">
-			<th style="width: 5%;background-color: aqua">时间</th>
-			<th><span id="1"></span></th>
-			<th><span id="2"></span></th>
-			<th><span id="3"></span></th>
-			<th><span id="4"></span></th>
-			<th><span id="5"></span></th>
-			<th><span id="6"></span></th>
-			<th><span id="7"></span></th>
-		</tr>
-		<tr>
-			<td>
-				09:00
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-<!--
-					<div class="one_couser">
-						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg" class="tag"><span>CourseName</span></div>
-						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png" class="tag"><span>TrainNmae</span></div>
-						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png" class="tag"><span>time</span></div>
-					</div>
--->
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				10:00
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-<!--
-					<div class="one_couser">
-						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg" class="tag"><span>CourseName</span></div>
-						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png" class="tag"><span>TrainNmae</span></div>
-						<div class="course_train_time"><img src="http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png" class="tag"><span>time</span></div>
-					</div>
--->
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				12:00
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				14:00
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				16:00
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
+				<tr style="height: 50px;border-bottom: 2px red solid">
+<!--					第一行第一个单元格的宽度决定第一列的宽度-->
+					<th style="width: 5%;background-color: aqua">时间</th>
+					<th><span id="1"></span></th>
+					<th><span id="2"></span></th>
+					<th><span id="3"></span></th>
+					<th><span id="4"></span></th>
+					<th><span id="5"></span></th>
+					<th><span id="6"></span></th>
+					<th><span id="7"></span></th>
+				</tr>
+				<tr>
+					<td>
+						09:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						10:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						12:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						14:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						16:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
 
-				18:30
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				19:30
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				20:30
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				21:30
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-			<td>
-				<div class="if_much_cousers">
-				</div>
-			</td>
-		</tr>
-	</table>
+						18:30
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						19:30
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						20:30
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						21:30
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+		</table>
 		</div>
 		
 <!--		将私教介绍限定在此div中，默认课程不显示-->
