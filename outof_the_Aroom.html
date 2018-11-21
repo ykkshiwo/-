@@ -59,13 +59,7 @@
 		var now_course = whereCourse();
 		var jquery_find_now_course = "tr:eq(" + now_course + ")"
 		console.log(jquery_find_now_course)
-		
-//		var xt = "<div style='display: flex;flex-direction: row; justify-content:space-around; align-items: center'><div style='width: 60px; height: 36px; border: 1px red solid'></div><div style='width: 60px; height: 36px; border: 1px red solid'></div></div>"
-//		var xtt = "<div style='width: 60px; height: 90px; border: 1px red solid'></div>"
-		
-//		此为每一堂课的插入html，可以改变课程名称，教练名称和时间段，
-//		var one_course = 
-//					"<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019451971610.jpg' class='tag'><span>" + "CourseName1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019367902810.png' class='tag'><span>" + "TrainNmae1" + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811081019522775900.png' class='tag'><span>" + "time1" + "</span></div></div>"
+
 		
 		var weekz = ["星期天", "星期一","星期二", "星期三","星期四","星期五","星期六"];
 		var weekz_en= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -166,7 +160,11 @@
 
 			//首先需要知道今天是星期几，也就是whatday。
 			var whatday = getDayNormal();
-//			在知道今天是星期几后，计算出这一周每一天的具体日期。例如，今天是周五，那么这一周的周一就是4天前，可以使用getDay_Date(1-5)函数来计算那一天的具体日期，以次类推，可以得到这一周每天的具体日期，而且因为星期几在表格上的位置是固定的，都是从周一到周天。
+//			在知道今天是星期几后，计算出这一周每一天的具体日期。
+//			例如，今天是周五，那么这一周的周一就是4天前，
+//			可以使用getDay_Date(1-5)函数来计算那一天的具体日期，
+//			以次类推，可以得到这一周每天的具体日期，
+//			而且因为星期几在表格上的位置是固定的，都是从周一到周天。
 			$("#1").text(getDay_Date(1-whatday))
 			$("#2").text(getDay_Date(2-whatday))
 			$("#3").text(getDay_Date(3-whatday))
