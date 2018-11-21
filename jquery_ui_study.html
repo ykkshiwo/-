@@ -5,17 +5,25 @@
   <title>jQuery UI 日期选择器（Datepicker） - 默认功能</title>
 	<link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.min.css">
 	<script src="./jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	<script src="./jquery-ui-1.12.1/jquery-ui.min.js"></script>
   <script>
-  $(function() {
-    $( "#getDate" ).datepicker();
-  });
+$(document).ready(function(){
+	$(".btn1").click(function(){
+		$("p").delay(2000).fadeOut(1000);
+	});
+	$(".btn2").click(function(){
+		$("p").fadeIn(1000);
+	});
+});
   </script>
 </head>
 <body>
  
-<p>日期：<input type="text" id="getDate"></p>
- 
+<!--<p>日期：<input type="text" id="getDate"></p>-->
+<button class="btn1">淡出</button>
+<button class="btn2">淡入</button>
+<p>这是一个段落。</p>
  
 </body>
 </html>
