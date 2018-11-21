@@ -110,7 +110,7 @@
     $(".add").click(function(event){
         var addcar = $(this); 
 //        var img = addcar.parent().find('img').attr('src');
-        var flyer = $('	<div style="border-radius: 50%; width: 16px; height: 16px; background-color: #4F4C4C"></div>');
+        var flyer = $('	<div style="border-radius: 50%; width: 16px; height: 16px; background-color: #4F4C4C; z-index: 9999;"></div>');
         flyer.fly({
             start: {
                 left: event.pageX, //开始位置（必填）#fly元素会被设置成position: fixed 
@@ -125,12 +125,12 @@
             onEnd: function(){ //结束回调
 //                $("#msg").show().animate({width: '250px'}, 200).fadeOut(1000); 
 //                addcar.css("cursor","default").removeClass('orange');
-//                this.destory(); //移除dom
+                  this.destory(); //移除dom
             } 
         });
     });
 			var num = 0;
-			$(".type_content").click(function(){
+			$(".add").click(function(){
 				console.log(num)
 				num = num + 1;
 				$("#carNum").text(num);
@@ -168,6 +168,8 @@
 			background-color: rgb(200,200,200);
 			box-sizing: border-box;
 			font-size: 12px;
+			position: absolute;
+			z-index: 200;
 		}
 		.type_content{
 			border: 0px solid blue;
@@ -298,12 +300,12 @@
 		</div>
 	</div>
 	</div>
-	<div style="position: fixed; right: 10px; bottom: 160px; border: 0px solid red; width: 36px; height: 36px">
-		<img id="touch" style="position: absolute;z-index: 9999" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581060.png" width="39px">
-		<a href="https://www.baidu.com"><img class="four" id="homePage" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png' width="56px"></a>
-		<img class="four" id="shopCar" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png' width="56px">
-		<img class="four" id="classify" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png' width="56px">
-		<img class="four" id="center" src='http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png' width="56px">
+	<div style="position: fixed; right: 10px; bottom: 160px; border: 0px solid red; width: 36px; height: 36px; z-index: 9999">
+		<img id="touch" style="position: absolute; z-index: 999" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581060.png" width="42px">
+		<a href="https://www.baidu.com"><img class="four" id="homePage" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="56px"></a>
+		<img class="four" id="shopCar" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581067.png" width="56px">
+		<img class="four" id="classify" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="56px">
+		<img class="four" id="center" src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291738127581061.png" width="56px">
 	</div>
 	<div class="car">
 		<img src="http://yy.rxmmd.net/Storage/master/gallery/201810/201810291721097074560.png" width="60px"/>
