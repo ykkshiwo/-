@@ -172,9 +172,9 @@
 			
 //			将今天和明天的标记为中文“今天”和“明天”
 			$("#"+ whatday).text("今天");
-			$("#"+ whatday).parent().css({"background-color": "rgb(239,195,62)"});
+			$("#"+ whatday).parent().css({"background-color": "rgb(255,189,0)"});
 			$("#"+ parseInt(whatday+1)).text("明天");
-			$("#"+ parseInt(whatday+1)).parent().css({"background-color": "rgb(239,205,101)"});
+			$("#"+ parseInt(whatday+1)).parent().css({"background-color": "rgb(139,103,0)"});
 			
 			// 此为将目前在进行的课程下边框变成3px的红线。
 			function setRedline(){
@@ -461,7 +461,7 @@
 <!--		将课程表格限定在此div中，默认课程显示-->
 		<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
 			<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
-				<tr style="height: 50px;border-bottom: 2px red solid">
+				<tr style="height: 50px;border-bottom: 1px red solid">
 <!--					第一行第一个单元格的宽度决定第一列的宽度-->
 					<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
 					<th><span id="1"></span></th>

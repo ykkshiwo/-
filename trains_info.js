@@ -189,6 +189,7 @@ var data_person_trains=
 				{
 				en_name: "Allen",
 				cn_name: "赵军",
+				"img": "",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格认证",
