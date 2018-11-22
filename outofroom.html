@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <!--	12个小时刷新一次，刷新为了获取最新的天气预报-->
 <meta http-equiv="refresh" content="43200">
-<title>操房外显示屏界面</title>
-	<link rel="stylesheet" type="text/css" href="./introduceOfTrains.css" />
+<title>课程表</title>
+	<link rel="stylesheet" href="./introduceOfTrains.css" />
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	
 <!--	handlebars模板语言-->
 	<script src="./handlebars-v4.0.12.js"></script>
 <!--	课程信息js文件导入-->
@@ -55,10 +56,6 @@
 			}
 		}
 
-		
-		var now_course = whereCourse();
-		var jquery_find_now_course = "tr:eq(" + now_course + ")"
-		console.log(jquery_find_now_course)
 
 		
 		var weekz = ["星期天", "星期一","星期二", "星期三","星期四","星期五","星期六"];
@@ -135,7 +132,7 @@
 				}
 				
 				console.log(today["tmp_max"]);
-				$("#tmp_today").html(today["tmp_min"] + "<sub>~</sub>" + today["tmp_max"]);
+				$("#tmp_today").html(today["tmp_min"] + "~" + today["tmp_max"]);
 			});
 			
 //			将具体日期写在温度上面
@@ -180,7 +177,18 @@
 			$("#"+ parseInt(whatday+1)).parent().css({"background-color": "rgb(239,205,101)"});
 			
 			// 此为将目前在进行的课程下边框变成3px的红线。
-			window.setInterval($(jquery_find_now_course).css({"border-bottom":"3px solid red"}), 1000*60*5);
+			function setRedline(){
+				var now_course = whereCourse();
+				var jquery_find_now_course = "tr:eq(" + now_course + ")"
+				console.log("这是每隔5分钟更新的数据:", jquery_find_now_course)
+				$(jquery_find_now_course).css({"border-bottom":"3px solid red"})
+			}
+			window.setInterval(setRedline, 1000*60*5);
+			
+			var now_course_ = whereCourse();
+			var jquery_find_now_course_ = "tr:eq(" + now_course_ + ")"
+			$(jquery_find_now_course_).css({"border-bottom":"3px solid red"})
+			console.log("这是立刻更新的数据:", jquery_find_now_course_)
 		
 			//将所有课程插入到表格中。
 			addCourses(fjl)
@@ -194,7 +202,7 @@
 			//console.log(r)
 //			$('tr td:nth-child(1)').css("background-color", "rgb(100,100,100)")// 所有tr元素的td元素中的第2个
 			
-			/**************************以上选择课程表或私教，团操*****************************/
+			/**************************以下选择课程表或私教，团操*****************************/
 //			课程表不能隐藏
 //			$("#courses").hide();
 			$("#personal_trains").hide();
@@ -233,20 +241,22 @@
 		}
 		.if_much_cousers{
 			display: flex;
-			flex-direction: row; 
-			justify-content:flex-start;
-			align-items: center;
+			flex-direction: column; 
+			justify-content:space-between;
+			align-items: flex-start;
+/*			border: 1px solid yellow;*/
 		}
 		.one_couser{
-			height: 90px; 
-			border: 1px red solid;
+/*			height: 65px; */
+/*			border: 1px red solid;*/
 			display: flex; 
 			flex-direction: column; 
 			justify-content: center;
 			align-items: flex-start;
 			font-size: 12px;
-			width: 45%;
+			width: 90%;
 			margin-left: 5px;
+			padding-bottom: 5px;
 		}
 		.course_train_time{
 			display: flex; 
@@ -267,12 +277,12 @@
 			background-color: rgb(100,100,100);
 			color: white;
 			font-weight: bold;
-			font-size: 40px;
+			font-size: 16px;
 		}
-		table{border-collapse:collapse;}
+		table{border-collapse:collapse;border: 1px solid white;}
 		.weather_day{
 			width:100px;
-			border:1px solid green;
+/*			border:1px solid green;*/
 			text-align: center;
 		}
 		p{
@@ -327,6 +337,88 @@
 			box-shadow:3px 3px 5px black;
 			transform: translate(4px,4px);
 		}
+/*		下面是教练的css妈的*/
+		.train_pic_text{
+/*			border: 1px solid yellow;*/
+			color: black;
+			width: 48%;
+			height: 400px;
+			border: 0px red solid;
+			margin: 6px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: flex-start;
+		}
+		.train_pic_text_left{
+			border: 2px solid rgb(181,181,181);
+			width: 45%;
+			height: 70%;
+		}
+		.train_pic_text_right{
+			border: 0px solid blue;
+			width: 45%;
+			height: 90%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		.train_pic_text_left img{
+			width: 100%;
+		}
+		.train_pic_text_left p{
+			color: white;
+			font-size: 80px;
+			margin-top: 10px;
+			margin-left: 10px;
+			font-family: SimHei;
+		}
+		.train_name_position{
+			color: white;
+			font-size: 50px;
+			font-family: SimHei;
+			margin-top: 20px;
+		}
+		.train_name_position a{
+			font-size: 20px;
+			margin-left: 10px;
+			color: white;
+		}
+		.teach_class{
+			margin-top: 20px;
+			font-size: 30px;
+			color: rgb(181,181,181);
+			font-family: SimHei;
+		}
+		.teach_class_concrete{
+			margin-top: 20px;
+			border: 0px solid blue;
+			width: 100%;
+/*			height: 40%;*/
+			display: flex; 
+			flex-direction: row; 
+			flex-wrap: wrap; 
+			justify-content: flex-start; 
+			align-items: flex-start;
+		}
+		.hook_classname{
+			margin: 5px;
+			border: 0px solid red;
+			width: 45%;
+			height: 15%;
+			color: rgb(181,181,181);
+			font-size: 32px;
+			font-family: SimHei;
+		}
+		.certificates{
+			margin-top: 20px;
+			color: rgb(181,181,181);
+			font-size: 30px;
+			height: 40%;
+			width: 100%;
+			font-family: SimHei;
+		}
 	</style>
 </head>
 
@@ -334,54 +426,44 @@
 	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201811/201811171449403133200.jpg); background-repeat: no-repeat; background-size:cover">
 		
 <!--		显示天气预报-->
-		<div style="width: 40%; height: 20%; border: 1px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
-			<div id="specific_date" style="border: 1px red solid">
+		<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
+			<div id="specific_date" style="border: 0px red solid">
 				
 			</div>
-			<div style="border: 1px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
-				<div id="tmp_today" style="font-size: 65px; font-family: SimHei; border: 1px solid red; height: 60px;">12/18</div>
-				<div style="font-weight: bold; padding: 0; border: 1px solid blue">o</div>
-				<div style="align-self: flex-end; border: 1px solid green;">c</div>
+			<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
+				<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">12/18</div>
+				<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
+				<div style="align-self: flex-end; border: 0px solid green; font-size: 25px;">c</div>
 			</div>
-			<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 1px red solid; width: 100%;"> 
+			<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%;"> 
 				<div id="day0" class="weather_day">
+<!--					这里将今天的天气限定大小为100px，利用溢出隐藏和滤镜投影向右100px，图像向左偏移100px，这样显示出来就是投影的图像颜色-->
 					<div style="width: 100px; position: relative;overflow: hidden">
-						<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid yellow; filter: drop-shadow(100px 0px white);position: relative; left:-100px;"/>
+						<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid rgba(1,1,1,0);position: relative; left: -100px;-webkit-filter: drop-shadow(100px 0px white)"/>
 					</div>
 					<text style="color: white; font-size: 26px">11/11</text>
 				</div>
 				<div id="day1" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 1px solid yellow;"/></div>
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 0px solid yellow;"/></div>
 					<text style="color: white; font-size: 26px">11/11</text>
 				</div>
 				<div id="day2" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100%; border: 1px solid yellow;"/></div>
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100%; border: 0px solid yellow;"/></div>
 					<text style="color: white; font-size: 26px">11/11</text>
 				</div>
-<!--免费开发者只能调用和风天气的3天的数据-->
-<!--
-				<div id="day3" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 1px solid yellow;"/></div>
-					<text>11/11</text>
-				</div>
-				<div id="day4" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 1px solid yellow;"/></div>
-					<text>11/11</text>
-				</div>
--->
 			</div>
 		</div>
 		
 <!--		时钟显示， 绝对定位在右上角-->
 		
-		<div id="timer" style="position: absolute; top: 20px; right: 20px; font-size: 60px;color: white"> 12:12 </div>
+		<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white"> 12:12 </div>
 		
 <!--		将课程表格限定在此div中，默认课程显示-->
-		<div id="courses" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color: white;">
+		<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
 			<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
 				<tr style="height: 50px;border-bottom: 2px red solid">
 <!--					第一行第一个单元格的宽度决定第一列的宽度-->
-					<th style="width: 5%;background-color: aqua">时间</th>
+					<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
 					<th><span id="1"></span></th>
 					<th><span id="2"></span></th>
 					<th><span id="3"></span></th>
@@ -396,6 +478,7 @@
 					</td>
 					<td>
 						<div class="if_much_cousers">
+							
 						</div>
 					</td>
 					<td>
@@ -692,14 +775,14 @@
 		</div>
 		
 <!--		将私教介绍限定在此div中，默认课程不显示-->
-		<div id="personal_trains" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">	
+		<div id="personal_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">	
 		</div>
 		
 <!--		将团操限定在此div中，默认课程不显示-->
-		<div id="group_trains" style="width: 100%; height: 65%; border: 1px solid blue;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">
+		<div id="group_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start">
 		</div>
 		
-		<div style="width: 60%; height: 10%; border: 1px solid #28DD0C; font-family: SimHei; color:white;">
+		<div style="width: 60%; height: 10%; border: 0px solid #28DD0C; font-family: SimHei; color:white;">
 			<div id="choose_course">课程表</div>
 			<div id="choose_group_trains">团操课教练</div>
 			<div id="choose_personal_trains"> 私教课教练</div>
@@ -710,14 +793,14 @@
 		{{#each trains_info}}
 			<div class="train_pic_text">
 			<div class="train_pic_text_left">
-				<img src="./zz.jpg">
-				<p>{{en_name}}</p>
+				<img src={{img}}>
+				<p style="font-size: 30px;">{{en_name}}</p>
 			</div>
-			<div class="train_pic_text_right">
-				<div class="train_name_position">
-					{{cn_name}}<a>{{position}}</a>
+			<div class="train_pic_text_right" style="font-size: 10px;">
+				<div class="train_name_position" style="font-size: 30px">
+					{{cn_name}}<a style="font-size: 15px;">{{position}}</a>
 				</div>
-				<div class="certificates">
+				<div class="certificates" style="font-size: 15px;">
 					<u>所获认证</u>
 					<ul>
 						{{#each certificates}}
@@ -725,10 +808,10 @@
 						{{/each}}
 					</ul>
 				</div>
-				<div class="teach_class">所教授项目：</div>
-				<div class="teach_class_concrete">
+				<div class="teach_class" style="font-size: 20px;">所教授项目：</div>
+				<div class="teach_class_concrete" style="font-size: 15px;">
 					{{#each projects}}
-					<div class="hook_classname">
+					<div class="hook_classname" style="font-size: 15px;">
 						√ {{this}}
 					</div>
 					{{/each}}

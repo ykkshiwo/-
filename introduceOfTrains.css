@@ -1,6 +1,5 @@
-@charset "utf-8";
-/* CSS Document */
 		.train_pic_text{
+			border; 1px solid yellow;
 			color: black;
 			width: 45%;
 			height: 800px;
@@ -17,7 +16,7 @@
 			height: 90%;
 		}
 		.train_pic_text_right{
-			border: 0px solid blue;
+			border: 1px solid blue;
 			width: 45%;
 			height: 90%;
 			display: flex;

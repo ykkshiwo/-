@@ -7,7 +7,7 @@ var data_group_trains=
 				en_name: "Darren",
 				cn_name: "曾钟钟",
 				position: "佑远团操总监",
-				img: "",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811051656455936190.jpg",
 				certificates: [
 					"Schwinn单车一星认证",
 					"Train Fitness体系fight fx认证",
@@ -19,7 +19,7 @@ var data_group_trains=
 				en_name: "Yiyi",
 				cn_name: "李玮秋",
 				position: "佑远团操教练",
-				img: "",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811221441194834220.jpg",
 				certificates: [
 					"中国瑜伽师联盟高级瑜伽导师",
 					"阴瑜伽高伽导师认证",
@@ -42,11 +42,11 @@ var data_person_trains=
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格证书",
-					"红十字会急救员证",
+//					"红十字会急救员证",
 					"功能性训练技能鉴定证书",
 					"普拉提（康复训练）技能鉴定证书",
 					"运动康复3M拉伸技能鉴定证书",
-					"拳课技能鉴定证书",
+//					"拳课技能鉴定证书",
 				],
 				projects: ["拉伸","增肌","减脂","塑形"]
 			},
@@ -129,7 +129,7 @@ var data_person_trains=
 					"TRX悬吊体适能教练证书",
 					"AASFP体适能教练认证",
 					"AASFP动感单车教练认证",
-					"2015年温州市全国邀请赛男子健美75KG第四名"
+//					"2015年温州市全国邀请赛男子健美75KG第四名"
 				],
 				projects: ["增肌","急速减脂","塑形","肌肉放松","拉伸","体态矫正","健美指导"]
 			},
@@ -139,8 +139,8 @@ var data_person_trains=
 				position: "佑远私人教练",
 				certificates: [
 					"高级国家职业资格健身教练",
-					"中国跆拳道协会黑带认证",
-					"南昌市跆拳道协会普通晋段考试官",
+//					"中国跆拳道协会黑带认证",
+//					"南昌市跆拳道协会普通晋段考试官",
 					"深圳市力仕健身学院（团体课）金牌培训导师",
 					"Trend UBound课程培训导师",
 					"Balas--潮流拳击认证教练"
@@ -156,7 +156,7 @@ var data_person_trains=
 					"CPT私人教练认证",
 					"体适能认证",
 					"运动训练师认证",
-					"体态评估与矫正",
+//					"体态评估与矫正",
 					"运动复健师认证",
 					"国家体育总局健身教练职业资格认证"
 				],
