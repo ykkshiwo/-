@@ -39,6 +39,7 @@ var data_person_trains=
 			{
 				en_name: "Echo",
 				cn_name: "张慧丽",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格证书",
@@ -53,6 +54,7 @@ var data_person_trains=
 			{
 				en_name: "Rick",
 				cn_name: "陈伟",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"CBBA高级私人教练认证",
@@ -63,6 +65,7 @@ var data_person_trains=
 			{
 				en_name: "Shiny Cheng",
 				cn_name: "程丰明",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"CBBA高级私人教练认证",
@@ -74,6 +77,7 @@ var data_person_trains=
 			{
 				en_name: "Javon",
 				cn_name: "贾鹏",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格认证",
@@ -87,6 +91,7 @@ var data_person_trains=
 				{
 				en_name: "Alick Li",
 				cn_name: "李文华",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格认证",
@@ -99,6 +104,7 @@ var data_person_trains=
 				{
 				en_name: "Page Ning",
 				cn_name: "宁康荘",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"健身教练国家职业中级认证",
@@ -111,6 +117,7 @@ var data_person_trains=
 				{
 				en_name: "Fish",
 				cn_name: "孙路",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业认证",
@@ -123,6 +130,7 @@ var data_person_trains=
 				{
 				en_name: "Jack wang",
 				cn_name: "王斌",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"健身教练国家职业高级认证",
@@ -136,6 +144,7 @@ var data_person_trains=
 				{
 				en_name: "Rambo",
 				cn_name: "王刚",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"高级国家职业资格健身教练",
@@ -150,6 +159,7 @@ var data_person_trains=
 				{
 				en_name: "Flute Wang",
 				cn_name: "王天将",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"CPR应急救护",
@@ -165,6 +175,7 @@ var data_person_trains=
 				{
 				en_name: "Alex",
 				cn_name: "徐金桥",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"赛普体适能认证",
@@ -178,6 +189,7 @@ var data_person_trains=
 				{
 				en_name: "JeanZhang",
 				cn_name: "张熙昊",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"LFBb国际私人教练认证",
