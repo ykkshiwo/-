@@ -39,7 +39,7 @@ var data_person_trains=
 			{
 				en_name: "Echo",
 				cn_name: "张慧丽",
-				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906387.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格证书",
@@ -104,7 +104,7 @@ var data_person_trains=
 				{
 				en_name: "Page Ning",
 				cn_name: "宁康荘",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426750232.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"健身教练国家职业中级认证",
@@ -189,7 +189,7 @@ var data_person_trains=
 				{
 				en_name: "JeanZhang",
 				cn_name: "张熙昊",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906388.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"LFBb国际私人教练认证",
