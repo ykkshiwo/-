@@ -62,22 +62,22 @@ var data_person_trains=
 				],
 				projects: ["增肌","减脂","塑形"]
 			},
-			{
-				en_name: "Shiny Cheng",
-				cn_name: "程丰明",
-				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"CBBA高级私人教练认证",
-					"MFT健身格斗认证",
-					"健康训练师认证 ",
-				],
-				projects: ["减脂","塑形","体能强化","格斗"]
-			},
+//			{
+//				en_name: "Shiny Cheng",
+//				cn_name: "程丰明",
+//				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+//				position: "佑远私人教练",
+//				certificates: [
+//					"CBBA高级私人教练认证",
+//					"MFT健身格斗认证",
+//					"健康训练师认证 ",
+//				],
+//				projects: ["减脂","塑形","体能强化","格斗"]
+//			},
 			{
 				en_name: "Javon",
 				cn_name: "贾鹏",
-				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811231402239959120.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格认证",
@@ -152,7 +152,7 @@ var data_person_trains=
 //					"南昌市跆拳道协会普通晋段考试官",
 					"深圳市力仕健身学院金牌培训导师",
 					"Trend UBound课程培训导师",
-					"Balas--潮流拳击认证教练"
+					"Balas潮流拳击认证教练"
 				],
 				projects: ["增肌","减脂","塑形","拳击","拉伸","体态矫正","散打","跆拳道"]
 			},

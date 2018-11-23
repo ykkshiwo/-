@@ -1,4 +1,4 @@
-		//测试数据集，课程固定，静态，不需要服务器支持。Time是将时间转为分钟，比如10小时变为600分钟。
+		//课程数据集，课程固定，静态，不需要服务器支持。Time是将时间转为分钟，比如10小时变为600分钟，duration表示将课程时段。
 		var fjl = [
 			[{'cousrName':'尊巴Zumba', 'TrainName':'Darren', 'Time':'600' ,'duration':'50'},
 			 {'cousrName':'Aerobic Exercise综合有氧', 'TrainName':'Darren', 'Time':'1110' ,'duration':'50'},
