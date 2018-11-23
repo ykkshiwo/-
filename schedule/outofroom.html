@@ -183,7 +183,7 @@
 				var jquery_find_now_course = "tr:eq(" + now_course + ")"
 				console.log("这是每隔5分钟更新的数据:", jquery_find_now_course)
 				$("tr").css({"border-bottom":"auto"});
-//				$(jquery_find_now_course).css({"border-bottom":"3px solid red"})
+				$(jquery_find_now_course).css({"border-bottom":"3px solid red"})
 			}
 			window.setInterval(setRedline, 1000*60*5);
 			

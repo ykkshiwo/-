@@ -13,7 +13,7 @@ var data_group_trains=
 					"Train Fitness体系fight fx认证",
 					"莱美体系bodypump初始培训",
 				],
-				projects: ["LesMills BODYPUMP","LesMills BODYCOMBAT","LesMills CXWORD","Fight FX能量搏击","PUMP FX功能杠铃","Zumba","Adidas训练课","Schwinn十字星单车"]
+				projects: ["bodypump","bodycombat","CXWORD","Fight FX能量搏击","PUMP FX功能杠铃","Zumba","Adidas训练课","Schwinn单车"]
 			},
 			{
 				en_name: "Yiyi",
@@ -54,7 +54,7 @@ var data_person_trains=
 			{
 				en_name: "Rick",
 				cn_name: "陈伟",
-				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+				img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426750230.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"CBBA高级私人教练认证",
@@ -91,7 +91,7 @@ var data_person_trains=
 				{
 				en_name: "Alick Li",
 				cn_name: "李文华",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426750231.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格认证",
@@ -117,7 +117,7 @@ var data_person_trains=
 				{
 				en_name: "Fish",
 				cn_name: "孙路",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811230914392046700.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业认证",
@@ -130,13 +130,13 @@ var data_person_trains=
 				{
 				en_name: "Jack wang",
 				cn_name: "王斌",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906384.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"健身教练国家职业高级认证",
 					"TRX悬吊体适能教练证书",
 					"AASFP体适能教练认证",
-					"AASFP动感单车教练认证",
+					"AASFP单车教练认证",
 //					"2015年温州市全国邀请赛男子健美75KG第四名"
 				],
 				projects: ["增肌","急速减脂","塑形","肌肉放松","拉伸","体态矫正","健美指导"]
@@ -144,13 +144,13 @@ var data_person_trains=
 				{
 				en_name: "Rambo",
 				cn_name: "王刚",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906385.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"高级国家职业资格健身教练",
 //					"中国跆拳道协会黑带认证",
 //					"南昌市跆拳道协会普通晋段考试官",
-					"深圳市力仕健身学院（团体课）金牌培训导师",
+					"深圳市力仕健身学院金牌培训导师",
 					"Trend UBound课程培训导师",
 					"Balas--潮流拳击认证教练"
 				],
@@ -159,12 +159,12 @@ var data_person_trains=
 				{
 				en_name: "Flute Wang",
 				cn_name: "王天将",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906386.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"CPR应急救护",
 					"CPT私人教练认证",
-					"体适能认证",
+//					"体适能认证",
 					"运动训练师认证",
 //					"体态评估与矫正",
 					"运动复健师认证",
@@ -175,7 +175,7 @@ var data_person_trains=
 				{
 				en_name: "Alex",
 				cn_name: "徐金桥",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221619527474030.jpg",
+					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811230905499961290.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"赛普体适能认证",
