@@ -180,7 +180,7 @@
 			// 此为将目前在进行的课程下边框变成3px的红线。
 			function setRedline(){
 				var now_course = whereCourse();
-				var jquery_find_now_course = "tr:eq(" + now_course + ")"
+				var jquery_find_now_course = "tr:eq(" + 4 + ")"
 				console.log("这是每隔5分钟更新的数据:", jquery_find_now_course)
 				$("tr:not(:first)").css({"border-bottom":"1px solid white"});
 				$(jquery_find_now_course).css({"border-bottom":"3px solid red"})
