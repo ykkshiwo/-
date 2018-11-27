@@ -6,14 +6,14 @@ var data_group_trains=
 			{
 				en_name: "Darren",
 				cn_name: "曾钟钟",
-				position: "佑远团操总监",
+				position: "佑远团操主管",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811051656455936190.jpg",
 				certificates: [
 					"Schwinn单车一星认证",
 					"Train Fitness体系fight fx认证",
 					"莱美体系bodypump初始培训",
 				],
-				projects: ["bodypump","bodycombat","CXWORD","Fight FX能量搏击","PUMP FX功能杠铃","Zumba","Adidas训练课","Schwinn单车"]
+				projects: ["bodypump","莱美搏击","CXWORD","Fight FX能量搏击","PUMP FX功能杠铃","Zumba","Adidas训练课","Schwinn单车"]
 			},
 			{
 				en_name: "Yiyi",
@@ -211,6 +211,19 @@ var data_person_trains=
 					"运动康复师认证"
 				],
 				projects: ["减脂","塑形","增肌"]
+			},
+				{
+				en_name: "Cannon Shi",
+				cn_name: "石中玉",
+				"img": "http://yy.rxmmd.net/Storage/master/gallery/201811/201811271632390175050.jpg",
+				position: "佑远私人教练",
+				certificates: [
+					"国家职业资格健身教练",
+					"CPR急救员（心肺复苏）",
+					"形体训练私人教练认证",
+					"功能性训练技能认证",
+				],
+				projects: ["减脂","塑形","增肌","拳课/散打"]
 			},
 			]
 	};
