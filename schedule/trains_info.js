@@ -186,18 +186,18 @@ var data_person_trains=
 				],
 				projects: ["减脂","塑形","拉伸","增肌","康复","拳击"]
 			},
-				{
-				en_name: "JeanZhang",
-				cn_name: "张熙昊",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906388.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"LFBb国际私人教练认证",
-					"产后康复认证",
-					"中国红十字会认证 ",
-				],
-				projects: ["减脂","塑形","增肌"]
-			},
+			// 	{
+			// 	en_name: "JeanZhang",
+			// 	cn_name: "张熙昊",
+			// 		img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906388.jpg",
+			// 	position: "佑远私人教练",
+			// 	certificates: [
+			// 		"LFBb国际私人教练认证",
+			// 		"产后康复认证",
+			// 		"中国红十字会认证 ",
+			// 	],
+			// 	projects: ["减脂","塑形","增肌"]
+			// },
 				{
 				en_name: "Allen",
 				cn_name: "赵军",
