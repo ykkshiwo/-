@@ -1,33 +1,30 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"> 
-<title>菜鸟教程(runoob.com)</title>
-<style>
-img 
-{
-    border: 1px solid red;
-	float:right;
-    margin: 10px;
-    padding: 20px;
-}
-a:first-child{
-    color: red;
-    /* padding: 10px; */
-    border: 1px blue solid;
-    padding-left: 10px;
-    float: left;
-    margin-left: 10px;
-}
-</style>
+  <meta charset="utf-8">
+  <title>剪辑特效（Clip Effect）演示</title>
+  <link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.min.css">
+  <style>
+  #toggle {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+  </style>
+  <!-- <script src="./jquery-ui-1.12.1/jquery-ui.min.js"></script> -->
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./jquery-ui-1.12.1/jquery-ui.js"></script>
 </head>
-
 <body>
-<img src="./zz.jpg" width="95" height="84" />
-<div>
-    <a>hello world</a>
-    <a>hello world</a>
-</div>
+ 
+    <p>点击任意地方进行切换。</p>
+    <div id="toggle"></div>
+     
+    <script>
+        $( document ).click(function() {
+        $( "#toggle" ).toggle( "blind" , {direction: "left"});
+        });
+    </script>
+ 
 </body>
-
 </html>
