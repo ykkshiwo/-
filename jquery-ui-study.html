@@ -1,30 +1,39 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>剪辑特效（Clip Effect）演示</title>
   <link rel="stylesheet" href="./jquery-ui-1.12.1/jquery-ui.min.css">
   <style>
-  #toggle {
-    width: 100px;
-    height: 100px;
-    background: #ccc;
-  }
+    #toggle {
+      width: 100px;
+      height: 100px;
+      background: #ccc;
+    }
   </style>
   <!-- <script src="./jquery-ui-1.12.1/jquery-ui.min.js"></script> -->
   <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <script src="./jquery-ui-1.12.1/jquery-ui.js"></script>
 </head>
+
 <body>
+
+  <button id="opener">打开对话框</button>
+  <div id="dialog" title="对话框标题">我是一个对话框</div>
+
+  <script>
+    $("#dialog").dialog({ autoOpen: false });
+    $("#opener").click(function () {
+      $("#dialog").dialog("open");
+    });
+  </script>
+  <input id="spinner">
  
-    <p>点击任意地方进行切换。</p>
-    <div id="toggle"></div>
-     
-    <script>
-        $( document ).click(function() {
-        $( "#toggle" ).toggle( "blind" , {direction: "left"});
-        });
-    </script>
- 
+  <script>
+  $( "#spinner" ).spinner();
+  </script>
+
 </body>
+
 </html>

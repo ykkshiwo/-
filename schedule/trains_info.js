@@ -28,6 +28,20 @@ var data_group_trains=
 				],
 				projects: ["哈他瑜伽","阴瑜伽","流瑜伽","理疗瑜伽","高温瑜伽"]
 			},
+			{
+				en_name: "Julia",
+				cn_name: "未央",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201812/201812151011402445200.jpg",
+				certificates: [
+					"理疗契合养生导师",
+					"哈他瑜伽注册教练",
+					"流瑜伽注册教练",
+					"阴瑜伽注册教练",
+					"热瑜伽注册教练",
+				],
+				projects: ["哈他瑜伽","阴瑜伽","流瑜伽","理疗瑜伽","高温瑜伽","心灵疗愈瑜伽","阿斯汤加","普拉提器械","双语儿童瑜伽"]
+			},
 			]
 	};
 
@@ -186,18 +200,18 @@ var data_person_trains=
 				],
 				projects: ["减脂","塑形","拉伸","增肌","康复","拳击"]
 			},
-				{
-				en_name: "JeanZhang",
-				cn_name: "张熙昊",
-					img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906388.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"LFBb国际私人教练认证",
-					"产后康复认证",
-					"中国红十字会认证 ",
-				],
-				projects: ["减脂","塑形","增肌"]
-			},
+			// 	{
+			// 	en_name: "JeanZhang",
+			// 	cn_name: "张熙昊",
+			// 		img:"http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906388.jpg",
+			// 	position: "佑远私人教练",
+			// 	certificates: [
+			// 		"LFBb国际私人教练认证",
+			// 		"产后康复认证",
+			// 		"中国红十字会认证 ",
+			// 	],
+			// 	projects: ["减脂","塑形","增肌"]
+			// },
 				{
 				en_name: "Allen",
 				cn_name: "赵军",
