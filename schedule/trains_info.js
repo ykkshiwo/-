@@ -212,20 +212,20 @@ var data_person_trains=
 			// 	],
 			// 	projects: ["减脂","塑形","增肌"]
 			// },
-				{
-				en_name: "Allen",
-				cn_name: "赵军",
-				"img": "http://yy.rxmmd.net/Storage/master/gallery/201811/201811221601354889310.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"国家职业资格认证",
-					"健康体适能认证",
-					"体态矫正师认证",
-					"运动训练师认证",
-					"运动康复师认证"
-				],
-				projects: ["减脂","塑形","增肌"]
-			},
+			// 	{
+			// 	en_name: "Allen",
+			// 	cn_name: "赵军",
+			// 	"img": "http://yy.rxmmd.net/Storage/master/gallery/201811/201811221601354889310.jpg",
+			// 	position: "佑远私人教练",
+			// 	certificates: [
+			// 		"国家职业资格认证",
+			// 		"健康体适能认证",
+			// 		"体态矫正师认证",
+			// 		"运动训练师认证",
+			// 		"运动康复师认证"
+			// 	],
+			// 	projects: ["减脂","塑形","增肌"]
+			// },
 				{
 				en_name: "Cannon Shi",
 				cn_name: "石中玉",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <!--	禁止放大-->
 <meta name="viewport" content=" maximum-scale=1.0, user-scalable=0"> 
-<!--	3个小时刷新一次，刷新为了获取最新的天气预报-->
+<!--	6个小时刷新一次，刷新为了获取最新的天气预报-->
 <meta http-equiv="refresh" content="21600">
 <title>课程表</title>
 <!--	<link rel="stylesheet" href="./introduceOfTrains.css" />-->
@@ -17,7 +17,7 @@
 	<script>
 		
 //		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
-		var course_interval = [540,600,720,840,960,1110,1190,1230,1290]
+		var course_interval = [540,600,720,840,960,1130,1200,1230,1290]
 		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
 		function whereCourse(){
 			var d = new Date();
