@@ -1,5 +1,9 @@
 		//课程数据集，课程固定，静态，不需要服务器支持。Time是将时间转为分钟，比如10小时变为600分钟，duration表示将课程时段。
+		//周日在最前面
 		var fjl = [
+			[{'cousrName':'Dance Yoga 舞韵瑜伽', 'TrainName':'Yur', 'Time':'1130', 'duration':'50'},
+			{'cousrName':'Ready to go 新手入门', 'TrainName':'Darren', 'Time':'1200', 'duration':'50'}],
+
 			[{'cousrName':'尊巴Zumba', 'TrainName':'Darren', 'Time':'600' ,'duration':'50'},
 			 {'cousrName':'Yin yoga阴瑜伽', 'TrainName':'Yiyi', 'Time':'1200' ,'duration':'50'},
 			 {'cousrName':'Fight FX 能量搏击', 'TrainName':'Darren', 'Time':'1130' ,'duration':'50'}],
@@ -24,8 +28,5 @@
 			 {'cousrName':'Training Day 训练日', 'TrainName':'Darren', 'Time':'1200' ,'duration':'50'}],
 			
 			[{'cousrName':'Flow yoga 流瑜伽', 'TrainName':'Yiyi', 'Time':'840' ,'duration':'50'},
-			 {'cousrName':'Hatha Yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'1200' ,'duration':'50'}],
-			
-			[{'cousrName':'Dance Yoga 舞韵瑜伽', 'TrainName':'Yur', 'Time':'1130', 'duration':'50'},
-			{'cousrName':'Ready to go 新手入门', 'TrainName':'Darren', 'Time':'1200', 'duration':'50'}],
+			 {'cousrName':'Hatha Yoga 哈他瑜伽', 'TrainName':'Yiyi', 'Time':'1200' ,'duration':'50'}]
 		]
