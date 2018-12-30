@@ -5,8 +5,6 @@
 	<meta charset="utf-8">
 	<!--	禁止放大-->
 	<meta name="viewport" content=" maximum-scale=1.0, user-scalable=0">
-	<!--	2个小时刷新一次，刷新为了获取最新的天气预报-->
-	<meta http-equiv="refresh" content="7200">
 	<title>课程表</title>
 	<!--	<link rel="stylesheet" href="./introduceOfTrains.css" />-->
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
@@ -14,7 +12,7 @@
 	<!--	handlebars模板语言-->
 	<script src="./handlebars-v4.0.12.js"></script>
 	<!--	课程信息js文件导入-->
-	<script src="./courses_info1.js"></script>
+	<script src="./courses_info12.js"></script>
 	<script>
 
 		//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
@@ -64,10 +62,10 @@
 		 * 具体变现为改变数组的顺序，将今天的课程放在第一位（0），以此类推即可。
 		 *上面的addCourses()函数只是把给他的一个数组按要求插进去，只需要给他的参数变化一下顺序即可。
 		 * **/
-		function changeQueueOfFjl(fjl){
+		function changeQueueOfFjl(fjl) {
 			var d = new Date()
 			var w = d.getDay()
-			var new_fjl = fjl.slice(w,7).concat(fjl.slice(0,w))
+			var new_fjl = fjl.slice(w, 7).concat(fjl.slice(0, w))
 			return new_fjl
 		}
 
@@ -848,7 +846,7 @@
 		</div>
 		{{/each}}
 	</script>
-<script src="./trains_info1.js"></script>
+<script src="./trains_info12.js"></script>
 <script>
 	var tpl = $("#Train_moudel").html();
 	var template = Handlebars.compile(tpl);
@@ -859,6 +857,11 @@
 	var template = Handlebars.compile(tpl);
 	var html = template(data_person_trains);
 	$('#personal_trains').html(html);
+</script>
+<script>
+	window.onload = function () {
+		setTimeout(function () { location.reload() }, 2 * 60 * 60 * 1000) //2个小时刷新一次
+	}
 </script>
 
 </html>

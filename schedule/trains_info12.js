@@ -13,7 +13,7 @@ var data_group_trains=
 					"Train Fitness体系fight fx认证",
 					"莱美体系bodypump初始培训",
 				],
-				projects: ["bodypump","莱美搏击","CXWORD","Fight FX能量搏击","PUMP FX功能杠铃","Zumba","Adidas训练课","Schwinn单车"]
+				projects: ["bodypump","莱美搏击","CXWORD","Fight FX","PUMP FX","Zumba","Adidas训练课","Schwinn"]
 			},
 			{
 				en_name: "Yiyi",
