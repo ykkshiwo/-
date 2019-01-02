@@ -814,6 +814,7 @@
 			<div id="choose_personal_trains"> 私教课教练</div>
 		</div>
 	</div>
+	<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time">12:12</a></div>
 </body>
 <script type="text/template" id="Train_moudel">
 		{{#each trains_info}}
@@ -860,6 +861,8 @@
 </script>
 <script>
 	window.onload = function () {
+		var t = new Date();
+		$("#update_time").append("<a>" + t + "</a>")
 		setTimeout(function () { location.reload() }, 2 * 60 * 60 * 1000) //2个小时刷新一次
 	}
 </script>
