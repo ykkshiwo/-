@@ -12,11 +12,11 @@
 	<!--	handlebars模板语言-->
 	<script src="./handlebars-v4.0.12.js"></script>
 	<!--	课程信息js文件导入-->
-	<script src="./courses_info12.js"></script>
+	<script src="./courses_info33.js"></script>
 	<script>
 
 		//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
-		var course_interval = [540, 600, 720, 840, 960, 1130, 1200, 1230, 1290]
+		var course_interval = [540, 600, 720, 840, 960, 1110, 1170, 1230, 1290]
 		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
 		function whereCourse() {
 			var d = new Date();
@@ -128,7 +128,7 @@
 			var icon_head = "https://cdn.heweather.com/cond_icon/"
 			var d = new Date();
 			$.get('https://free-api.heweather.com/s6/weather/forecast?key=' + key + '&location=' + location, function (data, status) {
-				console.log(data);
+				console.log("从和风天气获得" + location + "的数据为： " + data);
 				var many_of_the_weather = data["HeWeather6"][0]['daily_forecast'];
 				var today = many_of_the_weather[0];
 				console.log(many_of_the_weather.length);
@@ -302,7 +302,14 @@
 			font-weight: bold;
 			font-size: 16px;
 		}
-		table{border-collapse:collapse;border: 1px solid white;}
+		table{
+			border-collapse:collapse;
+			border: 1px solid white;
+			}
+		tr{
+			background-color:rgba(0, 0, 0, 0.38);
+			/* background-color: #28DD0C; */
+		}
 		.weather_day{
 			width:100px;
 /*			border:1px solid green;*/
@@ -446,7 +453,7 @@
 </head>
 
 <body>
-	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201812/201812261811000048440.jpg); background-repeat: no-repeat; background-size:100% 100%">
+	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201901/201901310911217010420.jpg); background-repeat: no-repeat; background-size:100% 100%">
 
 		<!--		显示天气预报-->
 		<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
@@ -479,10 +486,11 @@
 
 		<!--		时钟显示， 绝对定位在右上角-->
 
-		<!-- <div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white"> 12:12 </div> -->
+		<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
+			12:12 </div>
 
 		<!--		课程表修订， 绝对定位在右上角-->
-		<!--		<div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 60px;color: red"> 12/8课程表更新 </div>-->
+				<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
 
 		<!--		将课程表格限定在此div中，默认课程显示-->
 		<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
@@ -700,7 +708,7 @@
 				</tr>
 				<tr>
 					<td>
-						19:50
+						19:30
 					</td>
 					<td>
 						<div class="if_much_cousers">
@@ -814,7 +822,7 @@
 			<div id="choose_personal_trains"> 私教课教练</div>
 		</div>
 	</div>
-	<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time">12:12</a></div>
+	<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time"></a></div>
 </body>
 <script type="text/template" id="Train_moudel">
 		{{#each trains_info}}
@@ -847,7 +855,7 @@
 		</div>
 		{{/each}}
 	</script>
-<script src="./trains_info12.js"></script>
+<script src="./trains_info33.js"></script>
 <script>
 	var tpl = $("#Train_moudel").html();
 	var template = Handlebars.compile(tpl);
