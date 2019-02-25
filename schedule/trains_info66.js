@@ -40,7 +40,7 @@ var data_group_trains =
 					"阴瑜伽注册教练",
 					"热瑜伽注册教练",
 				],
-				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈瑜伽", "阿斯汤加", "普拉提器械", "双语儿童瑜伽"]
+				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
 			},
 			{
 				en_name: "Alan",
@@ -91,6 +91,18 @@ var data_group_trains =
 					"单车培训资格认证",
 				],
 				projects: ["单车"]
+			},
+			{
+				en_name: "Miya",
+				cn_name: "小雨",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902231734487493910.jpg",
+				certificates: [
+					"哈他瑜伽注册教练",
+					"空中瑜伽注册教练",
+					"单车注册教练",
+				],
+				projects: ["单车","空中瑜伽"]
 			},
 		]
 };
